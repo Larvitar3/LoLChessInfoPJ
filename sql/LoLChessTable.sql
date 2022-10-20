@@ -45,7 +45,6 @@ CREATE TABLE lineSynergyTable(
     FOREIGN KEY (lineId) REFERENCES lineTable (id)
 );
 
-drop table tribeIdSynergyTable;
 
 CREATE TABLE tribeIdSynergyTable(
 	id INT AUTO_INCREMENT NOT NULL,
@@ -62,7 +61,8 @@ CREATE TABLE synergyTable(
     tribeId INT NOT NULL,
     lineId INT NOT NULL,
     FOREIGN KEY (championId) REFERENCES championTable (id),
-    FOREIGN KEY (tribeId) REFERENCES tribeTable (id)
+    FOREIGN KEY (tribeId) REFERENCES tribeTable (id),
+    FOREIGN KEY(lineId) REFERENCES lineTable(id)
 );
 
 CREATE TABLE itemMaterialTable(
