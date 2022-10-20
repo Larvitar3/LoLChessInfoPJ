@@ -1,4 +1,4 @@
-desc championTable;
+
 
 
 /*
@@ -16,6 +16,10 @@ CREATE TABLE championTable(
     PRIMARY KEY (id)
 );
 */
+
+-- desc championTable;
+-- select * from championTable;
+
 insert into championTable
 values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'C:\\LoLChessPJ\\Images\\Nidalee.png');
 insert into championTable 
@@ -73,7 +77,7 @@ values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 ,
 insert into championTable
 values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'C:\\LoLChessPJ\\Images\\Syfen.png' );
 
-desc tribeTable;
+-- desc tribeTable;
 
 insert into tribeTable   
 values ( 1 , '기병대' , '기병대가 방어력과 마법 저항력을 얻습니다. 
@@ -114,9 +118,8 @@ insert into tribeTable
 values ( 15 , '용술사' , '용술사의 축복을 사용해 영웅을 선택합니다. 
 영웅의 체력과 주문력이 용술사의 별 레벨 하나당 20%씩 증가합니다.' , null);
 
-desc lineTable;
-
-SELECT * FROM tribeTable;
+-- desc lineTable;
+-- SELECT * FROM tribeTable;
 
 insert into lineTable   
 values ( 1 , '별' , '플레이어 대상 전투 후 별의 구를 획득합니다.
@@ -136,16 +139,16 @@ insert into lineTable
 values ( 6 , '속삭임' , '속삭임이 피해를 입힌 적은 움츠러들며 6초 동안 방어력과 마법 저항력이 40% 감소합니다.' , 
 '움츠러든 적에게 피해를 입힌 속삭임은 중첩되는 공격력과 주문력을 얻습니다.' );
 
-SELECT * FROM linetable;
+-- SELECT * FROM linetable;
 
-desc lineSynergyTable;
+-- desc lineSynergyTable;
 
 insert into lineSynergyTable  
 values ( 1 , 1 , 3 , '주문력+5' );
 insert into lineSynergyTable  
 values ( 2 , 1 , 5 , '주문력+30' );
 insert into lineSynergyTable  
-values ( 3 , 1 , 2 , '마법피해 15% 증가' );
+values ( 3 , 2 , 2 , '마법피해 15% 증가' );
 insert into lineSynergyTable  
 values ( 4 , 2 , 4 , '마법피해 50% 증가' );
 insert into lineSynergyTable  
@@ -171,7 +174,7 @@ values ( 14 , 6 , 2 , '공격력과 주문력 +1' );
 insert into lineSynergyTable  
 values ( 15 , 6 , 4 , '공격력과 주문력 +3' );
 
-desc tribeIdSynergyTable;
+-- desc tribeIdSynergyTable;
 
 insert into tribeIdSynergyTable  
 values ( 1 , 1 , 2 , '방어력 +35, 마법저항력 +35' );
@@ -230,7 +233,7 @@ values ( 27 , 14 , 2 , '체력 +180' );
 insert into tribeIdSynergyTable  
 values ( 28 , 14 , 4 , '체력 +350' );
 
-desc synergyTable;
+-- desc synergyTable;
 
 insert into synergyTable   
 values ( 1 , 1 , 3 , 1 );
@@ -305,7 +308,7 @@ values ( 35 , 28 , 6 , 6 );
 insert into synergyTable   
 values ( 36 , 28 , 14 , 6 );
 
-desc itemMaterialTable;
+-- desc itemMaterialTable;
 
 insert into itemMaterialTable  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
@@ -314,33 +317,34 @@ values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.
 insert into itemMaterialTable  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
 insert into itemMaterialTable  
-values ( 4 , '여신의 눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
+values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
-desc itemTable;
+-- desc itemTable;
+-- select * from itemTable;
 
 insert into itemTable  
-values ( 1 , '죽음의 검' , '추가 공격력 25/45/65 획득' , 1 , 1 , 'C:\\LoLChessPJ\\Images\\LordsEdge.jpg' );
+values ( 1 , '죽음의검' , '추가 공격력 25/45/65 획득' , 1 , 1 , 'C:\\LoLChessPJ\\Images\\LordsEdge.jpg' );
 insert into itemTable  
 values ( 2 , '거인학살자' , '기본 공격 및 스킬 사용시 20%의 추가 피해. 
 대상 최대 체력이 1900 초과 시 추가 피해 45%로 증가' , 1 , 2 , 'C:\\LoLChessPJ\\Images\\GiantSlayer.jpg' );
 insert into itemTable  
-values ( 3 , '밤의 끝자락' , '체력이 60%일 때 잠시 은신하며 대상으로 지정할 수 없는 상태가 되고 해로운 효과 제거. 
+values ( 3 , '밤의끝자락' , '체력이 60%일 때 잠시 은신하며 대상으로 지정할 수 없는 상태가 되고 해로운 효과 제거. 
 이후 추가 공격 속도 40% 획득.' , 1 , 3 , 'C:\\LoLChessPJ\\Images\\GuardianAngel.png' );
 insert into itemTable  
-values ( 4 , '쇼진의 창' , '추가 주문력 20, 기본 공격 시 추가로 5의 마나 회복' , 1 , 4 , 'C:\\LoLChessPJ\\Images\\SpearofShojin.png' );
+values ( 4 , '쇼진의창' , '추가 주문력 20, 기본 공격 시 추가로 5의 마나 회복' , 1 , 4 , 'C:\\LoLChessPJ\\Images\\SpearofShojin.png' );
 insert into itemTable  
 values ( 5 , '고속연사포' , '추가 공격 속도 30% 및 공격 사거리 1칸 증가' , 2 , 2 , 'C:\\LoLChessPJ\\Images\\Rapid Firecannon.png' );
 insert into itemTable  
-values ( 6 , '거인의 결의' , '공격하거나 피해를 받으면 공격력 및 주문력 2 획득 (최대 25회 중첩)' , 2 , 3 , 'C:\\LoLChessPJ\\Images\\TitansResolve.png' );
+values ( 6 , '거인의결의' , '공격하거나 피해를 받으면 공격력 및 주문력 2 획득 (최대 25회 중첩)' , 2 , 3 , 'C:\\LoLChessPJ\\Images\\TitansResolve.png' );
 insert into itemTable  
-values ( 7 , '스태틱의 단검' , '추가 공격 속도 10%. 세 번째 공격마다 4명의 적에게 튕기는 
+values ( 7 , '스태틱의단검' , '추가 공격 속도 10%. 세 번째 공격마다 4명의 적에게 튕기는 
 연쇄 번개를 발사하여 50의 마법 피해를 입히고 대상의 마법 저항력 5초 동안 50% 감소' , 2  , 4 , 'C:\\LoLChessPJ\\Images\\StatikkShiv.png' );
 insert into itemTable  
 values ( 8 , '덤불조끼' , '추가 방어력 40. 받는 치명타 공격의 추가 피해 75% 무효화. 기본 공격에 맞을 경우 
 주변 모든 적에게 75/100/150 ★의 마법 피해 (2.5초마다 한 번씩)' , 3 , 3 , 'C:\\LoLChessPJ\\Images\\BrambleVest.png' );
 insert into itemTable  
-values ( 9 , '수호자의 맹세' , '시작 마나 15 증가
+values ( 9 , '수호자의맹세' , '시작 마나 15 증가
 전투 당 한번: 체력이 50%까지 떨어지면, 3칸 내 아군들이 2초 동안 최대 체력의 10%에 해당하는 보호막을 획득하며 
 전투가 끝날 때까지 방어력 및 마법 저항력 15 획득' , 3 , 4 , 'C:\\LoLChessPJ\\Images\\Fimbulwinter.png' );
 insert into itemTable  
-values ( 10 , '푸른 파수꾼' , '시작 마나 20 증가. 스킬 사용 후 마나를 20까지 회복' , 4 , 4 , 'C:\\LoLChessPJ\\Images\\BlueBuff.png' );
+values ( 10 , '푸른파수꾼' , '시작 마나 20 증가. 스킬 사용 후 마나를 20까지 회복' , 4 , 4 , 'C:\\LoLChessPJ\\Images\\BlueBuff.png' );
