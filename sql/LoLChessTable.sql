@@ -1,6 +1,8 @@
-CREATE DATABASE LoLChessInfo;
+-- CREATE DATABASE LoLChessInfo;
 
-USE LoLChessInfo;
+-- USE LoLChessInfo;
+
+-- DROP DATABASE LoLChessInfo;
 
 CREATE TABLE championTable(
 	id INT AUTO_INCREMENT NOT NULL,
@@ -13,6 +15,7 @@ CREATE TABLE championTable(
     attackSpeed DOUBLE NOT NULL,
     defense INT NOT NULL,
     magicResistance INT NOT NULL,
+    imageRoute varchar(100),
     PRIMARY KEY (id)
 );
 
@@ -42,13 +45,15 @@ CREATE TABLE lineSynergyTable(
     FOREIGN KEY (lineId) REFERENCES lineTable (id)
 );
 
+drop table tribeIdSynergyTable;
+
 CREATE TABLE tribeIdSynergyTable(
 	id INT AUTO_INCREMENT NOT NULL,
     tribeId INT NOT NULL,
     collaborationCount INT NOT NULL,
     collaborativeEffect TEXT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (tribeId) REFERENCES lineTable (id)
+    FOREIGN KEY (tribeId) REFERENCES tribeTable (id)
 );
 
 CREATE TABLE synergyTable(
@@ -64,6 +69,7 @@ CREATE TABLE itemMaterialTable(
 	id INT AUTO_INCREMENT NOT NULL,
     name TEXT NOT NULL,
     materialEffect TEXT NOT NULL,
+    imageRoute varchar(100),
     PRIMARY KEY (id)
 );
 
@@ -73,6 +79,7 @@ CREATE TABLE itemTable(
     itemEffect TEXT NOT NULL,
     materialId1 INT NOT NULL,
     materialId2 INT NOT NULL,
+    imageRoute varchar(100),
     PRIMARY KEY (id),
     FOREIGN KEY (materialId1) REFERENCES itemMaterialTable (id),
     FOREIGN KEY (materialId2) REFERENCES itemMaterialTable (id)
