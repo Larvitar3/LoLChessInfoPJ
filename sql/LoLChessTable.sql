@@ -52,7 +52,7 @@ CREATE TABLE tribeIdSynergyTable(
 );
 
 CREATE TABLE synergyTable(
-	id INT AUTO_INCREMENT NOT NULL,
+	id INT NOT NULL,
     championId INT NOT NULL,
     tribeId INT NOT NULL,
     lineId INT NOT NULL,
