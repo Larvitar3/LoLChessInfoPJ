@@ -3,8 +3,12 @@ package lolChessSearchInfo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class ChampionSerch extends JFrame implements ActionListener{
 
@@ -12,11 +16,24 @@ public class ChampionSerch extends JFrame implements ActionListener{
 	JButton lineBtn;
 	JButton tribeBtn;
 	JButton priceBtn;
+	// Btn end
+	
+	JTextField searchBox;
+	JButton searchBtn;
+	// searchBox end
+	
+	JLabel championImgBox;
+	
+	String img = "C:\\LoLChessPJ\\Images\\Sylas.png";
+	
 	
 	public ChampionSerch() {
 		initData();
 		setInitLayout();
 		addEventListener();
+		
+		// 삭제
+		nameSelect();
 	}
 
 	private void initData() {
@@ -28,8 +45,23 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		lineBtn = new JButton("LINE");
 		tribeBtn = new JButton("TRIBE");
 		priceBtn = new JButton("PRICE");
+		// Btn End
 		
+		searchBox = new JTextField();
+		searchBtn = new JButton("검색");
+		// searchBox end
 		
+		// 데이터 연결 ▼
+		ImageIcon championImg = new ImageIcon(img);
+		championImgBox = new JLabel(championImg);
+		
+	}
+	
+	 private void nameSelect() {
+			
+			add(searchBox);
+			add(searchBtn);
+			add(championImgBox);
 	}
 
 	private void setInitLayout() {
@@ -54,6 +86,14 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		priceBtn.setSize(176, 40);
 		priceBtn.setLocation(578, 220);
 		
+		searchBox.setSize(480, 35);
+		searchBox.setLocation(130, 300);
+		
+		searchBtn.setSize(70, 35);
+		searchBtn.setLocation(609, 300);
+		
+		championImgBox.setSize(120, 120);
+		championImgBox.setLocation(85, 370);
 		
 	}
 
@@ -64,6 +104,8 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		priceBtn.addActionListener(this);
 		
 	}
+	
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -77,8 +119,10 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		}else if(e.getSource() == priceBtn) {
 			System.out.println("비용이 선택되었습니다.");
 		}
-		
+
 	}
+	
+	
 	public static void main(String[] args) {
 		new ChampionSerch();
 	}

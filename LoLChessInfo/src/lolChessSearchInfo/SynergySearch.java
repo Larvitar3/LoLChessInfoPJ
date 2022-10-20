@@ -19,7 +19,6 @@ public class SynergySearch extends JFrame implements ActionListener{
 	JButton lineBtn;
 	JButton tribeBtn;
 	JButton effectBtn;
-	JLabel test;
 	
 	public SynergySearch() {
 		initData();
@@ -36,9 +35,6 @@ public class SynergySearch extends JFrame implements ActionListener{
 		tribeBtn =  new JButton("Tribe");
 		effectBtn = new JButton("Effect");
 		
-		ImageIcon testImage = new ImageIcon("C:\\LoLChessPJ\\Images\\Bard.png");
-		test = new JLabel(testImage);
-		
 	}
 
 	private void setInitLayout() {
@@ -46,10 +42,6 @@ public class SynergySearch extends JFrame implements ActionListener{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(null);
-		
-		add(test);
-		test.setSize(200,200);
-		test.setLocation(0,0);
 		
 		add(lineBtn);
 		lineBtn.setSize(234, 40);
