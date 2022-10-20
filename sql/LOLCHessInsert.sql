@@ -16,62 +16,62 @@ CREATE TABLE championTable(
     PRIMARY KEY (id)
 );
 */
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 3 , '스카너' , 1 , 650 , 60 , 36 , '★☆☆☆☆' , 0.6 , 45 , 45 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 4 , '럭스' , 2 , 600 , 30 , 21 , '★★★★☆' , 0.7 , 20 , 20 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 5 , '바루스' , 3 , 650 , 55 , 39 , '★★★☆☆' , 0.7 , 25 , 25 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 6 , '아우렐리온 솔' , 8 , 800 , 60 , 45 , '★★★★☆' , 0.75 , 35 , 35 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 7 , '릴리아' , 2 , 750 , 40 , 28 , '★☆☆☆☆' , 0.7 , 40 , 40 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 8 , '브라움' , 2 , 800 , 70 , 42 , '★☆☆☆☆' , 0.6 , 60 , 60 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance)
-values ( 9 , '다이애나' , 3 , 700 , 50 , 38 , '★☆☆☆☆' , 0.75 , 35 , 35 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 10 , '올라프' , 3 , 800 , 55 , 39 , '★☆☆☆☆' , 0.7 , 50 , 50 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 11 , '세주아니' , 1 , 650 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 12 , '트위치' , 2 , 550 , 55 , 39 , '★★★☆☆' , 0.7 , 20 , 20 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 13 , '제이스' , 4 , 900 , 90 , 72 , '★★★☆☆' , 0.8 , 25 , 25 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 14 , '바드' , 5 , 850 , 60 , 42 , '★★★★☆' , 0.7 , 40 , 40 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 15 , '쌩쌩이' , 6 , 800 , 85 , 64 , '★☆☆☆☆' , 0.75 , 50 , 50 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 16 , '렐' , 2 , 700 , 50 , 30 , '★☆☆☆☆' , 0.6 , 45 , 45 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 17 , '아펠리오스' , 2 , 500 , 60 , 42 , '★★★★☆' , 0.7 , 20 , 20 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 18 , '렝가' , 3 , 700 , 70 , 53 , '★☆☆☆☆' , 0.75 , 30 , 30 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 19 , '스웨인' , 7 , 900 , 40 , 24 , '★★☆☆☆' , 0.6 , 70 , 70 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 20 , '나서스' , 1 , 600 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 21 , '잭스' , 2 , 750 , 55 , 39 , '★☆☆☆☆' , 0.7 , 45 , 45 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 22 , '볼리베어' , 3 , 800 , 50 , 38 , '★☆☆☆☆' , 0.75 , 50 , 50 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 23 , '조이' , 5 , 800 , 45 , 34 , '★★★★☆' , 0.75 , 20 , 20 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 24 , '이다스' , 7 , 950 , 90 , 50 , '★☆☆☆☆' , 0.55 , 60 , 60 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 25 , '자이라' , 2 , 600 , 40 , 26 , '★★★★☆' , 0.65 , 20 , 20 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 26 , '사일러스' , 3 , 800 , 60 , 36 , '★☆☆☆☆' , 0.6 , 50 , 50 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50 );
-insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
-values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60 );
+insert into championTable
+values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'C:\\LoLChessPJ\\Images\\Nidalee.png');
+insert into championTable 
+values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 3 , '스카너' , 1 , 650 , 60 , 36 , '★☆☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 4 , '럭스' , 2 , 600 , 30 , 21 , '★★★★☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 5 , '바루스' , 3 , 650 , 55 , 39 , '★★★☆☆' , 0.7 , 25 , 25,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 6 , '아우렐리온 솔' , 8 , 800 , 60 , 45 , '★★★★☆' , 0.75 , 35 , 35,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 7 , '릴리아' , 2 , 750 , 40 , 28 , '★☆☆☆☆' , 0.7 , 40 , 40,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 8 , '브라움' , 2 , 800 , 70 , 42 , '★☆☆☆☆' , 0.6 , 60 , 60,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 9 , '다이애나' , 3 , 700 , 50 , 38 , '★☆☆☆☆' , 0.75 , 35 , 35,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 10 , '올라프' , 3 , 800 , 55 , 39 , '★☆☆☆☆' , 0.7 , 50 , 50,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 11 , '세주아니' , 1 , 650 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 12 , '트위치' , 2 , 550 , 55 , 39 , '★★★☆☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 13 , '제이스' , 4 , 900 , 90 , 72 , '★★★☆☆' , 0.8 , 25 , 25,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 14 , '바드' , 5 , 850 , 60 , 42 , '★★★★☆' , 0.7 , 40 , 40,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 15 , '쌩쌩이' , 6 , 800 , 85 , 64 , '★☆☆☆☆' , 0.75 , 50 , 50,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 16 , '렐' , 2 , 700 , 50 , 30 , '★☆☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable 
+values ( 17 , '아펠리오스' , 2 , 500 , 60 , 42 , '★★★★☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 18 , '렝가' , 3 , 700 , 70 , 53 , '★☆☆☆☆' , 0.75 , 30 , 30,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 19 , '스웨인' , 7 , 900 , 40 , 24 , '★★☆☆☆' , 0.6 , 70 , 70,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 20 , '나서스' , 1 , 600 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 21 , '잭스' , 2 , 750 , 55 , 39 , '★☆☆☆☆' , 0.7 , 45 , 45,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 22 , '볼리베어' , 3 , 800 , 50 , 38 , '★☆☆☆☆' , 0.75 , 50 , 50,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 23 , '조이' , 5 , 800 , 45 , 34 , '★★★★☆' , 0.75 , 20 , 20,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 24 , '이다스' , 7 , 950 , 90 , 50 , '★☆☆☆☆' , 0.55 , 60 , 60,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 25 , '자이라' , 2 , 600 , 40 , 26 , '★★★★☆' , 0.65 , 20 , 20,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 26 , '사일러스' , 3 , 800 , 60 , 36 , '★☆☆☆☆' , 0.6 , 50 , 50,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50,'C:\\LoLChessPJ\\Images\\' );
+insert into championTable
+values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'C:\\LoLChessPJ\\Images\\' );
 
 desc tribeTable;
 
