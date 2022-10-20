@@ -4,6 +4,9 @@
 
 -- DROP DATABASE LoLChessInfo;
 
+
+
+
 CREATE TABLE championTable(
 	id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR (10) NOT NULL,
@@ -15,10 +18,10 @@ CREATE TABLE championTable(
     attackSpeed DOUBLE NOT NULL,
     defense INT NOT NULL,
     magicResistance INT NOT NULL,
-    imageRoute varchar(100),
+    imageRoute VARCHAR(100),
     PRIMARY KEY (id)
 );
-
+-- select * from tribeTable;
 
 CREATE TABLE tribeTable(
 id INT AUTO_INCREMENT NOT NULL,
@@ -27,6 +30,7 @@ tribeSynergyEffect TEXT NOT NULL,
 tribeSynergyCharacteristic TEXT,
 PRIMARY KEY (id)
 );
+
 
 CREATE TABLE lineTable(
 	id INT AUTO_INCREMENT NOT NULL,
@@ -62,7 +66,11 @@ CREATE TABLE synergyTable(
     lineId INT NOT NULL,
     FOREIGN KEY (championId) REFERENCES championTable (id),
     FOREIGN KEY (tribeId) REFERENCES tribeTable (id),
+<<<<<<< HEAD
     FOREIGN KEY(lineId) REFERENCES lineTable(id)
+=======
+    FOREIGN KEY (lineId) REFERENCES linetable(id)
+>>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 );
 
 CREATE TABLE itemMaterialTable1(
@@ -77,7 +85,7 @@ CREATE TABLE itemMaterialTable2(
 	id INT AUTO_INCREMENT NOT NULL,
     name TEXT NOT NULL,
     materialEffect TEXT NOT NULL,
-    imageRoute varchar(100),
+    imageRoute VARCHAR(100),
     PRIMARY KEY (id)
 );
 
@@ -87,7 +95,7 @@ CREATE TABLE itemTable(
     itemEffect TEXT NOT NULL,
     materialId1 INT NOT NULL,
     materialId2 INT NOT NULL,
-    imageRoute varchar(100),
+    imageRoute VARCHAR(100),
     PRIMARY KEY (id),
     FOREIGN KEY (materialId1) REFERENCES itemMaterialTable1 (id),
     FOREIGN KEY (materialId2) REFERENCES itemMaterialTable2 (id)

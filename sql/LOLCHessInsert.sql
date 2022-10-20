@@ -1,4 +1,4 @@
-desc championTable;
+
 
 
 /*
@@ -17,6 +17,12 @@ CREATE TABLE championTable(
 );
 */
 
+<<<<<<< HEAD
+=======
+-- desc championTable;
+-- select * from championTable;
+
+>>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 insert into championTable
 values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'C:\\LoLChessPJ\\Images\\Nidalee.png');
 insert into championTable 
@@ -74,7 +80,7 @@ values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 ,
 insert into championTable
 values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'C:\\LoLChessPJ\\Images\\Syfen.png' );
 
-desc tribeTable;
+-- desc tribeTable;
 
 insert into tribeTable   
 values ( 1 , '기병대' , '기병대가 방어력과 마법 저항력을 얻습니다. 
@@ -115,9 +121,8 @@ insert into tribeTable
 values ( 15 , '용술사' , '용술사의 축복을 사용해 영웅을 선택합니다. 
 영웅의 체력과 주문력이 용술사의 별 레벨 하나당 20%씩 증가합니다.' , null);
 
-desc lineTable;
-
-SELECT * FROM tribeTable;
+-- desc lineTable;
+-- SELECT * FROM tribeTable;
 
 insert into lineTable   
 values ( 1 , '별' , '플레이어 대상 전투 후 별의 구를 획득합니다.
@@ -137,9 +142,9 @@ insert into lineTable
 values ( 6 , '속삭임' , '속삭임이 피해를 입힌 적은 움츠러들며 6초 동안 방어력과 마법 저항력이 40% 감소합니다.' , 
 '움츠러든 적에게 피해를 입힌 속삭임은 중첩되는 공격력과 주문력을 얻습니다.' );
 
-SELECT * FROM linetable;
+-- SELECT * FROM linetable;
 
-desc lineSynergyTable;
+-- desc lineSynergyTable;
 
 insert into lineSynergyTable  
 values ( 1 , 1 , 3 , '주문력+5' );
@@ -172,7 +177,7 @@ values ( 14 , 6 , 2 , '공격력과 주문력 +1' );
 insert into lineSynergyTable  
 values ( 15 , 6 , 4 , '공격력과 주문력 +3' );
 
-desc tribeIdSynergyTable;
+-- desc tribeIdSynergyTable;
 
 insert into tribeIdSynergyTable  
 values ( 1 , 1 , 2 , '방어력 +35, 마법저항력 +35' );
@@ -231,7 +236,7 @@ values ( 27 , 14 , 2 , '체력 +180' );
 insert into tribeIdSynergyTable  
 values ( 28 , 14 , 4 , '체력 +350' );
 
-desc synergyTable;
+-- desc synergyTable;
 
 insert into synergyTable   
 values ( 1 , 1 , 3 , 1 );
@@ -306,7 +311,11 @@ values ( 35 , 28 , 6 , 6 );
 insert into synergyTable   
 values ( 36 , 28 , 14 , 6 );
 
+<<<<<<< HEAD
 desc itemMaterialTable1;
+=======
+-- desc itemMaterialTable;
+>>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 
 insert into itemMaterialTable1  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
@@ -314,6 +323,7 @@ insert into itemMaterialTable1
 values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.png' );
 insert into itemMaterialTable1  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
+<<<<<<< HEAD
 insert into itemMaterialTable1 
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
@@ -324,9 +334,13 @@ values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.
 insert into itemMaterialTable2  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
 insert into itemMaterialTable2 
+=======
+insert into itemMaterialTable  
+>>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
-desc itemTable;
+-- desc itemTable;
+-- select * from itemTable;
 
 insert into itemTable  
 values ( 1 , '죽음의검' , '추가 공격력 25/45/65 획득' , 1 , 1 , 'C:\\LoLChessPJ\\Images\\LordsEdge.jpg' );
