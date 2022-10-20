@@ -1,4 +1,4 @@
-package lolChessSearchInfo;
+package lolChessSearchInfo.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ public class DBHelper {
 	private static final int DB_PORT = 3306;
 	private static final String DB_DATABASE_NAME = "LoLChessInfo";
 	private static final String DB_USER_NAME = "root";
-	private static final String DB_CHARSET = "root";
+	private static final String DB_CHARSET = "UTF-8";
 	private static final String DB_PASSWORD = "asd1234";
 
 	private static DBHelper dbHelper;
@@ -49,8 +49,10 @@ public class DBHelper {
 			try {
 				conn.close();
 				conn = null;
+				System.out.println(">>> Connection Close <<<");
 			} catch (SQLException e) {
 				e.printStackTrace();
+				System.out.println(">>> Connection Close Fail <<<");
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-package lolChessSearchInfo;
+package lolChessSearchInfo.interfaces;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package lolChessSearchInfo;
+package lolChessSearchInfo.view;
 
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;

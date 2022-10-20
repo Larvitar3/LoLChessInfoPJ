@@ -22,7 +22,7 @@ CREATE TABLE championTable(
 
 CREATE TABLE tribeTable(
 id INT AUTO_INCREMENT NOT NULL,
-tribe VARCHAR (10) NOT NULL,
+name VARCHAR (10) NOT NULL,
 tribeSynergyEffect TEXT NOT NULL,
 tribeSynergyCharacteristic TEXT,
 PRIMARY KEY (id)
@@ -30,7 +30,7 @@ PRIMARY KEY (id)
 
 CREATE TABLE lineTable(
 	id INT AUTO_INCREMENT NOT NULL,
-    line VARCHAR (10) NOT NULL,
+    name VARCHAR (10) NOT NULL,
     lineSynergyEffect TEXT NOT NULL,
     lineSynergyCharacteristic TEXT,
     PRIMARY KEY (id)
@@ -65,7 +65,15 @@ CREATE TABLE synergyTable(
     FOREIGN KEY(lineId) REFERENCES lineTable(id)
 );
 
-CREATE TABLE itemMaterialTable(
+CREATE TABLE itemMaterialTable1(
+	id INT AUTO_INCREMENT NOT NULL,
+    name TEXT NOT NULL,
+    materialEffect TEXT NOT NULL,
+    imageRoute varchar(100),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE itemMaterialTable2(
 	id INT AUTO_INCREMENT NOT NULL,
     name TEXT NOT NULL,
     materialEffect TEXT NOT NULL,
@@ -81,7 +89,7 @@ CREATE TABLE itemTable(
     materialId2 INT NOT NULL,
     imageRoute varchar(100),
     PRIMARY KEY (id),
-    FOREIGN KEY (materialId1) REFERENCES itemMaterialTable (id),
-    FOREIGN KEY (materialId2) REFERENCES itemMaterialTable (id)
+    FOREIGN KEY (materialId1) REFERENCES itemMaterialTable1 (id),
+    FOREIGN KEY (materialId2) REFERENCES itemMaterialTable2 (id)
 );
 
