@@ -1,0 +1,341 @@
+desc championTable;
+
+
+/*
+CREATE TABLE championTable(
+	id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR (10) NOT NULL,
+    price INT NOT NULL,
+    hp INT NOT NULL,
+    power INT NOT NULL,
+    dps INT NOT NULL,
+    attackRange VARCHAR(10) NOT NULL,
+    attackSpeed DOUBLE NOT NULL,
+    defense INT NOT NULL,
+    magicResistance INT NOT NULL,
+    PRIMARY KEY (id)
+);
+*/
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 3 , '스카너' , 1 , 650 , 60 , 36 , '★☆☆☆☆' , 0.6 , 45 , 45 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 4 , '럭스' , 2 , 600 , 30 , 21 , '★★★★☆' , 0.7 , 20 , 20 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 5 , '바루스' , 3 , 650 , 55 , 39 , '★★★☆☆' , 0.7 , 25 , 25 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 6 , '아우렐리온 솔' , 8 , 800 , 60 , 45 , '★★★★☆' , 0.75 , 35 , 35 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 7 , '릴리아' , 2 , 750 , 40 , 28 , '★☆☆☆☆' , 0.7 , 40 , 40 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 8 , '브라움' , 2 , 800 , 70 , 42 , '★☆☆☆☆' , 0.6 , 60 , 60 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance)
+values ( 9 , '다이애나' , 3 , 700 , 50 , 38 , '★☆☆☆☆' , 0.75 , 35 , 35 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 10 , '올라프' , 3 , 800 , 55 , 39 , '★☆☆☆☆' , 0.7 , 50 , 50 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 11 , '세주아니' , 1 , 650 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 12 , '트위치' , 2 , 550 , 55 , 39 , '★★★☆☆' , 0.7 , 20 , 20 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 13 , '제이스' , 4 , 900 , 90 , 72 , '★★★☆☆' , 0.8 , 25 , 25 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 14 , '바드' , 5 , 850 , 60 , 42 , '★★★★☆' , 0.7 , 40 , 40 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 15 , '쌩쌩이' , 6 , 800 , 85 , 64 , '★☆☆☆☆' , 0.75 , 50 , 50 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 16 , '렐' , 2 , 700 , 50 , 30 , '★☆☆☆☆' , 0.6 , 45 , 45 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 17 , '아펠리오스' , 2 , 500 , 60 , 42 , '★★★★☆' , 0.7 , 20 , 20 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 18 , '렝가' , 3 , 700 , 70 , 53 , '★☆☆☆☆' , 0.75 , 30 , 30 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 19 , '스웨인' , 7 , 900 , 40 , 24 , '★★☆☆☆' , 0.6 , 70 , 70 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 20 , '나서스' , 1 , 600 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 21 , '잭스' , 2 , 750 , 55 , 39 , '★☆☆☆☆' , 0.7 , 45 , 45 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 22 , '볼리베어' , 3 , 800 , 50 , 38 , '★☆☆☆☆' , 0.75 , 50 , 50 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 23 , '조이' , 5 , 800 , 45 , 34 , '★★★★☆' , 0.75 , 20 , 20 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 24 , '이다스' , 7 , 950 , 90 , 50 , '★☆☆☆☆' , 0.55 , 60 , 60 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 25 , '자이라' , 2 , 600 , 40 , 26 , '★★★★☆' , 0.65 , 20 , 20 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 26 , '사일러스' , 3 , 800 , 60 , 36 , '★☆☆☆☆' , 0.6 , 50 , 50 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50 );
+insert into championTable (id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance) 
+values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60 );
+
+desc tribeTable;
+
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 1 , '기병대' , '기병대가 방어력과 마법 저항력을 얻습니다. 
+전투 시작 및 돌격 이후 4초 동안 이 수치가 200% 증가합니다.' , '이동 시 대상에게 빠르게 돌격합니다.');
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 2 , '민첩사수' , '민첩사수와 대상 사이에 놓인 칸 하나당 해당 민첩사수가 공격 속도를 얻습니다.' , 
+'공격 사거리가 2칸 증가합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 3 , '형상변환자' , '변신 시 추가 최대 체력을 얻습니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 4 , '신비술사' , '아군이 마법 저항력을 얻습니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 5 , '음유시인' , '바드는 춤을 출 때 항상 음표를 생성합니다. 
+음표를 획득할 때마다 상점에서 단계가 높은 챔피언이 등장할 확률이 1%씩 증가합니다.' ,
+'플레이어 대상 전투에서 아군이 살아남으면 2% 확률로 음표를 생성합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 6 , '용' , '용은 특성 중첩을 3 증가시키고 아군 용이 몇 마리 있는지에 따라 추가 효과를 얻습니다.' , 
+'2개의 팀 슬롯이 필요합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 7 , '요술사' , '요술사는 스킬을 두 번 사용하고 총 주문력이 조정됩니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 8 , '일깨우는자' , '아군 또는 적이 스킬을 사용할 때마다 일깨우는 자가 마나를 얻습니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 9 , '포병대' , '5번째 공격마다 대포를 발사하고 대상 주변에 폭발을 일으켜 물리 피해를 입힙니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 10 , '암살자' , '암살자는 추가 치명타 피해량과 확률을 획득하며, 스킬에 치명타가 적용될 수 있습니다.' ,
+'전투 시작 시 적의 후방으로 도약합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 11 , '수호자' , '전투당 한 번 체력이 50%일 때 가장 가까운 아군과 자신에게 최대 체력의 일정 비율만큼 
+피해를 흡수하는 보호막을 씌웁니다. 보호막은 중첩됩니다!' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 12 , '주문도둑' , '조이가 스킬 사용 후와 라운드 시작 시마다 새 스킬을 가져갑니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 13 , '전사' , '전사가 공격 시 50%의 확률로 다음 공격의 피해량이 증가합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 14 , '난동꾼' , '아군의 최대 체력이 증가합니다. 난동꾼은 두 배로 증가합니다.' );
+insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
+values ( 15 , '용술사' , '용술사의 축복을 사용해 영웅을 선택합니다. 
+영웅의 체력과 주문력이 용술사의 별 레벨 하나당 20%씩 증가합니다.' );
+
+desc lineTable;
+
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 1 , '별' , '플레이어 대상 전투 후 별의 구를 획득합니다.
+아군 별 챔피언의 별 레벨 총합에 따라 구의 값어치가 달라집니다' , 
+'별 챔피언은 추가 주문력을 얻습니다' );
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 2 , '용사냥꾼' , '용사냥꾼이 체력이 1900보다 높은 적에게 받는 피해량이 15% 감소하고 피해량에 비례하는 추가 마법 피해를 입힙니다.' );
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 3 , '길드' , '아군에게 고유 보너스를 부여합니다. 길드원은 두 배로 얻습니다. 전장의 길드 아군마다 증가합니다!' );
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 4 , '어둠강림' , '희생의 제단을 소환합니다. 전투 시작: 제단에 놓인 유닛이 희생되어, 보유한 아이템 하나의 복사본과 함께 추가 체력을 모든 어둠강림 챔피언에게 부여합니다.', 
+'상징과 제작 불가 아이템은 복사되는 순간 오염되어 어둠강림 정수로 변합니다.' );
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 5 , '빛비늘' , '무작위 빛비늘 한정 아이템을 부여합니다.' , '장착 유닛을 대기석에 놓으면 빛비늘 아이템을 제거할 수 있습니다.' );
+insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
+values ( 6 , '속삭임' , '속삭임이 피해를 입힌 적은 움츠러들며 6초 동안 방어력과 마법 저항력이 40% 감소합니다.' , 
+'움츠러든 적에게 피해를 입힌 속삭임은 중첩되는 공격력과 주문력을 얻습니다.' );
+
+desc lineSynergyTable;
+
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 1 , 1 , 3 , '주문력+5' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 2 , 1 , 5 , '주문력+30' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 3 , 2 , 2 , '마법피해 15% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 4 , 2 , 4 , '마법피해 50% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 5 , 3 , 1 , '능력치보너스 100% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 6 , 3 , 2 , '능력치보너스 110% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 7 , 3 , 3 , '능력치보너스 120% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 8 , 3 , 4 , '능력치보너스 130% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 9 , 3 , 5 , '능력치보너스 140% 증가' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 10 , 4 , 2 , '체력 +500' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 11 , 4 , 4 , '체력 +750' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 12 , 5 , 3 , '고유아이템 +1' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 13 , 5 , 5 , '고유아이템 +2' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 14 , 6 , 2 , '공격력과 주문력 +1' );
+insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
+values ( 15 , 6 , 4 , '공격력과 주문력 +3' );
+
+desc tribeIdSynergyTable;
+
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 1 , 1 , 2 , '방어력 +35, 마법저항력 +35' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 2 , 1 , 3 , '방어력 +50, 마법저항력 +50' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 3 , 2 , 2 , '공격속도 +10%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 4 , 2 , 3 , '공격속도 +15%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 5 , 3 , 2 , '추가체력 +50%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 6 , 3 , 4 , '추가체력 +125%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 7 , 4 , 2 , '마법저항력 +40' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 8 , 4 , 3 , '마법저항력 +80' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 9 , 4 , 4 , '마법저항력 +150' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 10 , 5 , 1 , '높은챔피언 등장 확률 +1%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 11 , 6 , 1 , '추가체력 +500' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 12 , 6 , 2 , '마법 저항력 및 방어력 +20' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 13 , 6 , 3 , '추가 피해 +10%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 14 , 6 , 4 , '팀 정원 +1' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 15 , 7 , 3 , '주문력 +80%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 16 , 8 , 2 , '마나 +4' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 17 , 8 , 3 , '마나 +6' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 18 , 9 , 2 , '공격력 +150%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 19 , 9 , 4 , '공격력 +275%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 20 , 10 , 2 , '치명타 확률 +20% 및 치명타 피해량 +10%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 21 , 10 , 4 , '치명타 확률 +50% 및 치명타 피해량 +25%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 22 , 11 , 2 , '최대 체력의 비례 보호막 +25%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 23 , 11 , 4 , '최대 체력의 비례 보호막 +40%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 24 , 12 , 1 , '스킬 사용 후와 라운드 시작 시마다 새 스킬을 가져갑니다.' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 25 , 13 , 2 , '피해 +75%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 26 , 13 , 4 , '피해 +150%' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 27 , 14 , 2 , '체력 +180' );
+insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
+values ( 28 , 14 , 4 , '체력 +350' );
+
+desc synergyTable;
+
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 1 , 1 , 3 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 2 , 2 , 7 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 3 , 3 , 14 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 4 , 4 , 7 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 5 , 5 , 2 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 6 , 6 , 6 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 7 , 6 , 8 , 1 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 8 , 7 , 7 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 9 , 7 , 1 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 10 , 8 , 11 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 11 , 9 , 10 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 12 , 10 , 14 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 13 , 10 , 13 , 2 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 14 , 11 , 1 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 15 , 12 , 2 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 16 , 13 , 3 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 17 , 14 , 4 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 18 , 14 , 5 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 19 , 15 , 6 , 3 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 20 , 16 , 1 , 4 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 21 , 17 , 9 , 4 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 22 , 18 , 10 , 4 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 23 , 19 , 6 , 4 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 24 , 20 , 11 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 25 , 21 , 14 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 26 , 22 , 15 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 27 , 23 , 7 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 28 , 23 , 12 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 29 , 24 , 6 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 30 , 24 , 11 , 5 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 31 , 25 , 8 , 6 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 32 , 26 , 7 , 6 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 33 , 26 , 14 , 6 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 34 , 27 , 13 , 6 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 35 , 28 , 6 , 6 );
+insert into synergyTable (id, championId, tribeId, lineId) 
+values ( 36 , 28 , 14 , 6 );
+
+desc itemMaterialTable;
+
+insert into itemMaterialTable (id, name, materialEffect)
+values ( 1 , '대검' , '공격력 +10' );
+insert into itemMaterialTable (id, name, materialEffect)
+values ( 2 , '곡궁' , '공격속도 +10' );
+insert into itemMaterialTable (id, name, materialEffect)
+values ( 3 , '갑옷' , '방어력 +20' );
+insert into itemMaterialTable (id, name, materialEffect)
+values ( 4 , '여신의 눈물' , '마나 +15' );
+
+desc itemTable;
+
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 1 , '죽음의 검' , '추가 공격력 25/45/65 획득' , 1 , 1 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 2 , '거인학살자' , '기본 공격 및 스킬 사용시 20%의 추가 피해. 
+대상 최대 체력이 1900 초과 시 추가 피해 45%로 증가' , 1 , 2 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 3 , '밤의 끝자락' , '체력이 60%일 때 잠시 은신하며 대상으로 지정할 수 없는 상태가 되고 해로운 효과 제거. 
+이후 추가 공격 속도 40% 획득.' , 1 , 3 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 4 , '쇼진의 창' , '추가 주문력 20, 기본 공격 시 추가로 5의 마나 회복' , 1 , 4 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 5 , '고속연사포' , '추가 공격 속도 30% 및 공격 사거리 1칸 증가' , 2 , 2 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 6 , '거인의 결의' , '공격하거나 피해를 받으면 공격력 및 주문력 2 획득 (최대 25회 중첩)' , 2 , 3 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 7 , '스태틱의 단검' , '추가 공격 속도 10%. 세 번째 공격마다 4명의 적에게 튕기는 
+연쇄 번개를 발사하여 50의 마법 피해를 입히고 대상의 마법 저항력 5초 동안 50% 감소' , 2  , 4 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 8 , '덤불조끼' , '추가 방어력 40. 받는 치명타 공격의 추가 피해 75% 무효화. 기본 공격에 맞을 경우 
+주변 모든 적에게 75/100/150 ★의 마법 피해 (2.5초마다 한 번씩)' , 3 , 3 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 9 , '수호자의 맹세' , '시작 마나 15 증가
+전투 당 한번: 체력이 50%까지 떨어지면, 3칸 내 아군들이 2초 동안 최대 체력의 10%에 해당하는 보호막을 획득하며 
+전투가 끝날 때까지 방어력 및 마법 저항력 15 획득' , 3 , 4 );
+insert into itemTable (id, name, itemEffect, materialId1, materialId2)
+values ( 10 , '푸른 파수꾼' , '시작 마나 20 증가. 스킬 사용 후 마나를 20까지 회복' , 4 , 4 );
