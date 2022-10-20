@@ -1,6 +1,8 @@
-CREATE DATABASE LoLChessInfo;
+-- CREATE DATABASE LoLChessInfo;
 
-USE LoLChessInfo;
+-- USE LoLChessInfo;
+
+-- DROP DATABASE LoLChessInfo;
 
 CREATE TABLE championTable(
 	id INT AUTO_INCREMENT NOT NULL,
@@ -42,17 +44,19 @@ CREATE TABLE lineSynergyTable(
     FOREIGN KEY (lineId) REFERENCES lineTable (id)
 );
 
+drop table tribeIdSynergyTable;
+
 CREATE TABLE tribeIdSynergyTable(
 	id INT AUTO_INCREMENT NOT NULL,
     tribeId INT NOT NULL,
     collaborationCount INT NOT NULL,
     collaborativeEffect TEXT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (tribeId) REFERENCES lineTable (id)
+    FOREIGN KEY (tribeId) REFERENCES tribeTable (id)
 );
 
 CREATE TABLE synergyTable(
-	id INT AUTO_INCREMENT NOT NULL,
+	id INT NOT NULL,
     championId INT NOT NULL,
     tribeId INT NOT NULL,
     lineId INT NOT NULL,

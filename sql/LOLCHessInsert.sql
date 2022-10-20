@@ -82,9 +82,9 @@ insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristi
 values ( 2 , '민첩사수' , '민첩사수와 대상 사이에 놓인 칸 하나당 해당 민첩사수가 공격 속도를 얻습니다.' , 
 '공격 사거리가 2칸 증가합니다.' );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 3 , '형상변환자' , '변신 시 추가 최대 체력을 얻습니다.' );
+values ( 3 , '형상변환자' , '변신 시 추가 최대 체력을 얻습니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 4 , '신비술사' , '아군이 마법 저항력을 얻습니다.' );
+values ( 4 , '신비술사' , '아군이 마법 저항력을 얻습니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
 values ( 5 , '음유시인' , '바드는 춤을 출 때 항상 음표를 생성합니다. 
 음표를 획득할 때마다 상점에서 단계가 높은 챔피언이 등장할 확률이 1%씩 증가합니다.' ,
@@ -93,37 +93,40 @@ insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristi
 values ( 6 , '용' , '용은 특성 중첩을 3 증가시키고 아군 용이 몇 마리 있는지에 따라 추가 효과를 얻습니다.' , 
 '2개의 팀 슬롯이 필요합니다.' );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 7 , '요술사' , '요술사는 스킬을 두 번 사용하고 총 주문력이 조정됩니다.' );
+values ( 7 , '요술사' , '요술사는 스킬을 두 번 사용하고 총 주문력이 조정됩니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 8 , '일깨우는자' , '아군 또는 적이 스킬을 사용할 때마다 일깨우는 자가 마나를 얻습니다.' );
+values ( 8 , '일깨우는자' , '아군 또는 적이 스킬을 사용할 때마다 일깨우는 자가 마나를 얻습니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 9 , '포병대' , '5번째 공격마다 대포를 발사하고 대상 주변에 폭발을 일으켜 물리 피해를 입힙니다.' );
+values ( 9 , '포병대' , '5번째 공격마다 대포를 발사하고 대상 주변에 폭발을 일으켜 물리 피해를 입힙니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
 values ( 10 , '암살자' , '암살자는 추가 치명타 피해량과 확률을 획득하며, 스킬에 치명타가 적용될 수 있습니다.' ,
 '전투 시작 시 적의 후방으로 도약합니다.' );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
 values ( 11 , '수호자' , '전투당 한 번 체력이 50%일 때 가장 가까운 아군과 자신에게 최대 체력의 일정 비율만큼 
-피해를 흡수하는 보호막을 씌웁니다. 보호막은 중첩됩니다!' );
+피해를 흡수하는 보호막을 씌웁니다. 보호막은 중첩됩니다!' , null);
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 12 , '주문도둑' , '조이가 스킬 사용 후와 라운드 시작 시마다 새 스킬을 가져갑니다.' );
+values ( 12 , '주문도둑' , '조이가 스킬 사용 후와 라운드 시작 시마다 새 스킬을 가져갑니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 13 , '전사' , '전사가 공격 시 50%의 확률로 다음 공격의 피해량이 증가합니다.' );
+values ( 13 , '전사' , '전사가 공격 시 50%의 확률로 다음 공격의 피해량이 증가합니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
-values ( 14 , '난동꾼' , '아군의 최대 체력이 증가합니다. 난동꾼은 두 배로 증가합니다.' );
+values ( 14 , '난동꾼' , '아군의 최대 체력이 증가합니다. 난동꾼은 두 배로 증가합니다.', null );
 insert into tribeTable (id, tribe, tribeSynergyEffect, tribeSynergyCharacteristic) 
 values ( 15 , '용술사' , '용술사의 축복을 사용해 영웅을 선택합니다. 
-영웅의 체력과 주문력이 용술사의 별 레벨 하나당 20%씩 증가합니다.' );
+영웅의 체력과 주문력이 용술사의 별 레벨 하나당 20%씩 증가합니다.' , null);
 
 desc lineTable;
+
+SELECT * FROM tribeTable;
 
 insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
 values ( 1 , '별' , '플레이어 대상 전투 후 별의 구를 획득합니다.
 아군 별 챔피언의 별 레벨 총합에 따라 구의 값어치가 달라집니다' , 
 '별 챔피언은 추가 주문력을 얻습니다' );
 insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
-values ( 2 , '용사냥꾼' , '용사냥꾼이 체력이 1900보다 높은 적에게 받는 피해량이 15% 감소하고 피해량에 비례하는 추가 마법 피해를 입힙니다.' );
+values ( 2 , '용사냥꾼' , 
+'용사냥꾼이 체력이 1900보다 높은 적에게 받는 피해량이 15% 감소하고 피해량에 비례하는 추가 마법 피해를 입힙니다.', null );
 insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
-values ( 3 , '길드' , '아군에게 고유 보너스를 부여합니다. 길드원은 두 배로 얻습니다. 전장의 길드 아군마다 증가합니다!' );
+values ( 3 , '길드' , '아군에게 고유 보너스를 부여합니다. 길드원은 두 배로 얻습니다. 전장의 길드 아군마다 증가합니다!' , null);
 insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic) 
 values ( 4 , '어둠강림' , '희생의 제단을 소환합니다. 전투 시작: 제단에 놓인 유닛이 희생되어, 보유한 아이템 하나의 복사본과 함께 추가 체력을 모든 어둠강림 챔피언에게 부여합니다.', 
 '상징과 제작 불가 아이템은 복사되는 순간 오염되어 어둠강림 정수로 변합니다.' );
@@ -133,6 +136,8 @@ insert into lineTable (id, line, lineSynergyEffect, lineSynergyCharacteristic)
 values ( 6 , '속삭임' , '속삭임이 피해를 입힌 적은 움츠러들며 6초 동안 방어력과 마법 저항력이 40% 감소합니다.' , 
 '움츠러든 적에게 피해를 입힌 속삭임은 중첩되는 공격력과 주문력을 얻습니다.' );
 
+SELECT * FROM linetable;
+
 desc lineSynergyTable;
 
 insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
@@ -140,7 +145,7 @@ values ( 1 , 1 , 3 , '주문력+5' );
 insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
 values ( 2 , 1 , 5 , '주문력+30' );
 insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
-values ( 3 , 2 , 2 , '마법피해 15% 증가' );
+values ( 3 , 1 , 2 , '마법피해 15% 증가' );
 insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
 values ( 4 , 2 , 4 , '마법피해 50% 증가' );
 insert into lineSynergyTable (id, lineId, collaborationCount, collaborativeEffect)
@@ -197,7 +202,7 @@ values ( 13 , 6 , 3 , '추가 피해 +10%' );
 insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
 values ( 14 , 6 , 4 , '팀 정원 +1' );
 insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
-values ( 15 , 7 , 3 , '주문력 +80%' );
+values ( 15 , 7 , 3 , '주문력 +80%');
 insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
 values ( 16 , 8 , 2 , '마나 +4' );
 insert into tribeIdSynergyTable (id, tribeId, collaborationCount, collaborativeEffect)
