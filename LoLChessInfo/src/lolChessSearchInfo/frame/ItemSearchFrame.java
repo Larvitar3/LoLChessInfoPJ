@@ -1,4 +1,4 @@
-package lolChessSearchInfo.view;
+package lolChessSearchInfo.frame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class ItemSearch extends JFrame implements ActionListener{
+public class ItemSearchFrame extends JFrame implements ActionListener{
 
 	JButton nameBtn;
 	JButton meteridlBtn;
 	JButton effectBtn;
 	
-	public ItemSearch() {
+	public ItemSearchFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -67,7 +67,7 @@ public class ItemSearch extends JFrame implements ActionListener{
 		
 	}
 	public static void main(String[] args) {
-		new ItemSearch();
+		new ItemSearchFrame();
 	}
 
 	

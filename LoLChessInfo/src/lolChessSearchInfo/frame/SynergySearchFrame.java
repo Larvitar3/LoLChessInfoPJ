@@ -1,4 +1,4 @@
-package lolChessSearchInfo.view;
+package lolChessSearchInfo.frame;
 
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -14,13 +14,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SynergySearch extends JFrame implements ActionListener{
+public class SynergySearchFrame extends JFrame implements ActionListener{
 
 	JButton lineBtn;
 	JButton tribeBtn;
 	JButton effectBtn;
 	
-	public SynergySearch() {
+	public SynergySearchFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -83,7 +83,7 @@ public class SynergySearch extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		new SynergySearch();
+		new SynergySearchFrame();
 	}
 	
 }

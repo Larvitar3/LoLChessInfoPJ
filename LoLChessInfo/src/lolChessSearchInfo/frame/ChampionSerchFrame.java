@@ -1,5 +1,6 @@
-package lolChessSearchInfo.view;
+package lolChessSearchInfo.frame;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,10 +8,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ChampionSerch extends JFrame implements ActionListener{
+public class ChampionSerchFrame extends JFrame implements ActionListener{
 
 	JButton nameBtn;
 	JButton lineBtn;
@@ -22,17 +24,27 @@ public class ChampionSerch extends JFrame implements ActionListener{
 	JButton searchBtn;
 	// searchBox end
 	
+
+	
+	JPanel bgBox;
 	JLabel championImgBox;
-	
 	String img = "C:\\LoLChessPJ\\Images\\Sylas.png";
+	JLabel name;
+	JLabel tribeName;
+	JLabel hp;
+	JLabel power;
+	JLabel dps;
+	JLabel attackRange;
+	JLabel attackSpeed;
+	JLabel defense;
+	JLabel magicResistance;
 	
-	
-	public ChampionSerch() {
+	public ChampionSerchFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
-		
 		// 삭제
+
 		nameSelect();
 	}
 
@@ -51,6 +63,8 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		searchBtn = new JButton("검색");
 		// searchBox end
 		
+		bgBox = new JPanel();
+		
 		// 데이터 연결 ▼
 		ImageIcon championImg = new ImageIcon(img);
 		championImgBox = new JLabel(championImg);
@@ -62,13 +76,18 @@ public class ChampionSerch extends JFrame implements ActionListener{
 			add(searchBox);
 			add(searchBtn);
 			add(championImgBox);
+			
 	}
+	 
+	 
 
 	private void setInitLayout() {
 		setVisible(true);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(null);
+
+		
 		
 		add(nameBtn);
 		nameBtn.setSize(176, 40);
@@ -94,6 +113,11 @@ public class ChampionSerch extends JFrame implements ActionListener{
 		
 		championImgBox.setSize(120, 120);
 		championImgBox.setLocation(85, 370);
+		
+		add(bgBox);
+		bgBox.setSize(704,300);
+		bgBox.setLocation(50, 260);
+		bgBox.setBackground(Color.WHITE);
 		
 	}
 
@@ -124,7 +148,8 @@ public class ChampionSerch extends JFrame implements ActionListener{
 	
 	
 	public static void main(String[] args) {
-		new ChampionSerch();
+		ChampionSerchFrame cf = new ChampionSerchFrame();
+		
 	}
 	
 }

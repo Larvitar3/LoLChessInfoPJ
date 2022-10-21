@@ -1,5 +1,8 @@
 package lolChessSearchInfo.dto;
 
+import lombok.Data;
+
+@Data
 public class ResponseItem {
 
 	private int id;

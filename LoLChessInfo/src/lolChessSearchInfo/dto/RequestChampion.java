@@ -1,7 +1,9 @@
 package lolChessSearchInfo.dto;
 
-public class RequestChampion {
+import lombok.Data;
 
+@Data
+public class RequestChampion {
 	
 	//챔피언
 	

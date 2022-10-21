@@ -11,7 +11,7 @@ public class ResponseChampion {
 	private int hp;
 	private int power;
 	private int dps;
-	private int attackRange;
+	private String attackRange;
 	private double attackSpeed;
 	private int defense;
 	private int magicResistance;
@@ -28,5 +28,21 @@ public class ResponseChampion {
 	private String collaborativeEffect;
 	private int tribeId;
 	private int championId;
+	
+	@Override
+	public String toString() {
+		return "ResponseChampion [id=" + id + ", name=" + name + ", price=" + price + ", hp=" + hp + ", power=" + power
+				+ ", dps=" + dps + ", attackRange=" + attackRange + ", attackSpeed=" + attackSpeed + ", defense="
+				+ defense + ", magicResistance=" + magicResistance + ", imageRoute=" + imageRoute
+				+ ", tribeSynergyEffect=" + tribeSynergyEffect + ", tribeSynergyCharacteristic="
+				+ tribeSynergyCharacteristic + ", lineSynergyEffect=" + lineSynergyEffect
+				+ ", lineSynergyCharacteristic=" + lineSynergyCharacteristic + ", lineId=" + lineId
+				+ ", collaborationCount=" + collaborationCount + ", collaborativeEffect=" + collaborativeEffect
+				+ ", tribeId=" + tribeId + ", championId=" + championId + "]";
+	}
+	
+	
+	
+	
 	
 }
