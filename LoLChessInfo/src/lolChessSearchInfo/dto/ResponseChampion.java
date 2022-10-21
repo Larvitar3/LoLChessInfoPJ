@@ -1,10 +1,10 @@
-package lolChessSearchInfo;
+package lolChessSearchInfo.dto;
 
-public class RequestChampion {
+import lombok.Data;
 
-	
-	//챔피언
-	
+@Data
+public class ResponseChampion {
+
 	private int id;
 	private String name;
 	private int price;
@@ -28,11 +28,5 @@ public class RequestChampion {
 	private String collaborativeEffect;
 	private int tribeId;
 	private int championId;
-	
-
-	
-	
-	
-	
 	
 }

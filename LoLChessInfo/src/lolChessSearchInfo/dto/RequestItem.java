@@ -1,4 +1,4 @@
-package lolChessSearchInfo;
+package lolChessSearchInfo.dto;
 
 public class RequestItem {
 
@@ -9,4 +9,5 @@ public class RequestItem {
 	private String itemEffect;
 	private int materialId1;
 	private int materialId2;
+	
 }
