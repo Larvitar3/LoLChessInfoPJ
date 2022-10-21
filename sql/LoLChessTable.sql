@@ -62,15 +62,14 @@ CREATE TABLE tribeIdSynergyTable(
 CREATE TABLE synergyTable(
 	id INT NOT NULL,
     championId INT NOT NULL,
-    tribeId INT NOT NULL,
+    tribeId1 INT NOT NULL,
+    tribeId2 INT,
     lineId INT NOT NULL,
     FOREIGN KEY (championId) REFERENCES championTable (id),
-    FOREIGN KEY (tribeId) REFERENCES tribeTable (id),
-<<<<<<< HEAD
+    FOREIGN KEY (tribeId1) REFERENCES tribeTable (id),
+    FOREIGN KEY (tribeId2) REFERENCES tribeTable (id),
     FOREIGN KEY(lineId) REFERENCES lineTable(id)
-=======
-    FOREIGN KEY (lineId) REFERENCES linetable(id)
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
+
 );
 
 CREATE TABLE itemMaterialTable1(

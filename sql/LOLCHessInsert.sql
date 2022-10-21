@@ -17,14 +17,11 @@ CREATE TABLE championTable(
 );
 */
 
-<<<<<<< HEAD
-=======
--- desc championTable;
--- select * from championTable;
-
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 insert into championTable
-values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'C:\\LoLChessPJ\\Images\\Nidalee.png');
+values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'Images/Nidalee.png');
+UPDATE championTable SET name = '니달리'
+WHERE imageRoute = 'Images/Nidalee.png';
+
 insert into championTable 
 values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\Vladimir.png' );
 insert into championTable 
@@ -79,8 +76,6 @@ insert into championTable
 values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50,'C:\\LoLChessPJ\\Images\\Pantheon.jpg' );
 insert into championTable
 values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'C:\\LoLChessPJ\\Images\\Syfen.png' );
-
--- desc tribeTable;
 
 insert into tribeTable   
 values ( 1 , '기병대' , '기병대가 방어력과 마법 저항력을 얻습니다. 
@@ -239,83 +234,63 @@ values ( 28 , 14 , 4 , '체력 +350' );
 -- desc synergyTable;
 
 insert into synergyTable   
-values ( 1 , 1 , 3 , 1 );
+values ( 1 , 1 , 3 , null, 1 );
 insert into synergyTable   
-values ( 2 , 2 , 7 , 1 );
+values ( 2 , 2 , 7 , null,1 );
 insert into synergyTable   
-values ( 3 , 3 , 14 , 1 );
+values ( 3 , 3 , 14 ,null, 1 );
 insert into synergyTable   
-values ( 4 , 4 , 7 , 1 );
+values ( 4 , 4 , 7 ,null, 1 );
 insert into synergyTable   
-values ( 5 , 5 , 2 , 1 );
+values ( 5 , 5 , 2 ,null, 1 );
 insert into synergyTable   
-values ( 6 , 6 , 6 , 1 );
+values ( 6 , 6 , 6 , 8 , 1 );
 insert into synergyTable   
-values ( 7 , 6 , 8 , 1 );
+values ( 7 , 7 , 7 , 1, 2 );
 insert into synergyTable   
-values ( 8 , 7 , 7 , 2 );
+values ( 8 , 8 , 11 , null,2 );
 insert into synergyTable   
-values ( 9 , 7 , 1 , 2 );
+values ( 9 , 9 , 10 ,null, 2 );
 insert into synergyTable   
-values ( 10 , 8 , 11 , 2 );
+values ( 10 , 10 , 14 , 13,  2 );
 insert into synergyTable   
-values ( 11 , 9 , 10 , 2 );
+values ( 11 , 11 , 1 , null,3 );
 insert into synergyTable   
-values ( 12 , 10 , 14 , 2 );
+values ( 12 , 12 , 2 ,null, 3 );
 insert into synergyTable   
-values ( 13 , 10 , 13 , 2 );
+values ( 13 , 13 , 3 ,null, 3 );
 insert into synergyTable   
-values ( 14 , 11 , 1 , 3 );
+values ( 14 , 14 , 4 , 5, 3 );
 insert into synergyTable   
-values ( 15 , 12 , 2 , 3 );
+values ( 15 , 15 , 6 ,null, 3 );
 insert into synergyTable   
-values ( 16 , 13 , 3 , 3 );
+values ( 16 , 16 , 1 ,null, 4 );
 insert into synergyTable   
-values ( 17 , 14 , 4 , 3 );
+values ( 17 , 17 , 9 ,null, 4 );
 insert into synergyTable   
-values ( 18 , 14 , 5 , 3 );
+values ( 18 , 18 , 10 ,null, 4 );
 insert into synergyTable   
-values ( 19 , 15 , 6 , 3 );
+values ( 19 , 19 , 6 ,null, 4 );
 insert into synergyTable   
-values ( 20 , 16 , 1 , 4 );
+values ( 20 , 20 , 11 ,null, 5 );
 insert into synergyTable   
-values ( 21 , 17 , 9 , 4 );
+values ( 21 , 21 , 14 ,null, 5 );
 insert into synergyTable   
-values ( 22 , 18 , 10 , 4 );
+values ( 22 , 22 , 15 ,null, 5 );
 insert into synergyTable   
-values ( 23 , 19 , 6 , 4 );
+values ( 23 , 23 , 7 , 12, 5 );
 insert into synergyTable   
-values ( 24 , 20 , 11 , 5 );
+values ( 24 , 24 , 6 ,11, 5 );
 insert into synergyTable   
-values ( 25 , 21 , 14 , 5 );
+values ( 25 , 25 , 8 ,null, 6 );
 insert into synergyTable   
-values ( 26 , 22 , 15 , 5 );
+values ( 26 , 26 , 7 ,14, 6 );
 insert into synergyTable   
-values ( 27 , 23 , 7 , 5 );
+values ( 27 , 27 , 13 , null,6 );
 insert into synergyTable   
-values ( 28 , 23 , 12 , 5 );
-insert into synergyTable   
-values ( 29 , 24 , 6 , 5 );
-insert into synergyTable   
-values ( 30 , 24 , 11 , 5 );
-insert into synergyTable   
-values ( 31 , 25 , 8 , 6 );
-insert into synergyTable   
-values ( 32 , 26 , 7 , 6 );
-insert into synergyTable   
-values ( 33 , 26 , 14 , 6 );
-insert into synergyTable   
-values ( 34 , 27 , 13 , 6 );
-insert into synergyTable   
-values ( 35 , 28 , 6 , 6 );
-insert into synergyTable   
-values ( 36 , 28 , 14 , 6 );
+values ( 28 , 28 , 6 ,14, 6 );
 
-<<<<<<< HEAD
-desc itemMaterialTable1;
-=======
--- desc itemMaterialTable;
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
+
 
 insert into itemMaterialTable1  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
@@ -323,7 +298,6 @@ insert into itemMaterialTable1
 values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.png' );
 insert into itemMaterialTable1  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
-<<<<<<< HEAD
 insert into itemMaterialTable1 
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
@@ -334,9 +308,6 @@ values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.
 insert into itemMaterialTable2  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
 insert into itemMaterialTable2 
-=======
-insert into itemMaterialTable  
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
 -- desc itemTable;

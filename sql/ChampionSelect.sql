@@ -17,10 +17,12 @@ CREATE TABLE championTable(
 -- 챔피언정보
 select * from championtable;
 
-select name as champName, price as price, hp as hp, power as power, dps as dps, attackRange as attackRange, attackSpeed as attackSpeed,
+select name as champName, price, hp, powe, dps as dps, attackRange as attackRange, attackSpeed as attackSpeed,
 defense as defense, magicResistance as magicResistance, imageRoute as imageRoute
-from championtable;
+from championtable as C
+WHERE name = '니달리';
 
+select name as champName, price as price, hp as hp,  power as power, dps as dps, attackRange as attackRange,  attackSpeed as attackSpeed, defense as defense, magicResistance as magicResistance, imageRoute as imageRoute from championtable WHERE name = '니달리';
 
 -- 챔피언 계열 , 첫번째 넣을 계열 사진 없음
 select l.name as lineName, c.imageRoute as champImage, c.name as champName
@@ -28,7 +30,9 @@ from championtable as c
 join synergyTable as s
 on c.id = s.championId
 join lineTable as l
-on s.lineId = l.id;
+on s.lineId = l.id
+WHERE l.name = '용사냥꾼'
+group by c.name;
 
 
 -- 챔피언 종족 종족 사진 아직 없음.
@@ -39,11 +43,44 @@ on c.id = s.championId
 join tribeTable as t
 on s.tribeId = t.id;
 
+select name
+from championtable
+WHERE price = 1;
 
 -- 캐릭터 비용
 select  price as price , imageRoute as imageRoute , name as champName
 from championtable
 order by price;
+
+SELECT * , (
+SELECT T.name
+FROM championtable as C
+join synergytable AS S
+ON c.id = s.championId
+JOIN linetable AS L
+ON L.id = s.lineId
+JOIN tribetable AS T
+ON T.id = s.tribeId
+WHERE c.name = '릴리아'
+group by c.name) AS T2
+FROM championtable as C
+join synergytable AS S
+ON c.id = s.championId
+JOIN linetable AS L
+ON L.id = s.lineId
+JOIN tribetable AS T
+ON T.id = s.tribeId
+WHERE c.name = '릴리아'
+group by c.name;
+
+
+
+
+
+
+
+
+
 
 
 

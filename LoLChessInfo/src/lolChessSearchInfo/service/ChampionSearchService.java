@@ -10,25 +10,25 @@ import lolChessSearchInfo.dto.ResponseChampion;
 import lolChessSearchInfo.interfaces.IChampionSearchService;
 import lolChessSearchInfo.utils.DBHelper;
 
-public class ChamoionSearchService implements IChampionSearchService{
+public class ChampionSearchService implements IChampionSearchService{
 
 	private DBHelper dbHelper;
 	private PreparedStatement psmt;
 	private ResultSet rs;
 	
-	public ChamoionSearchService() {
+	public ChampionSearchService() {
 		this.dbHelper = DBHelper.getInstance();
 	}
 
 	@Override
-	public List<ResponseChampion> selectChampionByName(String championName) {
+	public ResponseChampion selectChampionByName(String championName) {
 		
-		List<ResponseChampion> list = new ArrayList<>();
-		
+		ResponseChampion rc = new ResponseChampion();
 		String selectName = "select name as champName, price as price, hp as hp, "
 				+ " power as power, dps as dps, attackRange as attackRange, "
 				+ " attackSpeed as attackSpeed,"
-				+ " defense as defense, magicResistance as magicResistance, imageRoute as imageRoute"
+				+ " defense as defense, magicResistance as magicResistance, "
+				+ " imageRoute as imageAddress"
 				+ " from championtable"
 				+ " WHERE name = ? ";
 		
@@ -38,25 +38,24 @@ public class ChamoionSearchService implements IChampionSearchService{
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				ResponseChampion rc = new ResponseChampion();
-				rc.setName(rs.getString("champName"));
-				rc.setPrice(rs.getInt("price"));
-				rc.setHp(rs.getInt("hp"));
-				rc.setPower(rs.getInt("power"));
-				rc.setDps(rs.getInt("dps"));
-				rc.setAttackRange(rs.getString("attackRange"));
-				rc.setAttackSpeed(rs.getDouble("attackSpeed"));
-				rc.setDefense(rs.getInt("defense"));
-				rc.setMagicResistance(rs.getInt("magicResistance"));
-				rc.setImageRoute(rs.getString("imageRoute"));
 				
-				list.add(rc);
+				rc.setName(rs.getString("champName"));
+				rc.setPrice(rs.getString("price"));
+				rc.setHp(rs.getString("hp"));
+				rc.setPower(rs.getString("power"));
+				rc.setDps(rs.getString("dps"));
+				rc.setAttackRange(rs.getString("attackRange"));
+				rc.setAttackSpeed(rs.getString("attackSpeed"));
+				rc.setDefense(rs.getString("defense"));
+				rc.setMagicResistance(rs.getString("magicResistance"));
+				rc.setImageAddress(rs.getString("imageAddress"));
+				
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return rc;
 		
 		
 	}
@@ -81,11 +80,9 @@ public class ChamoionSearchService implements IChampionSearchService{
 
 
 	public static void main(String[] args) {
-		ChamoionSearchService cp =new ChamoionSearchService();
+		ChampionSearchService cp =new ChampionSearchService();
 		
-		List<ResponseChampion> list = cp.selectChampionByName("니달리");
-		System.out.println(list);
-
+		
 		
 	}
 

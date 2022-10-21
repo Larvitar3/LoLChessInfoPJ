@@ -5,17 +5,19 @@ import lombok.Data;
 @Data
 public class ResponseChampion {
 
-	private int id;
+	private String id;
 	private String name;
-	private int price;
-	private int hp;
-	private int power;
-	private int dps;
+	private String lineName;
+	private String tribeName;
+	private String price;
+	private String hp;
+	private String power;
+	private String dps;
 	private String attackRange;
-	private double attackSpeed;
-	private int defense;
-	private int magicResistance;
-	private String imageRoute;
+	private String attackSpeed;
+	private String defense;
+	private String magicResistance;
+	private String imageAddress;
 	
 	private String tribeSynergyEffect;
 	private String tribeSynergyCharacteristic;
@@ -23,17 +25,18 @@ public class ResponseChampion {
 	private String lineSynergyEffect;
 	private String lineSynergyCharacteristic;
 	
-	private int lineId;
-	private int collaborationCount;
+	private String lineId;
+	private String collaborationCount;
 	private String collaborativeEffect;
-	private int tribeId;
-	private int championId;
+	private String tribeId;
+	private String championId;
+	
 	
 	@Override
 	public String toString() {
 		return "ResponseChampion [id=" + id + ", name=" + name + ", price=" + price + ", hp=" + hp + ", power=" + power
 				+ ", dps=" + dps + ", attackRange=" + attackRange + ", attackSpeed=" + attackSpeed + ", defense="
-				+ defense + ", magicResistance=" + magicResistance + ", imageRoute=" + imageRoute
+				+ defense + ", magicResistance=" + magicResistance + ", imageAddress=" + imageAddress
 				+ ", tribeSynergyEffect=" + tribeSynergyEffect + ", tribeSynergyCharacteristic="
 				+ tribeSynergyCharacteristic + ", lineSynergyEffect=" + lineSynergyEffect
 				+ ", lineSynergyCharacteristic=" + lineSynergyCharacteristic + ", lineId=" + lineId
