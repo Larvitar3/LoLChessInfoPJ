@@ -17,12 +17,11 @@ CREATE TABLE championTable(
 );
 */
 
-<<<<<<< HEAD
-=======
+
 -- desc championTable;
 -- select * from championTable;
 
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
+
 insert into championTable
 values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'C:\\LoLChessPJ\\Images\\Nidalee.png');
 insert into championTable 

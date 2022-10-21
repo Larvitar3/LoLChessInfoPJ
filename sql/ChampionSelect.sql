@@ -15,35 +15,36 @@ CREATE TABLE championTable(
 
 
 -- 챔피언정보
-select * from championtable;
+SELECT * FROM championtable;
 
-select name as champName, price as price, hp as hp, power as power, dps as dps, attackRange as attackRange, attackSpeed as attackSpeed,
-defense as defense, magicResistance as magicResistance, imageRoute as imageRoute
-from championtable;
+SELECT name AS champName, price AS price, hp AS hp, power AS power, dps AS dps, attackRange AS attackRange, attackSpeed AS attackSpeed,
+defense AS defense, magicResistance AS magicResistance, imageRoute AS imageRoute
+FROM championtable
+WHERE name = ? ;
 
 
 -- 챔피언 계열 , 첫번째 넣을 계열 사진 없음
-select l.name as lineName, c.imageRoute as champImage, c.name as champName
-from championtable as c
-join synergyTable as s
-on c.id = s.championId
-join lineTable as l
-on s.lineId = l.id;
+SELECT l.name AS lineName, c.imageRoute AS champImage, c.name AS champName
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN lineTable AS l
+ON s.lineId = l.id;
 
 
 -- 챔피언 종족 종족 사진 아직 없음.
-select t.name as tribeName, c.imageRoute as champImage, c.name as champName
-from championtable as c
-join synergyTable as s
-on c.id = s.championId
-join tribeTable as t
-on s.tribeId = t.id;
+SELECT t.name AS tribeName, c.imageRoute AS champImage, c.name AS champName
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN tribeTable AS t
+ON s.tribeId = t.id;
 
 
 -- 캐릭터 비용
-select  price as price , imageRoute as imageRoute , name as champName
-from championtable
-order by price;
+SELECT  price AS price , imageRoute AS imageRoute , name AS champName
+FROM championtable
+ORDER BY price;
 
 
 
