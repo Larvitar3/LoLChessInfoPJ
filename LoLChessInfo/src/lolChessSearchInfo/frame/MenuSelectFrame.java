@@ -1,4 +1,4 @@
-package lolChessSearchInfo.view;
+package lolChessSearchInfo.frame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,14 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MenuSelect extends JFrame implements ActionListener{
+public class MenuSelectFrame extends JFrame implements ActionListener{
 
 	JLabel backgroundImg;
 	JButton championSearch;
 	JButton itemSearch;
 	JButton synergySearch;
 	
-	public MenuSelect() {
+	public MenuSelectFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -76,7 +76,7 @@ public class MenuSelect extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		new MenuSelect();
+		new MenuSelectFrame();
 	}
 
 	
