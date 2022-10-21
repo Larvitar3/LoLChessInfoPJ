@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 public class RequestItem {
 
-	private int id;
+	private String id;
 	private String name;
 	private String materialEffect;
 	private String imageRoute;
 	private String itemEffect;
-	private int materialId1;
-	private int materialId2;
+	private String materialId1;
+	private String materialId2;
 	
 }

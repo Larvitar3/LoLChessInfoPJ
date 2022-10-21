@@ -1,30 +1,24 @@
-CREATE TABLE championTable(
-	id INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR (10) NOT NULL,
-    price INT NOT NULL,
-    hp INT NOT NULL,
-    power INT NOT NULL,
-    dps INT NOT NULL,
-    attackRange VARCHAR(10) NOT NULL,
-    attackSpeed DOUBLE NOT NULL,
-    defense INT NOT NULL,
-    magicResistance INT NOT NULL,
-    imageRoute VARCHAR(100),
-    PRIMARY KEY (id)
-);
 
 
 -- 챔피언정보
-select * from championtable;
+-- SELECT * FROM championtable;
 
+<<<<<<< HEAD
 select name as champName, price, hp, powe, dps as dps, attackRange as attackRange, attackSpeed as attackSpeed,
 defense as defense, magicResistance as magicResistance, imageRoute as imageRoute
 from championtable as C
 WHERE name = '니달리';
+=======
+SELECT name AS champName, price AS price, hp AS hp, power AS power, dps AS dps, attackRange AS attackRange, attackSpeed AS attackSpeed,
+defense AS defense, magicResistance AS magicResistance, imageRoute AS imageRoute
+FROM championtable
+WHERE name = ? ;
+>>>>>>> b396b56798ccc40d5ee3d4a150a8b51e23f83fe7
 
 select name as champName, price as price, hp as hp,  power as power, dps as dps, attackRange as attackRange,  attackSpeed as attackSpeed, defense as defense, magicResistance as magicResistance, imageRoute as imageRoute from championtable WHERE name = '니달리';
 
 -- 챔피언 계열 , 첫번째 넣을 계열 사진 없음
+<<<<<<< HEAD
 select l.name as lineName, c.imageRoute as champImage, c.name as champName
 from championtable as c
 join synergyTable as s
@@ -33,24 +27,66 @@ join lineTable as l
 on s.lineId = l.id
 WHERE l.name = '용사냥꾼'
 group by c.name;
+=======
+>>>>>>> b396b56798ccc40d5ee3d4a150a8b51e23f83fe7
 
+SELECT l.name AS lineName, l.lineSynergyEffect as lineSynergyEffect, l.lineSynergyCharacteristic as lineSynergyCharacteristic
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN lineTable AS l
+ON s.lineId = l.id
+where l.name = '용사냥꾼'
+group by l.name;
+
+-- 챔피언 계열 , 첫번째 넣을 계열 사진 없음
+
+SELECT l.name AS lineName, c.imageRoute AS champImage, c.name AS champName
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN lineTable AS l
+ON s.lineId = l.id
+where l.name = '용사냥꾼'
+group by c.name;
+
+-- select * from lineTable;
+
+/*
+-- 챔피언 종족 종족 사진 아직 없음.
+SELECT t.name AS tribeName, t.tribeSynergyEffect as tribeSynergyEffect, t.tribeSynergyCharacteristic as tribeSynergyCharacteristic
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN tribeTable AS t
+ON s.tribeId = t.id
+WHERE t.name = '별'
+group by t.name;
+*/
+
+--  select * from tribeTable;
 
 -- 챔피언 종족 종족 사진 아직 없음.
-select t.name as tribeName, c.imageRoute as champImage, c.name as champName
-from championtable as c
-join synergyTable as s
-on c.id = s.championId
-join tribeTable as t
-on s.tribeId = t.id;
+SELECT t.name AS tribeName, c.imageRoute AS champImage, c.name AS champName
+FROM championtable AS c
+JOIN synergyTable AS s
+ON c.id = s.championId
+JOIN tribeTable AS t
+ON s.tribeId = t.id
+WHERE t.name = '기병대'
+group by c.name;
+
+
 
 select name
 from championtable
 WHERE price = 1;
 
 -- 캐릭터 비용
-select  price as price , imageRoute as imageRoute , name as champName
-from championtable
-order by price;
+SELECT price, name
+FROM championtable
+WHERE price = 1
+ORDER BY price;
 
 SELECT * , (
 SELECT T.name

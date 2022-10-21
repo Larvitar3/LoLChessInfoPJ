@@ -17,6 +17,14 @@ CREATE TABLE championTable(
 );
 */
 
+<<<<<<< HEAD
+=======
+
+-- desc championTable;
+-- select * from championTable;
+
+
+>>>>>>> b396b56798ccc40d5ee3d4a150a8b51e23f83fe7
 insert into championTable
 values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'Images/Nidalee.png');
 UPDATE championTable SET name = '니달리'
@@ -291,6 +299,14 @@ insert into synergyTable
 values ( 28 , 28 , 6 ,14, 6 );
 
 
+<<<<<<< HEAD
+=======
+ 
+desc itemMaterialTable1;
+  
+-- desc itemMaterialTable;
+  
+>>>>>>> b396b56798ccc40d5ee3d4a150a8b51e23f83fe7
 
 insert into itemMaterialTable1  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
