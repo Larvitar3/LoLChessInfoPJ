@@ -310,11 +310,11 @@ values ( 35 , 28 , 6 , 6 );
 insert into synergyTable   
 values ( 36 , 28 , 14 , 6 );
 
-<<<<<<< HEAD
+ 
 desc itemMaterialTable1;
-=======
+  
 -- desc itemMaterialTable;
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
+  
 
 insert into itemMaterialTable1  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
@@ -322,7 +322,6 @@ insert into itemMaterialTable1
 values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.png' );
 insert into itemMaterialTable1  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
-<<<<<<< HEAD
 insert into itemMaterialTable1 
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
@@ -333,9 +332,6 @@ values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.
 insert into itemMaterialTable2  
 values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
 insert into itemMaterialTable2 
-=======
-insert into itemMaterialTable  
->>>>>>> 6a391aa7804602d811b825996a2282cb93e0163d
 values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
 
 -- desc itemTable;

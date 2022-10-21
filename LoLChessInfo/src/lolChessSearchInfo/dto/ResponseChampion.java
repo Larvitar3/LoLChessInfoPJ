@@ -1,20 +1,21 @@
 package lolChessSearchInfo.dto;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 public class ResponseChampion {
 
-	private int id;
+	private String id;
 	private String name;
-	private int price;
-	private int hp;
-	private int power;
-	private int dps;
+	private String price;
+	private String hp;
+	private String power;
+	private String dps;
 	private String attackRange;
-	private double attackSpeed;
-	private int defense;
-	private int magicResistance;
+	private String attackSpeed;
+	private String defense;
+	private String magicResistance;
 	private String imageRoute;
 	
 	private String tribeSynergyEffect;
@@ -23,11 +24,16 @@ public class ResponseChampion {
 	private String lineSynergyEffect;
 	private String lineSynergyCharacteristic;
 	
-	private int lineId;
-	private int collaborationCount;
+	private String lineId;
+	private String lineName;
+	private String collaborationCount;
 	private String collaborativeEffect;
-	private int tribeId;
-	private int championId;
+	private String tribeId;
+	private String tribeName;
+	private String championId;
+	
+	
+
 	
 	@Override
 	public String toString() {
@@ -38,7 +44,7 @@ public class ResponseChampion {
 				+ tribeSynergyCharacteristic + ", lineSynergyEffect=" + lineSynergyEffect
 				+ ", lineSynergyCharacteristic=" + lineSynergyCharacteristic + ", lineId=" + lineId
 				+ ", collaborationCount=" + collaborationCount + ", collaborativeEffect=" + collaborativeEffect
-				+ ", tribeId=" + tribeId + ", championId=" + championId + "]";
+				+ ", tribeId=" + tribeId + ", championId=" + championId + ", lineName=" + lineName + "tribeName=" + tribeName + "]";
 	}
 	
 	
