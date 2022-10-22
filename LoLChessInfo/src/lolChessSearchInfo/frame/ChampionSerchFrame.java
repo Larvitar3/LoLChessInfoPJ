@@ -1,11 +1,15 @@
 package lolChessSearchInfo.frame;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +19,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import lolChessSearchInfo.dto.ResponseChampion;
+import lolChessSearchInfo.dto.ResponseLine;
 import lolChessSearchInfo.service.ChampionSearchService;
 
 public class ChampionSerchFrame extends JFrame implements ActionListener {
@@ -39,6 +44,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 	JLabel price;
 	JLabel priceCoin;
 	JLabel tribeName;
+	JLabel tribeName2;
 	JLabel hp;
 	JLabel power;
 	JLabel dps;
@@ -47,7 +53,8 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 	JLabel defense;
 	JLabel magicResistance;
 
-	boolean flag = true;
+	ImageIcon[] star = new ImageIcon[5];
+	ImageIcon[] dragonHunter = new ImageIcon[4];
 
 	public ChampionSerchFrame() {
 		initData();
@@ -82,6 +89,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		cName = new JLabel();
 		price = new JLabel();
 		tribeName = new JLabel();
+		tribeName2 = new JLabel();
 		hp = new JLabel();
 		power = new JLabel();
 		dps = new JLabel();
@@ -98,56 +106,61 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 	void nameSearch(String searchName) {
 
-		ResponseChampion rcn = css.selectChampionByName(searchName);
+		ResponseChampion rcCBN = css.selectChampionByName(searchName);
 
-		if (rcn.getName() == null) {
+		if (rcCBN.getName() == null) {
 			System.out.println("없는 챔피언 입니다.");
 		} else {
-			ImageIcon championImg = new ImageIcon(rcn.getImageAddress());
-			championImgBox.setIcon(championImg);
 
-			System.out.println(rcn.toString());
+			ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
+			championImgBox.setIcon(imageAddress);
 
-			imgAddress = rcn.getImageAddress();
+			System.out.println(rcCBN.toString());
+
+			imgAddress = rcCBN.getImageAddress();
 			add(championImgBox);
-			System.out.println(rcn.getImageAddress());
+			System.out.println(rcCBN.getImageAddress());
 
 			bgBox.add(cName);
 
-			cName.setText(rcn.getName());
+			cName.setText(rcCBN.getName());
 
 			bgBox.add(price);
-			price.setText("X " + rcn.getPrice());
+			price.setText("X " + rcCBN.getPrice());
 
 			bgBox.add(tribeName);
+			tribeName.setText(rcCBN.getTribeName());
+
+			bgBox.add(tribeName2);
+			tribeName2.setText("|      " + rcCBN.getTribeName2());
 
 			bgBox.add(hp);
-			hp.setText("체력  " + rcn.getHp());
+			hp.setText("체력  " + rcCBN.getHp());
 
 			bgBox.add(power);
-			power.setText("     |   공격력  " + rcn.getPower() + "     |  ");
+			power.setText("     |   공격력  " + rcCBN.getPower() + "     |  ");
 
 			bgBox.add(dps);
-			dps.setText("DPS   " + rcn.getDps());
+			dps.setText("DPS   " + rcCBN.getDps());
 
 			bgBox.add(attackRange);
-			attackRange.setText("공격사거리   " + rcn.getAttackRange());
+			attackRange.setText("공격사거리   " + rcCBN.getAttackRange());
 
 			bgBox.add(attackSpeed);
-			attackSpeed.setText("|     공격속도   " + rcn.getAttackSpeed());
+			attackSpeed.setText("|     공격속도   " + rcCBN.getAttackSpeed());
 
 			bgBox.add(defense);
-			defense.setText("방어력   " + rcn.getDefense());
+			defense.setText("방어력   " + rcCBN.getDefense());
 
 			bgBox.add(magicResistance);
-			magicResistance.setText("|     마법저항력   " + rcn.getMagicResistance());
+			magicResistance.setText("|     마법저항력   " + rcCBN.getMagicResistance());
 
 			bgBox.add(priceCoin);
 
 			add(bgBox);
-			
+
 			repaint();
-			
+
 		}
 	}
 
@@ -160,13 +173,41 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		repaint();
 	}
-	
+
 	// end of nameSelect ============================
-	
-	void lineSearch() {
-		
+
+	void lineSearch(String searchLineName) {
+
+		List<ResponseLine> resList = css.selectChampionByLine(searchLineName);
+
+		bgBox.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 100));
+		repaint();
+		int tempCount = 2;
+		for (ResponseLine data : resList) {
+
+			JLabel imgJlabel = new JLabel(new ImageIcon(data.getChampImage()));
+			bgBox.add(imgJlabel);
+			imgJlabel.setSize(100, 100);
+			imgJlabel.setLocation(50 * tempCount, 100);
+			tempCount++;
+			System.out.println("이미지 실행" + data.getChampImage());
+			// imgJlabel.setLocation(0,0);
+		}
+		System.out.println("라인검색 실행");
+		add(bgBox);
+		repaint();
+
 	}
 
+	void lineSelect() {
+
+		System.out.println("계열 검색이 시작됨미다");
+
+		add(searchBox);
+		add(searchBtn);
+
+		repaint();
+	}
 
 	private void setInitLayout() {
 		setVisible(true);
@@ -180,7 +221,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		bgBox.setSize(704, 300);
 		bgBox.setLocation(53, 260);
 		bgBox.setBackground(whiteOp);
-		bgBox.setLayout(null);
 
 		add(nameBtn);
 		nameBtn.setSize(176, 40);
@@ -214,6 +254,10 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		tribeName.setSize(200, 25);
 		tribeName.setFont(new Font("sanSerif", Font.BOLD, 18));
 		tribeName.setLocation(225, 105);
+
+		tribeName2.setSize(200, 25);
+		tribeName2.setFont(new Font("sanSerif", Font.BOLD, 18));
+		tribeName2.setLocation(325, 105);
 
 		hp.setSize(100, 25);
 		hp.setFont(new Font("sanSerif", Font.BOLD, 18));
@@ -275,6 +319,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			nameSelect();
 			isBtnType = NAME_SEARCH_BTN;
 		} else if (e.getSource() == lineBtn) {
+			lineSelect();
 			System.out.println("계열이 선택되었습니다.");
 			isBtnType = LINE_SEARCH_BTN;
 		} else if (e.getSource() == tribeBtn) {
@@ -297,6 +342,17 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		if (isBtnType == NAME_SEARCH_BTN) {
 			nameSearch(searchBox.getText().trim());
 
+		} else if (isBtnType == LINE_SEARCH_BTN) {
+			System.out.println("라인 검색");
+			lineSearch(searchBox.getText().trim());
+			bgBox.removeAll();
+			repaint();
+		} else if (isBtnType == TRIBE_SEARCH_BTN) {
+			System.out.println("종족 검색");
+			lineSearch(searchBox.getText().trim());
+		} else if (isBtnType == PRICE_SEARCH_BTN) {
+			System.out.println("비용 검색");
+			lineSearch(searchBox.getText().trim());
 		} else {
 			System.out.println("선택되지않았습니다.");
 		}

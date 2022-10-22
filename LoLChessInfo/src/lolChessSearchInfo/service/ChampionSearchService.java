@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lolChessSearchInfo.dto.ResponseChampion;
+import lolChessSearchInfo.dto.ResponseLine;
 import lolChessSearchInfo.interfaces.IChampionSearchService;
 import lolChessSearchInfo.utils.DBHelper;
 
@@ -23,7 +24,7 @@ public class ChampionSearchService implements IChampionSearchService {
 	@Override
 	public ResponseChampion selectChampionByName(String championName) {
 		ResponseChampion rc = new ResponseChampion();
-		String selectName = "  SELECT * , T.name As tName, ( " + " SELECT T.name" + " FROM championtable as C "
+		String selectName = "  SELECT * , T.name AS tName, ( " + " SELECT T.name" + " FROM championtable as C "
 				+ " join synergytable AS S " + " ON c.id = s.championId " + " JOIN linetable AS L "
 				+ " ON L.id = s.lineId " + " JOIN tribetable AS T " + " ON T.id = s.tribeId2 " + " WHERE c.name = ? "
 				+ " group by c.name) AS T2 " + " FROM championtable as C " + " join synergytable AS S "
@@ -48,6 +49,7 @@ public class ChampionSearchService implements IChampionSearchService {
 				rc.setAttackSpeed(rs.getString("attackSpeed"));
 				rc.setDefense(rs.getString("defense"));
 				rc.setMagicResistance(rs.getString("magicResistance"));
+				rc.setImageAddress(rs.getString("imageRoute"));
 			}
 
 		} catch (SQLException e) {
@@ -58,23 +60,26 @@ public class ChampionSearchService implements IChampionSearchService {
 	}
 
 	@Override
-	public List<ResponseChampion> selectChampionByLine(String lineName) {
 
-		List<ResponseChampion> list = new ArrayList<>();
-		ResponseChampion rc = new ResponseChampion();
-		String selectLine = " SELECT l.name AS lineName," + " c.name AS name " + " FROM championtable AS c "
-				+ " JOIN synergyTable AS s " + " ON c.id = s.championId " + " JOIN lineTable AS l "
-				+ " ON s.lineId = l.id " + " where l.name = ? " + " group by c.name ";
+	public List<ResponseLine> selectChampionByLine(String lineName) {
 
+		ArrayList<ResponseLine> resl = new ArrayList<>();
+
+		String selectLine = "SELECT c.imageRoute AS champImage, c.name AS champName" + " FROM championtable AS c "
+				+ " JOIN synergyTable AS s " + " ON c.id = s.championId " + " JOIN tribeTable AS t "
+				+ " ON s.tribeId1 = t.id " + " WHERE t.name = ? " + " group by c.name ";
+
+		System.out.println(selectLine);
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
 			psmt.setString(1, lineName);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				rc.setName(rs.getString("name"));
-				rc.setLineName(rs.getString("lineName"));
-				list.add(rc);
+				ResponseLine res = new ResponseLine();
+				res.setChampName(rs.getString("champName"));
+				res.setChampImage(rs.getString("champImage"));
+				resl.add(res);
 			}
 
 		} catch (SQLException e) {
@@ -82,7 +87,7 @@ public class ChampionSearchService implements IChampionSearchService {
 			e.printStackTrace();
 		}
 
-		return list;
+		return resl;
 	}
 
 	@Override
@@ -92,8 +97,7 @@ public class ChampionSearchService implements IChampionSearchService {
 		ResponseChampion rc = new ResponseChampion();
 		String selectLine = " SELECT t.name AS tribeName, c.imageRoute AS imageAddress, c.name AS name "
 				+ " FROM championtable AS c" + " JOIN synergyTable AS s " + " ON c.id = s.championId "
-				+ " JOIN tribeTable AS t " + "ON s.tribeId1 = t.id " + "WHERE t.name = ? "
-				+ " group by c.name ";
+				+ " JOIN tribeTable AS t " + "ON s.tribeId1 = t.id " + "WHERE t.name = ? " + " group by c.name ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -118,16 +122,9 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		List<ResponseChampion> list = new ArrayList<>();
 		ResponseChampion rc = new ResponseChampion();
-		String selectLine = " SELECT c.price, c.name "
-				+ " FROM championtable AS C "
-				+ " join synergytable AS S "
-				+ " ON c.id = s.championId "
-				+ " JOIN linetable AS L "
-				+ " ON L.id = s.lineId "
-				+ " JOIN tribetable AS T "
-				+ " ON T.id = s.tribeId1 "
-				+ " WHERE c.price = ? "
-				+ " group by c.name ";
+		String selectLine = " SELECT c.price, c.name " + " FROM championtable AS C " + " join synergytable AS S "
+				+ " ON c.id = s.championId " + " JOIN linetable AS L " + " ON L.id = s.lineId "
+				+ " JOIN tribetable AS T " + " ON T.id = s.tribeId1 " + " WHERE c.price = ? " + " group by c.name ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -150,31 +147,29 @@ public class ChampionSearchService implements IChampionSearchService {
 
 	public static void main(String[] args) {
 
-		ChampionSearchService cp = new ChampionSearchService();
-
-		System.out.println(cp.selectChampionByName("릴리아"));
-
-		System.out.println("---------------");
-
-		List<ResponseChampion> list = cp.selectChampionByLine("용사냥꾼");
-		for (ResponseChampion responseChampion : list) {
-			System.out.println(responseChampion);
-		}
-		
-		System.out.println("---");
-		
-		
-		List<ResponseChampion> tlist = cp.selectChampionBytribe("민첩사수");
-		for (ResponseChampion responseChampion1 : tlist) {
-			System.out.println(responseChampion1);
-		}
-		
-		System.out.println("--------");
-		List<ResponseChampion> plist = cp.selectChampionByPrice("8");
-		for (ResponseChampion responseChampion2 : plist) {
-			System.out.println(responseChampion2);
-		}
-
+//		ChampionSearchService cp = new ChampionSearchService();
+//
+//		System.out.println(cp.selectChampionByName("릴리아"));
+//
+//		System.out.println("---------------");
+//
+//		List<ResponseChampion> list = cp.selectChampionByLine("용사냥꾼");
+//		for (ResponseChampion responseChampion : list) {
+//			System.out.println(responseChampion);
+//		}
+//		
+//		System.out.println("---");
+//		
+//		
+//		List<ResponseChampion> tlist = cp.selectChampionBytribe("민첩사수");
+//		for (ResponseChampion responseChampion1 : tlist) {
+//			System.out.println(responseChampion1);
+//		}
+//		
+//		System.out.println("--------");
+//		List<ResponseChampion> plist = cp.selectChampionByPrice("8");
+//		for (ResponseChampion responseChampion2 : plist) {
+//			System.out.println(responseChampion2);
 	}
 
 }
