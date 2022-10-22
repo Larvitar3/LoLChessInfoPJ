@@ -18,7 +18,7 @@ public class ResponseItem {
 	
 	@Override
 	public String toString() {
-		return "ResponseItem [id=" + id + ", name=" + name + ", materialEffect=" + materialEffect + ", imageRoute="
+		return "ResponseItem [itemId=" + id + ", itemName=" + name + ", materialEffect=" + materialEffect + ", imageRoute="
 				+ imageRoute + ", itemEffect=" + itemEffect + ", materialId1=" + materialId1 + ", materialId2="
 				+ materialId2 + "]";
 	}

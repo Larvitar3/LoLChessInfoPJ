@@ -59,8 +59,9 @@ CREATE TABLE tribeIdSynergyTable(
     FOREIGN KEY (tribeId) REFERENCES tribeTable (id)
 );
 
+
 CREATE TABLE synergyTable(
-	id INT NOT NULL,
+    id INT NOT NULL,
     championId INT NOT NULL,
     tribeId1 INT NOT NULL,
     tribeId2 INT,

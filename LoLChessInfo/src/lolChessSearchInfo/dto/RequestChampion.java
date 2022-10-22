@@ -17,7 +17,7 @@ public class RequestChampion {
 	private String attackSpeed;
 	private String defense;
 	private String magicResistance;
-	private String imageRoute;
+	private String imageAddress;
 	
 	private String tribeName;
 	private String tribeSynergyEffect;
@@ -31,6 +31,17 @@ public class RequestChampion {
 	private String collaborativeEffect;
 	private String tribeId;
 	private String championId;
+	@Override
+	public String toString() {
+		return "RequestChampion [id=" + id + ", name=" + name + ", price=" + price + ", hp=" + hp + ", power=" + power
+				+ ", dps=" + dps + ", attackRange=" + attackRange + ", attackSpeed=" + attackSpeed + ", defense="
+				+ defense + ", magicResistance=" + magicResistance + ", imageAddress=" + imageAddress + ", tribeName="
+				+ tribeName + ", tribeSynergyEffect=" + tribeSynergyEffect + ", tribeSynergyCharacteristic="
+				+ tribeSynergyCharacteristic + ", lineSynergyEffect=" + lineSynergyEffect
+				+ ", lineSynergyCharacteristic=" + lineSynergyCharacteristic + ", lineId=" + lineId
+				+ ", collaborationCount=" + collaborationCount + ", collaborativeEffect=" + collaborativeEffect
+				+ ", tribeId=" + tribeId + ", championId=" + championId + "]";
+	}
 	
 
 	
