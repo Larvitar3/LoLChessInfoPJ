@@ -238,6 +238,12 @@ insert into tribeIdSynergyTable
 values ( 28 , 14 , 4 , '체력 +350' );
 
 -- desc synergyTable;
+select * 
+from championTable as a
+join synergyTable as b
+on a.id = b.championId;
+
+select * from synergyTable;
 
 insert into synergyTable   
 values ( 1 , 1 , 3 , null, 1 );
@@ -302,7 +308,7 @@ values ( 28 , 28 , 6 ,14, 6 );
 -- desc itemMaterialTable1;
   
 -- desc itemMaterialTable;
-  select * from synergytable;
+--  select * from synergytable;
 
 insert into itemMaterialTable1  
 values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
