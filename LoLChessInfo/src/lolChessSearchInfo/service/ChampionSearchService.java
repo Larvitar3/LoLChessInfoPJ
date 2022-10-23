@@ -92,8 +92,7 @@ public class ChampionSearchService implements IChampionSearchService {
 		ResponseChampion rc = new ResponseChampion();
 		String selectLine = " SELECT t.name AS tribeName, c.imageRoute AS imageAddress, c.name AS name "
 				+ " FROM championtable AS c" + " JOIN synergyTable AS s " + " ON c.id = s.championId "
-				+ " JOIN tribeTable AS t " + "ON s.tribeId1 = t.id " + "WHERE t.name = ? "
-				+ " group by c.name ";
+				+ " JOIN tribeTable AS t " + "ON s.tribeId1 = t.id " + "WHERE t.name = ? " + " group by c.name ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -118,16 +117,9 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		List<ResponseChampion> list = new ArrayList<>();
 		ResponseChampion rc = new ResponseChampion();
-		String selectLine = " SELECT c.price, c.name "
-				+ " FROM championtable AS C "
-				+ " join synergytable AS S "
-				+ " ON c.id = s.championId "
-				+ " JOIN linetable AS L "
-				+ " ON L.id = s.lineId "
-				+ " JOIN tribetable AS T "
-				+ " ON T.id = s.tribeId1 "
-				+ " WHERE c.price = ? "
-				+ " group by c.name ";
+		String selectLine = " SELECT c.price, c.name " + " FROM championtable AS C " + " join synergytable AS S "
+				+ " ON c.id = s.championId " + " JOIN linetable AS L " + " ON L.id = s.lineId "
+				+ " JOIN tribetable AS T " + " ON T.id = s.tribeId1 " + " WHERE c.price = ? " + " group by c.name ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -147,110 +139,135 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		return list;
 	}
-	
-	
-	public boolean insertChampion(ResponseChampion irc) {
 
-		//트랜잭션 정상 쿼리가 등록 되었으면 true 반환, false 처리
+	@Override
+	public boolean insertChampion(ResponseChampion rc) {
+
+		// 트랜잭션 정상 쿼리가 등록 되었으면 true 반환, false 처리
 		boolean flag = true;
 		// 트랜잭션 사용하기
 		// setAutoCommit 트랜잭션 처리 -- 기본값은 true이다 --> 바로 적용이 된다.
 		try {
-//			System.out.println("11111111" + dbHelper.getConnection());
-			dbHelper.getConnection().setAutoCommit(true); //일부러 false
-			// 1. 영화 테이블의 마지막 번호 들고오기.
+			System.out.println("11111111");
+			dbHelper.getConnection().setAutoCommit(false); // 일부러 false
+			// 1. 테이블의 마지막 번호 들고오기.
 			String query1 = " SELECT id FROM championtable ORDER BY id DESC LIMIT 1 ";
 			rs = dbHelper.getConnection().prepareStatement(query1).executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				int lastId = Integer.parseInt(rs.getString("id")) + 1;
-				irc.setId(query1);
+				rc.setId(lastId);
 				System.out.println("챔피언id; " + lastId);
 			}
-			
-//			//배우 테이블에 마지막 번호 들고 오기
-//			String query2 = " SELECT 번호 FROM 배우 ORDER BY 번호 DESC LIMIT 1 ";
-//			rs = dbHelper.getConnection().prepareStatement(query2).executeQuery();
-//			while(rs.next()) {
-//				int lastId = Integer.parseInt(rs.getString("번호")) + 1;
-//				irc.set배우번호(lastId);
-//				System.out.println("배우번호:" + lastId);
-//			}
-			
-			//영화 데이터 저장 (id, 이름, 개봉연도, 관객수, 평점)
-			String query3 = " INSERT INTO championtable VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ";
+
+			String query3 = " INSERT INTO championtable "
+					+ " ( id, name, price, hp, power, dps, attackRange, attackSpeed, defense, magicResistance, imageRoute ) "
+					+ " VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ";
+
 			psmt = dbHelper.getConnection().prepareStatement(query3);
-			psmt.setString(1, irc.getId());
-			psmt.setString(2, irc.getName());
-			psmt.setString(3, irc.getPrice());
-			psmt.setString(4, irc.getHp());
-			psmt.setString(5, irc.getPower());
-			psmt.setString(6, irc.getDps());
-			psmt.setString(7, irc.getAttackRange());
-			psmt.setString(8, irc.getAttackSpeed());
-			psmt.setString(9, irc.getDefense());
-			psmt.setString(10, irc.getMagicResistance());
-			psmt.setString(11, irc.getImageAddress());
-			
+			psmt.setInt(1, rc.getId());
+			psmt.setString(2, rc.getName());
+			psmt.setString(3, rc.getPrice());
+			psmt.setString(4, rc.getHp());
+			psmt.setString(5, rc.getPower());
+			psmt.setString(6, rc.getDps());
+			psmt.setString(7, rc.getAttackRange());
+			psmt.setString(8, rc.getAttackSpeed());
+			psmt.setString(9, rc.getDefense());
+			psmt.setString(10, rc.getMagicResistance());
+			psmt.setString(11, rc.getImageAddress());
+
 			psmt.executeUpdate();
-			
-//			//배우 데이터 저장
-//			String query4 = " INSERT INTO 배우( 번호, 이름, 출생, 키, 몸무게 ) VALUES ( ?, ?, ?, ?, ? ) ";
-//			psmt = dbHelper.getConnection().prepareStatement(query4);
-//			psmt.setInt(1, irc.get배우번호());
-//			psmt.setString(2, irc.get배우이름());
-//			psmt.setString(3, irc.get출생());
-//			psmt.setInt(4, irc.get키());
-//			psmt.setInt(5, irc.get몸무게());
-//			psmt.executeUpdate();
-			
-//			//출연 데이터 저장
-//			String query5 = " INSERT INTO 출연( 영화번호, 배우번호, 역할, 역 ) VALUES( ?, ?, ?, ? ) ";
-//			psmt = dbHelper.getConnection().prepareStatement(query5);
-//			psmt.setInt(1, irc.get영화번호());
-//			psmt.setInt(2, irc.get배우번호());
-//			psmt.setInt(3, irc.get역할());
-//			psmt.setString(4, irc.get역());
-//			psmt.executeUpdate();
-			
-			dbHelper.getConnection().commit();		 // 이걸 해야 실제 데이터 베이스에 반영//깃같은느낌 
-			dbHelper.getConnection().setAutoCommit(true);  
-//			System.out.println("11111111" + dbHelper.getConnection());
-			
+
+			dbHelper.getConnection().commit(); // 이걸 해야 실제 데이터 베이스에 반영//깃같은느낌
+			dbHelper.getConnection().setAutoCommit(true);
+
 		} catch (SQLException e) {
 			try {
-				//롤백 (백업)
+				// 롤백 (백업)
 				dbHelper.getConnection().rollback();
 				System.out.println("롤백했습니다!!");
 			} catch (SQLException e1) {
-				
+
 				e1.printStackTrace();
 			}
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
-				//다시 원상 복구로 돌려 놓는 것을 권장
+				// 다시 원상 복구로 돌려 놓는 것을 권장
 //				dbHelper.getConnection().setAutoCommit(true); //<<<< 커밋밑으로 이사시킴 여기 있으면 불안정
 				rs.close();
 				psmt.close();
 				dbHelper.connectionClose();
 			} catch (SQLException e) {
-				
+
 				e.printStackTrace();
 			}
 		}
 		return flag;
-	
-		
 	}
+
+	@Override
+	public void updateChampion(String oldName, String newName) {
+		String query = " UPDATE championtable SET name = ? WHERE name = ?  ";
+//		 " VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) "; 밸류로 해도 되고 안해도 되는듯??
+		
+		try {
+			psmt = dbHelper.getConnection().prepareStatement(query);
+			psmt.setString(1, oldName);
+			psmt.setString(2, newName);
+			psmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Override
+	public void deleteChampion(int championId) {
+		
+		try {
+			dbHelper.getConnection().setAutoCommit(false);
+			String query1 = " DELETE FROM championtable WHERE id = ? " ;
+			psmt = dbHelper.getConnection().prepareStatement(query1);
+			psmt.setInt(1, championId);
+			psmt.executeUpdate();
+			
+			dbHelper.getConnection().commit();
+			dbHelper.getConnection().setAutoCommit(true);
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				dbHelper.getConnection().rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					psmt.close();
+					dbHelper.connectionClose();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		}
+	}
+	
+	
+	
+	
+	
 	
 
 	public static void main(String[] args) {
 
-		ChampionSearchService select = new ChampionSearchService();
-		ResponseChampion rpc = new ResponseChampion();
+		ChampionSearchService css = new ChampionSearchService();
+		ResponseChampion rc = new ResponseChampion();
 
-		
-		
 //		System.out.println(css.selectChampionByName("릴리아"));
 //
 //		System.out.println("---------------");
@@ -273,20 +290,28 @@ public class ChampionSearchService implements IChampionSearchService {
 //		for (ResponseChampion responseChampion2 : plist) {
 //			System.out.println(responseChampion2);
 //		}
-		
-		System.out.println("인설트11111");
-		rpc.setId("29");
-		rpc.setName("이승원");
-		rpc.setPrice("1");
-		rpc.setHp("12");
-		rpc.setPower("13");
-		rpc.setDps("1");
-		rpc.setAttackRange("ㅇㅇㅇ");
-		rpc.setAttackSpeed("0.1");
-		rpc.setDefense("2");
-		rpc.setMagicResistance("30");
-		rpc.setImageAddress("이승원");
-		
-	}
 
+//		System.out.println("인설트시작");
+//		rc.setId(29);
+//		rc.setName("이승");
+//		rc.setPrice("1");
+//		rc.setHp("12");
+//		rc.setPower("13");
+//		rc.setDps("1");
+//		rc.setAttackRange("ㅇㅇㅇ");
+//		rc.setAttackSpeed("0.1");
+//		rc.setDefense("2");
+//		rc.setMagicResistance("30");
+//		rc.setImageAddress("ㅇㅇ");
+//		css.insertChampion(rc); //이거 있어야 실행됨
+//		System.out.println("인설트끝");
+
+		
+		
+//		System.out.println("update꼬");
+//		css.updateChampion("승원", "이승원");
+//		System.out.println("update끝");
+		
+//		css.deleteChampion(29);  //삭제
+	}
 }
