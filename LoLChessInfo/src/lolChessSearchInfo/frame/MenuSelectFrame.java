@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.frame.host.HostMainFrame;
+import lolChessSearchInfo.host.HostMainFrame;
 
 public class MenuSelectFrame extends JFrame implements ActionListener {
 

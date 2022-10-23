@@ -1,4 +1,4 @@
-package lolChessSearchInfo.frame.host;
+package lolChessSearchInfo.hostFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,11 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
-import lolChessSearchInfo.frame.ChampionSerchFrame;
-import lolChessSearchInfo.frame.ItemSearchFrame;
-import lolChessSearchInfo.frame.MenuSelectFrame;
-import lolChessSearchInfo.frame.SynergySearchFrame;
 
 public class HostCRUDFrame extends JFrame implements ActionListener {
 

@@ -1,4 +1,4 @@
-package lolChessSearchInfo.frame.host;
+package lolChessSearchInfo.hostFrame;
 
 import javax.swing.JFrame;
 
