@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 
 import lolChessSearchInfo.dto.ResponseChampion;
 
-public class MenuHostMainFrame extends JFrame implements ActionListener {
+public class HostMainFrame extends JFrame implements ActionListener {
 	
 	private JLabel backgroundImg;
 	private JButton insert;
@@ -18,7 +18,7 @@ public class MenuHostMainFrame extends JFrame implements ActionListener {
 	private JButton update;
 	private JButton hostButton; 
 
-	public MenuHostMainFrame() {
+	public HostMainFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -73,26 +73,26 @@ public class MenuHostMainFrame extends JFrame implements ActionListener {
 
 		if (e.getSource() == insert) {
 			System.out.println("인설트x버튼.");
-			new MenuHostSelectFrame();
+			new HostSelectFrame();
 			this.setVisible(false);
 		} else if (e.getSource() == delete) {
 			System.out.println("딜리트버튼.");
-			new MenuHostSelectFrame();
+			new HostSelectFrame();
 			this.setVisible(false);
 		} else if (e.getSource() == update) {
 			System.out.println("업데이트버튼.");
-			new MenuHostSelectFrame();
+			new HostSelectFrame();
 			this.setVisible(false);
 		} else if (e.getSource() == hostButton) {
 			System.out.println("관리자실행되었습니다");
-			new MenuHostSelectFrame();
+			new HostSelectFrame();
 			this.setVisible(false);
 			
 		}
 	}
 
 	public static void main(String[] args) {
-		new MenuHostMainFrame();
+		new HostMainFrame();
 	}
 
 }
