@@ -8,8 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.frame.host.HostMainFrame;
+import lolChessSearchInfo.hostFrame.HostMainFrame;
+import lombok.Data;
 
+@Data
 public class MenuSelectFrame extends JFrame implements ActionListener {
 
    JLabel backgroundImg;

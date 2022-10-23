@@ -8,8 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.dto.ResponseChampion;
+import lombok.Data;
 
+@Data
 public class HostMainFrame extends JFrame implements ActionListener {
 	
 	private JLabel backgroundImg;
