@@ -9,7 +9,6 @@ public class ResponseChampion {
 	private String id;
 	private String name;
 
-
 	private String price;
 	private String hp;
 	private String power;
@@ -38,6 +37,8 @@ public class ResponseChampion {
 	private String lineName;
 	private String tribeName;
 	private String tribeName2;
+	
+	
 	@Override
 	public String toString() {
 		return "ResponseChampion [id=" + id + ", name=" + name + ", price=" + price + ", hp=" + hp + ", power=" + power
@@ -50,6 +51,8 @@ public class ResponseChampion {
 				+ ", tribeId=" + tribeId + ", championId=" + championId + ", lineName=" + lineName + ", tribeName="
 				+ tribeName + ", tribeName2=" + tribeName2 + "]";
 	}
+	
+
 
 	
 	

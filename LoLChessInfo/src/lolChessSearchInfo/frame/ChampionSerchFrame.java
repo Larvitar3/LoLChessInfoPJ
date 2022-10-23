@@ -131,7 +131,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 			if (rcCBN.getTribeName2() != null) {
 				championBgBox.add(tribeName2);
-				tribeName2.setText("|      " + rcCBN.getTribeName2());
+				tribeName2.setText("|      " + rcCBN.getTribeName2());  
 			}
 
 			championBgBox.add(hp);
@@ -604,9 +604,5 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 	}
 
-	public static void main(String[] args) {
-		ChampionSerchFrame cf = new ChampionSerchFrame();
-
-	}
 
 }

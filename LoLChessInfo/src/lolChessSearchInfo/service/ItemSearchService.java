@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import lolChessSearchInfo.dto.RequestItem;
 import lolChessSearchInfo.dto.ResponseItem;
 import lolChessSearchInfo.interfaces.IItemSearchService;
 import lolChessSearchInfo.utils.DBHelper;

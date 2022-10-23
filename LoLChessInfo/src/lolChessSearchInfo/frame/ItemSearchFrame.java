@@ -21,7 +21,7 @@ import lolChessSearchInfo.service.ItemSearchService;
 
 public class ItemSearchFrame extends JFrame implements ActionListener {
 
-	ItemSearchService iss;
+	ItemSearchService iss;   
 	JLabel backgroundImg;
 
 	JTextField searchBox;
@@ -491,8 +491,5 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 	}
 
-	public static void main(String[] args) {
-		new ItemSearchFrame();
-	}
 
 }

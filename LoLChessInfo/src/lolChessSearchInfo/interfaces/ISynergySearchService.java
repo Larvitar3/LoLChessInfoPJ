@@ -8,9 +8,8 @@ public interface ISynergySearchService {
 
 	List<ResponseChampion>selectSynergyByLine(String synergyLine);
 	
-	List<ResponseChampion> selectISynergyByTribel(String synergyTribel);
+	List<ResponseChampion> selectSynergyByTribe(String synergyTribel);
 
-	List<ResponseChampion> selectSynergyByEffect(String synergyEffect);
 
 
 }

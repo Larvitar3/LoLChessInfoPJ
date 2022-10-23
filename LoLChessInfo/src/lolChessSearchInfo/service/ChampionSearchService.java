@@ -170,7 +170,7 @@ public class ChampionSearchService implements IChampionSearchService {
 				rc.setName(rs.getString("name"));
 				rc.setPrice(rs.getString("price"));
 				rc.setImageAddress(rs.getString("imageRoute"));
-				list.add(rc);
+				list.add(rc); 
 			}
 
 		} catch (SQLException e) {
