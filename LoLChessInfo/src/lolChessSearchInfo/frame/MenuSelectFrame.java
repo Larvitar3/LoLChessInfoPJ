@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.dto.ResponseChampion;
+import lolChessSearchInfo.frame.host.MenuHostMainFrame;
 
 public class MenuSelectFrame extends JFrame implements ActionListener{
 
@@ -16,8 +16,9 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 	JButton championSearch;
 	JButton itemSearch;
 	JButton synergySearch;
+	JButton hostButton;   //승원
 	
-	public MenuSelectFrame() {
+	public MenuSelectFrame() {  
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -32,7 +33,7 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 		championSearch = new JButton("챔피언 검색");
 		itemSearch = new JButton("아이템 검색");
 		synergySearch = new JButton("시너지 검색");
-		
+		hostButton = new JButton("관리자"); //승원
 	}
 
 	private void setInitLayout() {
@@ -55,13 +56,16 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 		synergySearch.setSize(328, 52);
 		synergySearch.setLocation(230, 472);
 		
-		
+		add(hostButton);
+		hostButton.setSize(100, 40);
+		hostButton.setLocation(650, 530);
 	}
 
 	private void addEventListener() {
 		championSearch.addActionListener(this);
 		itemSearch.addActionListener(this);
 		synergySearch.addActionListener(this);
+		hostButton.addActionListener(this);
 	}
 	
 	@Override
@@ -73,8 +77,13 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 			System.out.println("아이템 검색이 선택되었습니다.");
 		}else if(e.getSource() == synergySearch) {
 			System.out.println("시너지 검색이 선택되었습니다.");
-		}
+		}else if(e.getSource() == hostButton) {
+		System.out.println("관리자실행되었습니다");
+//		hostButton.setText("관리자1");
+		setVisible(false);
+		new MenuHostMainFrame();
 		
+		}
 	}
 	
 	public static void main(String[] args) {
