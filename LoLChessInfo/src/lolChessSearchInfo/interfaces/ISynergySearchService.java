@@ -6,10 +6,14 @@ import lolChessSearchInfo.dto.ResponseChampion;
 
 public interface ISynergySearchService {
 
-	ResponseChampion selectSynergyByName(String synergyName);
+	List<ResponseChampion>selectSynergyByLine(String synergyLine);
 
-	List<ResponseChampion> selectSynergyByEffect(String effectName);
+    List<ResponseChampion> selectISynergyByTribe(String synergyTribe);
 
-	List<ResponseChampion> selectISynergyByMaterial(String materialName);
+    List<ResponseChampion> selectSynergyByEffect(String synergyEffect);
+	
+//	boolean insertSynergy(ResponseChampion rc);
+//	void updateSynergy(String oldName, String newName);
+//	void deleteSynergy(int synergyId);
 
 }
