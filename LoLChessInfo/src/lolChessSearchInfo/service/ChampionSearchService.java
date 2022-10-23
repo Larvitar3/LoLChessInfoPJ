@@ -188,8 +188,6 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		return list;
 
-	
-		
 	}
 	
 
