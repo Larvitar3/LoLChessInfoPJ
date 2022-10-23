@@ -73,14 +73,9 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		ArrayList<ResponseLine> resl = new ArrayList<>();
 
-		String selectLine = "SELECT c.imageRoute AS champImage, "
-				+ " c.name AS champName, L.name AS lineName "
-				+ " FROM championtable AS c "
-				+ " JOIN synergyTable AS s "
-				+ " ON c.id = s.championId  "
-				+ " JOIN linetable AS L"
-				+ " ON s.lineId = L.id "
-				+ " WHERE L.name = ? " ;
+		String selectLine = "SELECT c.imageRoute AS champImage, " + " c.name AS champName, L.name AS lineName "
+				+ " FROM championtable AS c " + " JOIN synergyTable AS s " + " ON c.id = s.championId  "
+				+ " JOIN linetable AS L" + " ON s.lineId = L.id " + " WHERE L.name = ? ";
 
 		System.out.println(selectLine);
 		try {
@@ -133,10 +128,10 @@ public class ChampionSearchService implements IChampionSearchService {
 			while (rs.next()) {
 				ResponseChampion rcp = new ResponseChampion();
 				rcp.setTribeName(rs.getString("tribeName"));
-				rcp.setImageAddress(rs.getString("imageRoute")); 
+				rcp.setImageAddress(rs.getString("imageRoute"));
 				rcp.setName(rs.getString("championName"));
 
-				list.add(rcp);  
+				list.add(rcp);
 			}
 
 		} catch (SQLException e) {
@@ -178,7 +173,7 @@ public class ChampionSearchService implements IChampionSearchService {
 				rc.setName(rs.getString("name"));
 				rc.setPrice(rs.getString("price"));
 				rc.setImageAddress(rs.getString("imageRoute"));
-				list.add(rc); 
+				list.add(rc);
 			}
 
 		} catch (SQLException e) {
@@ -261,13 +256,14 @@ public class ChampionSearchService implements IChampionSearchService {
 			}
 		}
 		return flag;
+
 	}
 
 	@Override
 	public void updateChampion(String oldName, String newName) {
 		String query = " UPDATE championtable SET name = ? WHERE name = ?  ";
 //		 " VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) "; 밸류로 해도 되고 안해도 되는듯??
-		
+
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(query);
 			psmt.setString(1, oldName);
@@ -277,30 +273,27 @@ public class ChampionSearchService implements IChampionSearchService {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Override
 	public void deleteChampion(int championId) {
-		
+
 		try {
 			dbHelper.getConnection().setAutoCommit(false);
-			String query1 = " DELETE FROM championtable WHERE id = ? " ;
+			String query1 = " DELETE FROM championtable WHERE id = ? ";
 			psmt = dbHelper.getConnection().prepareStatement(query1);
 			psmt.setInt(1, championId);
 			psmt.executeUpdate();
-			
+
 			dbHelper.getConnection().commit();
 			dbHelper.getConnection().setAutoCommit(true);
-			
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			try {
 				dbHelper.getConnection().rollback();
 			} catch (SQLException e1) {
 				e1.printStackTrace();
-			}finally{
+			} finally {
 				try {
 					rs.close();
 					psmt.close();
@@ -309,16 +302,10 @@ public class ChampionSearchService implements IChampionSearchService {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
 
 	public static void main(String[] args) {
 
@@ -363,12 +350,10 @@ public class ChampionSearchService implements IChampionSearchService {
 //		css.insertChampion(rc); //이거 있어야 실행됨
 //		System.out.println("인설트끝");
 
-		
-		
 //		System.out.println("update꼬");
 //		css.updateChampion("승원", "이승원");
 //		System.out.println("update끝");
-		
+
 //		css.deleteChampion(29);  //삭제
 	}
 }

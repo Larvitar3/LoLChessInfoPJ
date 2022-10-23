@@ -301,12 +301,16 @@ public class SynergySearchFrame extends JFrame implements ActionListener{
 		if(e.getSource() == lineBtn) {
 			lineSelect();
 			isBtnType = LINE_SEARCH_BTN;
-			System.out.println("계열이 선택되었습니다.");
+			tribeBgBox.removeAll();
+			flowBox.removeAll();
+			remove(tribeBgBox);
 			
 		} else if(e.getSource() == tribeBtn) {
 			tribeSelect();
 			isBtnType = TRIBE_SEARCH_BTN;
-			System.out.println("종족이 선택되었습니다.");
+			lineBgBox.removeAll();
+			flowBox.removeAll();
+			remove(lineBgBox);
 			
 		}  else if (e.getSource() == searchBtn) {
 			actionType(isBtnType);
