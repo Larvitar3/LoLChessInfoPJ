@@ -2,6 +2,7 @@ package lolChessSearchInfo.interfaces;
 
 import java.util.List;
 
+import lolChessSearchInfo.dto.RequestItem;
 import lolChessSearchInfo.dto.ResponseItem;
 
 public interface IItemSearchService {
