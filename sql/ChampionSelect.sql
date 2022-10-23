@@ -3,7 +3,7 @@
 -- 챔피언정보
 -- SELECT * FROM championtable;
 
-<<<<<<< HEAD
+
 SELECT * , (
 SELECT T.name
 FROM championtable as C
@@ -24,7 +24,6 @@ JOIN tribetable AS T
 ON T.id = s.tribeId1
 WHERE c.name = '릴리아'
 group by c.name;
-=======
 
 select name as champName, price, hp, powe, dps as dps, attackRange as attackRange, attackSpeed as attackSpeed,
 defense as defense, magicResistance as magicResistance, imageRoute as imageRoute
@@ -35,14 +34,10 @@ SELECT name AS champName, price AS price, hp AS hp, power AS power, dps AS dps, 
 defense AS defense, magicResistance AS magicResistance, imageRoute AS imageRoute
 FROM championtable
 WHERE name = ? ;
->>>>>>> ce5a0b2535b0ee72eb76295fbcb41eac96003ee0
 
 
 -- 챔피언검색 끝
 
--- 챔피언 계열 , 첫번째 넣을 계열 사진 없음
-<<<<<<< HEAD
-=======
 
 select l.name as lineName, c.imageRoute as champImage, c.name as champName
 from championtable as c
@@ -50,10 +45,9 @@ join synergyTable as s
 on c.id = s.championId
 join lineTable as l
 on s.lineId = l.id
-WHERE l.name = '용사냥꾼'
+WHERE l.name = '주문도둑'
 group by c.name;
 
->>>>>>> ce5a0b2535b0ee72eb76295fbcb41eac96003ee0
 
 SELECT l.name AS lineName, l.lineSynergyEffect as lineSynergyEffect, l.lineSynergyCharacteristic as lineSynergyCharacteristic
 FROM championtable AS c
@@ -101,11 +95,8 @@ group by t.name;
 select * from tribeTable;
 
 -- 챔피언 종족 종족 사진 아직 없음.
-<<<<<<< HEAD
 SELECT t.name AS tribeName, c.imageRoute AS imageAddress, c.name AS name
-=======
 SELECT c.imageRoute AS champImage, c.name AS champName
->>>>>>> ce5a0b2535b0ee72eb76295fbcb41eac96003ee0
 FROM championtable AS c
 JOIN synergyTable AS s
 ON c.id = s.championId

@@ -54,6 +54,14 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+				dbHelper.connectionClose();
+			} catch (Exception e) {
+
+			}
 		}
 
 		return rc;
@@ -65,9 +73,14 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		ArrayList<ResponseLine> resl = new ArrayList<>();
 
-		String selectLine = "SELECT c.imageRoute AS champImage, c.name AS champName" + " FROM championtable AS c "
-				+ " JOIN synergyTable AS s " + " ON c.id = s.championId " + " JOIN tribeTable AS t "
-				+ " ON s.tribeId1 = t.id " + " WHERE t.name = ? " + " group by c.name ";
+		String selectLine = "SELECT c.imageRoute AS champImage, "
+				+ " c.name AS champName, L.name AS lineName "
+				+ " FROM championtable AS c "
+				+ " JOIN synergyTable AS s "
+				+ " ON c.id = s.championId  "
+				+ " JOIN linetable AS L"
+				+ " ON s.lineId = L.id "
+				+ " WHERE L.name = ? " ;
 
 		System.out.println(selectLine);
 		try {
@@ -85,6 +98,14 @@ public class ChampionSearchService implements IChampionSearchService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+				dbHelper.connectionClose();
+			} catch (Exception e) {
+
+			}
 		}
 
 		return resl;
@@ -94,10 +115,11 @@ public class ChampionSearchService implements IChampionSearchService {
 	public List<ResponseChampion> selectChampionBytribe(String tribeName) {
 
 		List<ResponseChampion> list = new ArrayList<>();
-		ResponseChampion rc = new ResponseChampion();
-		String selectLine = " SELECT t.name AS tribeName, c.imageRoute AS imageAddress, c.name AS name "
-				+ " FROM championtable AS c" + " JOIN synergyTable AS s " + " ON c.id = s.championId "
-				+ " JOIN tribeTable AS t " + "ON s.tribeId1 = t.id " + "WHERE t.name = ? " + " group by c.name ";
+
+		String selectLine = "SELECT C.name AS championName, T.name AS tribeName, C.imageRoute"
+				+ " FROM championtable as C " + " join synergytable AS S " + " ON c.id = s.championId "
+				+ " JOIN linetable AS L " + " ON L.id = s.lineId " + " JOIN tribetable AS T " + " ON T.id = s.tribeId1 "
+				+ " WHERE T.name = ? ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -105,13 +127,24 @@ public class ChampionSearchService implements IChampionSearchService {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				rc.setLineName(rs.getString("tribeName"));
-				list.add(rc);
+				ResponseChampion rcp = new ResponseChampion();
+				rcp.setTribeName(rs.getString("tribeName"));
+				rcp.setImageAddress(rs.getString("imageRoute"));
+				rcp.setName(rs.getString("championName"));
+
+				list.add(rcp);
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+				dbHelper.connectionClose();
+			} catch (Exception e) {
+
+			}
 		}
 
 		return list;
@@ -121,10 +154,11 @@ public class ChampionSearchService implements IChampionSearchService {
 	public List<ResponseChampion> selectChampionByPrice(String price) {
 
 		List<ResponseChampion> list = new ArrayList<>();
-		ResponseChampion rc = new ResponseChampion();
-		String selectLine = " SELECT c.price, c.name " + " FROM championtable AS C " + " join synergytable AS S "
-				+ " ON c.id = s.championId " + " JOIN linetable AS L " + " ON L.id = s.lineId "
-				+ " JOIN tribetable AS T " + " ON T.id = s.tribeId1 " + " WHERE c.price = ? " + " group by c.name ";
+
+		String selectLine = " SELECT C .price, C .name , C.imageRoute " + " FROM championtable AS C "
+				+ " join synergytable AS S " + " ON c.id = s.championId " + " JOIN linetable AS L "
+				+ " ON L.id = s.lineId " + " JOIN tribetable AS T " + " ON T.id = s.tribeId1 " + " WHERE c.price = ? "
+				+ " group by c.name ";
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -132,44 +166,27 @@ public class ChampionSearchService implements IChampionSearchService {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
+				ResponseChampion rc = new ResponseChampion();
 				rc.setName(rs.getString("name"));
 				rc.setPrice(rs.getString("price"));
+				rc.setImageAddress(rs.getString("imageRoute"));
 				list.add(rc);
 			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+				dbHelper.connectionClose();
+			} catch (Exception e) {
+
+			}
 		}
 
 		return list;
-	}
-
-	public static void main(String[] args) {
-
-//		ChampionSearchService cp = new ChampionSearchService();
-//
-//		System.out.println(cp.selectChampionByName("릴리아"));
-//
-//		System.out.println("---------------");
-//
-//		List<ResponseChampion> list = cp.selectChampionByLine("용사냥꾼");
-//		for (ResponseChampion responseChampion : list) {
-//			System.out.println(responseChampion);
-//		}
-//		
-//		System.out.println("---");
-//		
-//		
-//		List<ResponseChampion> tlist = cp.selectChampionBytribe("민첩사수");
-//		for (ResponseChampion responseChampion1 : tlist) {
-//			System.out.println(responseChampion1);
-//		}
-//		
-//		System.out.println("--------");
-//		List<ResponseChampion> plist = cp.selectChampionByPrice("8");
-//		for (ResponseChampion responseChampion2 : plist) {
-//			System.out.println(responseChampion2);
 	}
 
 }
