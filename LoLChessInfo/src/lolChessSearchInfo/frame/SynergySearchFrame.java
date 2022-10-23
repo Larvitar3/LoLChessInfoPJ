@@ -59,9 +59,6 @@ public class SynergySearchFrame extends JFrame implements ActionListener{
 	}
 	
 	
-
-	
-	// C:\\LoLChessPJ\\Images\\Bard.png
 	
 
 	private void addEventListener() {

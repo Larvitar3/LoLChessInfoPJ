@@ -129,10 +129,10 @@ public class ChampionSearchService implements IChampionSearchService {
 			while (rs.next()) {
 				ResponseChampion rcp = new ResponseChampion();
 				rcp.setTribeName(rs.getString("tribeName"));
-				rcp.setImageAddress(rs.getString("imageRoute"));
+				rcp.setImageAddress(rs.getString("imageRoute")); 
 				rcp.setName(rs.getString("championName"));
 
-				list.add(rcp);
+				list.add(rcp);  
 			}
 
 		} catch (SQLException e) {

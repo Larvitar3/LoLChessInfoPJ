@@ -3,19 +3,15 @@ package lolChessSearchInfo.frame;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import lolChessSearchInfo.dto.ResponseChampion;
@@ -117,14 +113,11 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		if (rcCBN.getName() == null) {
 			System.out.println("없는 챔피언 입니다.");
 		} else {
+			  
 			ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
 			championImgBox.setIcon(imageAddress);
 
-			System.out.println(rcCBN.toString());
-
-			imgAddress = rcCBN.getImageAddress();
 			add(championImgBox);
-			System.out.println(rcCBN.getImageAddress());
 
 			championBgBox.add(cName);
 
@@ -172,11 +165,11 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			cName.setLocation(105, 240);
 
 			tribeName.setSize(200, 25);
-			tribeName.setFont(new Font("sanSerif", Font.BOLD, 18));
+			tribeName.setFont(new Font("sanSerif", Font.BOLD, 18)); 
 			tribeName.setLocation(225, 105);
 
 			tribeName2.setSize(200, 25);
-			tribeName2.setFont(new Font("sanSerif", Font.BOLD, 18));
+			tribeName2.setFont(new Font("sanSerif", Font.BOLD, 18));    
 			tribeName2.setLocation(325, 105);
 
 			hp.setSize(100, 25);
@@ -264,7 +257,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		} // 라인 검색 이미지박스 end
 
-		System.out.println("=========================");
 
 		for (ResponseLine data : resList) {
 
@@ -316,7 +308,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		tribeBgBox.add(flowBox);
 		flowBox.setSize(704, 200);
 		flowBox.setLocation(53, 370);
-		flowBox.setLayout(new FlowLayout());
+		flowBox.setLayout(null);
 
 		int witdhMarginPlus = 0;
 		int witdhMarginTextPlus = 0;
@@ -349,7 +341,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		} // 종족 검색 이미지박스 end
 
-		System.out.println("=========================");
 
 		for (ResponseChampion data : resList) {
 
@@ -433,7 +424,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		} // 비용 검색 이미지박스 end
 
-		System.out.println("=========================");
 
 		for (ResponseChampion data : resList) {
 
@@ -451,7 +441,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 				titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
 				witdhMarginTextPlus += 130;
 				int countNum = 20 + witdhMarginTextPlus;
-				System.out.println("마진 실행중  :    " + countNum);
 				if (countNum > 694) {
 					titleJlabel.setLocation(50, 150);
 				}
@@ -459,7 +448,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			}
 
 			textFlag = false;
-			System.out.println("텍스트 실행 : " + data.getName());
 
 		} // 비용 검색 텍스트 end
 
@@ -558,9 +546,13 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == nameBtn) {
-			System.out.println("이름이 선택되었습니다.");
 			nameSelect();
 			isBtnType = NAME_SEARCH_BTN;
+			
+			lineBgBox.removeAll();
+			tribeBgBox.removeAll();
+			priceBgBox.removeAll();
+			repaint();
 		} else if (e.getSource() == lineBtn) {
 			lineSelect();
 			isBtnType = LINE_SEARCH_BTN;
@@ -568,20 +560,23 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			tribeBgBox.removeAll();
 			priceBgBox.removeAll();
 			repaint();
-
 		} else if (e.getSource() == tribeBtn) {
-			System.out.println("종족이 선택되었습니다.");
 			tribeSelect();
 			isBtnType = TRIBE_SEARCH_BTN;
+			lineBgBox.removeAll();
+			championBgBox.removeAll();
+			priceBgBox.removeAll();
+			repaint();
 		} else if (e.getSource() == priceBtn) {
 			priceSelect();
-			System.out.println("비용이 선택되었습니다.");
 			isBtnType = PRICE_SEARCH_BTN;
+			lineBgBox.removeAll();
+			championBgBox.removeAll();
+			tribeBgBox.removeAll();
 		} else if (e.getSource() == searchBtn) {
-			System.out.println("검색버튼 타입" + isBtnType);
 			actionType(isBtnType);
 		} else {
-			System.out.println("선택되지않았습니다.");
+			System.out.println("미선택");
 		}
 
 	}
