@@ -55,14 +55,16 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 	JPanel priceBgBox;
 
 	JPanel flowBox;
-
+	Color whiteOp = new Color(225, 225, 225, 150);
+	Color whiteOp100 = new Color(225, 225, 225, 0);
+	
 	public ChampionSerchFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
 
 	}
-
+	
 	private void initData() {
 		setSize(810, 640);
 		setTitle("챔피언 검색");
@@ -104,6 +106,9 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		priceCoin = new JLabel(coinImg);
 
 		css = new ChampionSearchService();
+		
+
+
 	}
 
 	void nameSearch(String searchName) {
@@ -113,11 +118,14 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		if (rcCBN.getName() == null) {
 			System.out.println("없는 챔피언 입니다.");
 		} else {
-			  
+			
+			championBgBox.add(championImgBox);
 			ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
 			championImgBox.setIcon(imageAddress);
 
-			add(championImgBox);
+			championBgBox.setSize(704, 300);
+			championBgBox.setLocation(53, 260);
+			championBgBox.setBackground(whiteOp);
 
 			championBgBox.add(cName);
 
@@ -158,7 +166,9 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			championBgBox.add(priceCoin);
 
 			championImgBox.setSize(120, 120);
-			championImgBox.setLocation(130, 370);
+			championImgBox.setLocation(77, 110);
+			
+			
 
 			cName.setSize(120, 20);
 			cName.setFont(new Font("sanSerif", Font.BOLD, 16));
@@ -218,8 +228,15 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 	void lineSearch(String searchLineName) {
 
+		System.out.println("실행");
+		
 		List<ResponseLine> resList = css.selectChampionByLine(searchLineName);
 
+		lineBgBox.setSize(704, 300);
+		lineBgBox.setLocation(53, 260);
+		lineBgBox.setBackground(whiteOp);
+		lineBgBox.setLayout(null);
+		
 		lineBgBox.add(flowBox);
 		flowBox.setSize(704, 200);
 		flowBox.setLocation(53, 370);
@@ -303,8 +320,14 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 	void tribeSearch(String searchTribeName) {
 
+
 		List<ResponseChampion> resList = css.selectChampionBytribe(searchTribeName);
 
+		tribeBgBox.setSize(704, 300);
+		tribeBgBox.setLocation(53, 260);
+		tribeBgBox.setBackground(whiteOp);
+		tribeBgBox.setLayout(null);
+		
 		tribeBgBox.add(flowBox);
 		flowBox.setSize(704, 200);
 		flowBox.setLocation(53, 370);
@@ -388,6 +411,11 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		List<ResponseChampion> resList = css.selectChampionByPrice(searchPrice);
 
+		priceBgBox.setSize(704, 300);
+		priceBgBox.setLocation(53, 260);
+		priceBgBox.setBackground(whiteOp);
+		priceBgBox.setLayout(null);
+		
 		priceBgBox.add(flowBox);
 		flowBox.setSize(704, 200);
 		flowBox.setLocation(53, 370);
@@ -471,28 +499,10 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setLayout(null);
 
-		Color whiteOp = new Color(225, 225, 225, 150);
-		Color whiteOp100 = new Color(225, 225, 225, 0);
 		setContentPane(backgroundImg);
 
-		championBgBox.setSize(704, 300);
-		championBgBox.setLocation(53, 260);
-		championBgBox.setBackground(whiteOp);
 
-		lineBgBox.setSize(704, 300);
-		lineBgBox.setLocation(53, 260);
-		lineBgBox.setBackground(whiteOp);
-		lineBgBox.setLayout(null);
 
-		tribeBgBox.setSize(704, 300);
-		tribeBgBox.setLocation(53, 260);
-		tribeBgBox.setBackground(whiteOp);
-		tribeBgBox.setLayout(null);
-
-		priceBgBox.setSize(704, 300);
-		priceBgBox.setLocation(53, 260);
-		priceBgBox.setBackground(whiteOp);
-		priceBgBox.setLayout(null);
 
 		flowBox.setBackground(whiteOp100);
 
@@ -542,6 +552,8 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 	final int TRIBE_SEARCH_BTN = 3;
 	final int PRICE_SEARCH_BTN = 4;
 
+
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -552,27 +564,51 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			lineBgBox.removeAll();
 			tribeBgBox.removeAll();
 			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(tribeBgBox);
+			remove(lineBgBox);
+			remove(priceBgBox);
+			
 			repaint();
 		} else if (e.getSource() == lineBtn) {
 			lineSelect();
 			isBtnType = LINE_SEARCH_BTN;
+			
+			championImgBox.removeAll();
 			championBgBox.removeAll();
 			tribeBgBox.removeAll();
 			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(tribeBgBox);
+			remove(priceBgBox);
 			repaint();
 		} else if (e.getSource() == tribeBtn) {
 			tribeSelect();
+			
 			isBtnType = TRIBE_SEARCH_BTN;
+			championImgBox.removeAll();
 			lineBgBox.removeAll();
 			championBgBox.removeAll();
 			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(lineBgBox);
+			remove(priceBgBox);
+			
 			repaint();
 		} else if (e.getSource() == priceBtn) {
 			priceSelect();
 			isBtnType = PRICE_SEARCH_BTN;
+			championImgBox.removeAll();
 			lineBgBox.removeAll();
 			championBgBox.removeAll();
 			tribeBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(lineBgBox);
+			remove(tribeBgBox);
+			
 		} else if (e.getSource() == searchBtn) {
 			actionType(isBtnType);
 		} else {

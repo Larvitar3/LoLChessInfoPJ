@@ -50,6 +50,10 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 	JPanel meteridlBgBox;
 	JPanel effectBgBox;
 	JPanel flowBox;
+	
+
+	Color whiteOp = new Color(225, 225, 225, 150);
+	Color whiteOp100 = new Color(225, 225, 225, 0);
 
 	public ItemSearchFrame() {
 		initData();
@@ -103,6 +107,11 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 		ResponseItem rpi = iss.selectItemByName(searchItemName);
 
+		nameBgBox.setSize(702, 300);
+		nameBgBox.setLocation(50, 260);
+		nameBgBox.setBackground(whiteOp);
+		nameBgBox.setLayout(null);
+		
 		System.out.println(rpi.getImageAddress());
 
 		ImageIcon imageAddress = new ImageIcon(rpi.getImageAddress());
@@ -129,8 +138,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		nameBgBox.add(mtd1Img);
 		mtd1Img.setSize(80, 80);
 		mtd1Img.setLocation(300, 110);
-		mtd1Img.setOpaque(true);
-		mtd1Img.setBackground(Color.PINK);
 
 		ImageIcon imageAddress1 = new ImageIcon(rpi.getMtd1imgAddress());
 		mtd1Img.setIcon(imageAddress1);
@@ -138,8 +145,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		nameBgBox.add(mtd2Img);
 		mtd2Img.setSize(80, 80);
 		mtd2Img.setLocation(460, 110);
-		mtd2Img.setOpaque(true);
-		mtd2Img.setBackground(Color.PINK);
 
 		ImageIcon imageAddress2 = new ImageIcon(rpi.getMtd2imgAddress());
 		mtd2Img.setIcon(imageAddress2);
@@ -150,8 +155,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		mtd1Name.setFont(new Font("sanSerif", Font.BOLD, 14));
 		mtd1Name.setLocation(300, 200);
 		mtd1Name.setHorizontalAlignment(JLabel.CENTER);
-		mtd1Name.setOpaque(true);
-		mtd1Name.setBackground(Color.PINK);
 
 		nameBgBox.add(mtd2Name);
 		mtd2Name.setSize(80, 20);
@@ -159,8 +162,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		mtd2Name.setFont(new Font("sanSerif", Font.BOLD, 14));
 		mtd2Name.setLocation(460, 200);
 		mtd2Name.setHorizontalAlignment(JLabel.CENTER);
-		mtd2Name.setOpaque(true);
-		mtd2Name.setBackground(Color.PINK);
 
 		nameBgBox.add(itemEffectText);
 		itemEffectText.setSize(400, 60);
@@ -190,6 +191,11 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 		List<ResponseItem> itemList = iss.selectItemByEffect(searchEffectName);
 
+		effectBgBox.setSize(702, 300);
+		effectBgBox.setLocation(50, 260);
+		effectBgBox.setBackground(whiteOp);
+		effectBgBox.setLayout(null);
+		
 		effectBgBox.add(flowBox);
 		flowBox.setSize(702, 200);
 		flowBox.setLocation(50, 370);
@@ -207,14 +213,12 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 			if (imgFlag) {
 				imgJlabel.setLocation(50, 0);
-				System.out.println("가로길이실행중");
 				witdhMarginPlus = 150;
 
 			} else {
 				imgJlabel.setLocation((20 + witdhMarginPlus), 0);
 				witdhMarginPlus += 130;
 				int countNum = 20 + witdhMarginPlus;
-				System.out.println("마진 실행중  :    " + countNum);
 				if (countNum > 694) {
 					imgJlabel.setLocation(50, 150);
 				}
@@ -234,14 +238,12 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 			if (textFlag) {
 				titleJlabel.setLocation(50, 90);
-				System.out.println("가로길이실행중");
 				witdhMarginTextPlus = 150;
 
 			} else {
 				titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
 				witdhMarginTextPlus += 130;
 				int countNum = 20 + witdhMarginTextPlus;
-				System.out.println("마진 실행중  :    " +  countNum);
 				if (countNum > 694) {
 					titleJlabel.setLocation(50, 150);
 				}
@@ -270,6 +272,11 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		
 		List<ResponseItem> metList = iss.selectItemByMaterial(searchMeteridlName);
 
+		meteridlBgBox.setSize(702, 300);
+		meteridlBgBox.setLocation(50, 260);
+		meteridlBgBox.setBackground(whiteOp);
+		meteridlBgBox.setLayout(null);
+		
 		meteridlBgBox.add(flowBox);
 		flowBox.setSize(702, 200);
 		flowBox.setLocation(50, 370);
@@ -307,7 +314,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 				imgJlabel.setLocation((20 + witdhMarginPlus), 30);
 				witdhMarginPlus += 120;
 				int countNum = 20 + witdhMarginPlus;
-				System.out.println("마진 실행중  :    " + countNum);
 				if (countNum > 694) {
 					imgJlabel.setLocation(50, 150);
 				}
@@ -315,7 +321,6 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 			}
 
 			imgFlag = false;
-			System.out.println(" 종족 이미지 실행  " + data.getImageAddress());
 
 		} // 아이템 이미지박스 end
 		
@@ -390,24 +395,7 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setLayout(null);
 
-		Color whiteOp = new Color(225, 225, 225, 150);
-		Color whiteOp100 = new Color(225, 225, 225, 0);
 		setContentPane(backgroundImg);
-
-		nameBgBox.setSize(702, 300);
-		nameBgBox.setLocation(50, 260);
-		nameBgBox.setBackground(whiteOp);
-		nameBgBox.setLayout(null);
-
-		effectBgBox.setSize(702, 300);
-		effectBgBox.setLocation(50, 260);
-		effectBgBox.setBackground(whiteOp);
-		effectBgBox.setLayout(null);
-
-		meteridlBgBox.setSize(702, 300);
-		meteridlBgBox.setLocation(50, 260);
-		meteridlBgBox.setBackground(whiteOp);
-		meteridlBgBox.setLayout(null);
 
 		flowBox.setBackground(whiteOp100);
 
@@ -449,19 +437,38 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nameBtn) {
-			System.out.println("이름이 선택되었습니다.");
 			nameSelect();
 			isBtnType = NAME_SEARCH_BTN;
-
+			effectBgBox.removeAll();
+			meteridlBgBox.removeAll();
+			flowBox.removeAll();
+			remove(effectBgBox);
+			remove(meteridlBgBox);
+			remove(border);
+			remove(mtdCollabo);
+			
 		} else if (e.getSource() == effectBtn) {
-			System.out.println("효과가 선택되었습니다.");
 			effectSelect();
 			isBtnType = EFFECT_SEARCH_BTN;
+			nameBgBox.removeAll();
+			meteridlBgBox.removeAll();
+			flowBox.removeAll();
+			remove(nameBgBox);
+			remove(meteridlBgBox);
+			remove(border);
+			remove(mtdCollabo);
+			remove(itemImgBox);
 
 		} else if (e.getSource() == meteridlBtn) {
-			System.out.println("재료가 선택되었습니다.");
 			meteridlSelect();
 			isBtnType = METERIDL_SEARCH_BTN;
+			
+			nameBgBox.removeAll();
+			effectBgBox.removeAll();
+			flowBox.removeAll();
+			remove(nameBgBox);
+			remove(effectBgBox);
+			remove(itemImgBox);
 
 		} else if (e.getSource() == searchBtn) {
 			actionType(isBtnType);
@@ -475,14 +482,11 @@ public class ItemSearchFrame extends JFrame implements ActionListener {
 
 		if (isBtnType == NAME_SEARCH_BTN) {
 			nameSearch(searchBox.getText().trim());
-			System.out.println("이름 검색");
-
+			
 		} else if (isBtnType == EFFECT_SEARCH_BTN) {
-			System.out.println("효과 검색");
 			effectSearch(searchBox.getText().trim());
 
 		} else if (isBtnType == METERIDL_SEARCH_BTN) {
-			System.out.println("재료 검색");
 			meteridlSearch(searchBox.getText().trim());
 
 		} else {

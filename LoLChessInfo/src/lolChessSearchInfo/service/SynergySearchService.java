@@ -17,7 +17,7 @@ public class SynergySearchService implements ISynergySearchService {
 	private ResultSet rs;
 
 	public SynergySearchService() {
-		this.dbHelper = DBHelper.getInstance();
+		this.dbHelper = DBHelper.getInstance(); 
 	}
 
 	@Override

@@ -72,15 +72,12 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == championSearch) {
-			System.out.println("챔피온 검색이 선택되었습니다.");
 			 new ChampionSerchFrame();
 			setVisible(false);
 		}else if(e.getSource() == itemSearch) {
-			System.out.println("아이템 검색이 선택되었습니다.");
 			new ItemSearchFrame();
 			setVisible(false);
 		}else if(e.getSource() == synergySearch) {
-			System.out.println("시너지 검색이 선택되었습니다.");
 			new SynergySearchFrame();
 			setVisible(false);
 		}else if(e.getSource() == hostButton) {
