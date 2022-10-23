@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.dto.ResponseChampion;
 import lolChessSearchInfo.frame.host.MenuHostMainFrame;
 
 public class MenuSelectFrame extends JFrame implements ActionListener{
@@ -19,7 +18,7 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 	JButton synergySearch;
 	JButton hostButton;   //승원
 	
-	public MenuSelectFrame() {
+	public MenuSelectFrame() {  
 		initData();
 		setInitLayout();
 		addEventListener();
@@ -81,7 +80,9 @@ public class MenuSelectFrame extends JFrame implements ActionListener{
 		}else if(e.getSource() == hostButton) {
 		System.out.println("관리자실행되었습니다");
 //		hostButton.setText("관리자1");
+		setVisible(false);
 		new MenuHostMainFrame();
+		
 		}
 	}
 	
