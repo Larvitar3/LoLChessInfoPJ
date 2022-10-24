@@ -11,6 +11,7 @@ public interface IChampionSearchService {
 	List<ResponseLine> selectChampionByLine(String lineName);
 	List<ResponseChampion> selectChampionBytribe(String tribeName);
 	List<ResponseChampion> selectChampionByPrice(String price);
-	// champion end 
+	
+
 	
 }

@@ -25,59 +25,59 @@ CREATE TABLE championTable(
 insert into championTable
 values ( 1 , '니달리' , 1 , 600 , 60 , 42 , '★★★★☆' , 0.7 , 30 , 30 ,'Images/Nidalee.png');
 insert into championTable 
-values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\Vladimir.png' );
+values ( 2 , '블라디미르' , 1 , 700 , 40 , 24 , '★★☆☆☆' , 0.6 , 45 , 45,'Images/Vladimir.png' );
 insert into championTable 
-values ( 3 , '스카너' , 1 , 650 , 60 , 36 , '★☆☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\Skarner.png' );
+values ( 3 , '스카너' , 1 , 650 , 60 , 36 , '★☆☆☆☆' , 0.6 , 45 , 45,'Images/Skarner.png' );
 insert into championTable 
-values ( 4 , '럭스' , 2 , 600 , 30 , 21 , '★★★★☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\Lux.jpg' );
+values ( 4 , '럭스' , 2 , 600 , 30 , 21 , '★★★★☆' , 0.7 , 20 , 20,'Images/Lux.jpg' );
 insert into championTable 
-values ( 5 , '바루스' , 3 , 650 , 55 , 39 , '★★★☆☆' , 0.7 , 25 , 25,'C:\\LoLChessPJ\\Images\\Varus.png' );
+values ( 5 , '바루스' , 3 , 650 , 55 , 39 , '★★★☆☆' , 0.7 , 25 , 25,'Images/Varus.png' );
 insert into championTable 
-values ( 6 , '아우렐리온 솔' , 8 , 800 , 60 , 45 , '★★★★☆' , 0.75 , 35 , 35,'C:\\LoLChessPJ\\Images\\AurelionSol.png' );
+values ( 6 , '아우렐리온 솔' , 8 , 800 , 60 , 45 , '★★★★☆' , 0.75 , 35 , 35,'Images/AurelionSol.png' );
 insert into championTable 
-values ( 7 , '릴리아' , 2 , 750 , 40 , 28 , '★☆☆☆☆' , 0.7 , 40 , 40,'C:\\LoLChessPJ\\Images\\Lillia.png' );
+values ( 7 , '릴리아' , 2 , 750 , 40 , 28 , '★☆☆☆☆' , 0.7 , 40 , 40,'Images/Lillia.png' );
 insert into championTable 
-values ( 8 , '브라움' , 2 , 800 , 70 , 42 , '★☆☆☆☆' , 0.6 , 60 , 60,'C:\\LoLChessPJ\\Images\\Braum.png' );
+values ( 8 , '브라움' , 2 , 800 , 70 , 42 , '★☆☆☆☆' , 0.6 , 60 , 60,'Images/Braum.png' );
 insert into championTable
-values ( 9 , '다이애나' , 3 , 700 , 50 , 38 , '★☆☆☆☆' , 0.75 , 35 , 35,'C:\\LoLChessPJ\\Images\\Diana.png' );
+values ( 9 , '다이애나' , 3 , 700 , 50 , 38 , '★☆☆☆☆' , 0.75 , 35 , 35,'Images/Diana.png' );
 insert into championTable 
-values ( 10 , '올라프' , 3 , 800 , 55 , 39 , '★☆☆☆☆' , 0.7 , 50 , 50,'C:\\LoLChessPJ\\Images\\Olaf.png' );
+values ( 10 , '올라프' , 3 , 800 , 55 , 39 , '★☆☆☆☆' , 0.7 , 50 , 50,'Images/Olaf.png' );
 insert into championTable 
-values ( 11 , '세주아니' , 1 , 650 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'C:\\LoLChessPJ\\Images\\Sejuani.png' );
+values ( 11 , '세주아니' , 1 , 650 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'Images/Sejuani.png' );
 insert into championTable 
-values ( 12 , '트위치' , 2 , 550 , 55 , 39 , '★★★☆☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\Twitch.png' );
+values ( 12 , '트위치' , 2 , 550 , 55 , 39 , '★★★☆☆' , 0.7 , 20 , 20,'Images/Twitch.png' );
 insert into championTable
-values ( 13 , '제이스' , 4 , 900 , 90 , 72 , '★★★☆☆' , 0.8 , 25 , 25,'C:\\LoLChessPJ\\Images\\Jayce.jpg' );
+values ( 13 , '제이스' , 4 , 900 , 90 , 72 , '★★★☆☆' , 0.8 , 25 , 25,'Images/Jayce.jpg' );
 insert into championTable
-values ( 14 , '바드' , 5 , 850 , 60 , 42 , '★★★★☆' , 0.7 , 40 , 40,'C:\\LoLChessPJ\\Images\\Bard.png' );
+values ( 14 , '바드' , 5 , 850 , 60 , 42 , '★★★★☆' , 0.7 , 40 , 40,'Images/Bard.png' );
 insert into championTable
-values ( 15 , '쌩쌩이' , 6 , 800 , 85 , 64 , '★☆☆☆☆' , 0.75 , 50 , 50,'C:\\LoLChessPJ\\Images\\Zippy.png' );
+values ( 15 , '쌩쌩이' , 6 , 800 , 85 , 64 , '★☆☆☆☆' , 0.75 , 50 , 50,'Images/Zippy.png' );
 insert into championTable
-values ( 16 , '렐' , 2 , 700 , 50 , 30 , '★☆☆☆☆' , 0.6 , 45 , 45,'C:\\LoLChessPJ\\Images\\Rell.jpg' );
+values ( 16 , '렐' , 2 , 700 , 50 , 30 , '★☆☆☆☆' , 0.6 , 45 , 45,'Images/Rell.jpg' );
 insert into championTable 
-values ( 17 , '아펠리오스' , 2 , 500 , 60 , 42 , '★★★★☆' , 0.7 , 20 , 20,'C:\\LoLChessPJ\\Images\\Aphelios.jpg' );
+values ( 17 , '아펠리오스' , 2 , 500 , 60 , 42 , '★★★★☆' , 0.7 , 20 , 20,'Images/Aphelios.jpg' );
 insert into championTable
-values ( 18 , '렝가' , 3 , 700 , 70 , 53 , '★☆☆☆☆' , 0.75 , 30 , 30,'C:\\LoLChessPJ\\Images\\Rengar.jpg' );
+values ( 18 , '렝가' , 3 , 700 , 70 , 53 , '★☆☆☆☆' , 0.75 , 30 , 30,'Images/Rengar.jpg' );
 insert into championTable
-values ( 19 , '스웨인' , 7 , 900 , 40 , 24 , '★★☆☆☆' , 0.6 , 70 , 70,'C:\\LoLChessPJ\\Images\\Swain.jpg' );
+values ( 19 , '스웨인' , 7 , 900 , 40 , 24 , '★★☆☆☆' , 0.6 , 70 , 70,'Images/Swain.jpg' );
 insert into championTable
-values ( 20 , '나서스' , 1 , 600 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'C:\\LoLChessPJ\\Images\\Nasus.jpg' );
+values ( 20 , '나서스' , 1 , 600 , 60 , 33 , '★☆☆☆☆' , 0.55 , 40 , 40,'Images/Nasus.jpg' );
 insert into championTable
-values ( 21 , '잭스' , 2 , 750 , 55 , 39 , '★☆☆☆☆' , 0.7 , 45 , 45,'C:\\LoLChessPJ\\Images\\Jax.jpg' );
+values ( 21 , '잭스' , 2 , 750 , 55 , 39 , '★☆☆☆☆' , 0.7 , 45 , 45,'Images/Jax.jpg' );
 insert into championTable
-values ( 22 , '볼리베어' , 3 , 800 , 50 , 38 , '★☆☆☆☆' , 0.75 , 50 , 50,'C:\\LoLChessPJ\\Images\\Volibear.png' );
+values ( 22 , '볼리베어' , 3 , 800 , 50 , 38 , '★☆☆☆☆' , 0.75 , 50 , 50,'Images/Volibear.png' );
 insert into championTable
-values ( 23 , '조이' , 5 , 800 , 45 , 34 , '★★★★☆' , 0.75 , 20 , 20,'C:\\LoLChessPJ\\Images\\Zoe.png' );
+values ( 23 , '조이' , 5 , 800 , 45 , 34 , '★★★★☆' , 0.75 , 20 , 20,'Images/Zoe.png' );
 insert into championTable
-values ( 24 , '이다스' , 7 , 950 , 90 , 50 , '★☆☆☆☆' , 0.55 , 60 , 60,'C:\\LoLChessPJ\\Images\\Idas.png' );
+values ( 24 , '이다스' , 7 , 950 , 90 , 50 , '★☆☆☆☆' , 0.55 , 60 , 60,'Images/Idas.png' );
 insert into championTable
-values ( 25 , '자이라' , 2 , 600 , 40 , 26 , '★★★★☆' , 0.65 , 20 , 20,'C:\\LoLChessPJ\\Images\\Zyra.jpg' );
+values ( 25 , '자이라' , 2 , 600 , 40 , 26 , '★★★★☆' , 0.65 , 20 , 20,'Images/Zyra.jpg' );
 insert into championTable
-values ( 26 , '사일러스' , 3 , 800 , 60 , 36 , '★☆☆☆☆' , 0.6 , 50 , 50,'C:\\LoLChessPJ\\Images\\Sylas.png' );
+values ( 26 , '사일러스' , 3 , 800 , 60 , 36 , '★☆☆☆☆' , 0.6 , 50 , 50,'Images/Sylas.png' );
 insert into championTable
-values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50,'C:\\LoLChessPJ\\Images\\Pantheon.jpg' );
+values ( 27 , '판테온' , 4 , 1000 , 60 , 39 , '★☆☆☆☆' , 0.65 , 50 , 50,'Images/Pantheon.jpg' );
 insert into championTable
-values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'C:\\LoLChessPJ\\Images\\Syfen.png' );
+values ( 28 , '사이펜' , 7 , 900 , 90 , 63 , '★☆☆☆☆' , 0.7 , 60 , 60,'Images/Syfen.png' );
 
 insert into tribeTable   
 values ( 1 , '기병대' , '기병대가 방어력과 마법 저항력을 얻습니다. 
@@ -234,6 +234,12 @@ insert into tribeIdSynergyTable
 values ( 28 , 14 , 4 , '체력 +350' );
 
 -- desc synergyTable;
+select * 
+from championTable as a
+join synergyTable as b
+on a.id = b.championId;
+
+select * from synergyTable;
 
 insert into synergyTable   
 values ( 1 , 1 , 3 , null, 1 );
@@ -295,49 +301,49 @@ values ( 28 , 28 , 6 ,14, 6 );
 
 
 insert into itemMaterialTable1  
-values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
+values ( 1 , '대검' , '공격력 +10' , 'Images/BFSword.png' );
 insert into itemMaterialTable1  
-values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.png' );
+values ( 2 , '곡궁' , '공격속도 +10', 'Images/RecurveBow.png' );
 insert into itemMaterialTable1  
-values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
+values ( 3 , '갑옷' , '방어력 +20' , 'Images/ChainVest.png' );
 insert into itemMaterialTable1 
-values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
+values ( 4 , '여신의눈물' , '마나 +15' , 'Images/Tearofthegoddess.png' );
 
 insert into itemMaterialTable2  
-values ( 1 , '대검' , '공격력 +10' , 'C:\\LoLChessPJ\\Images\\BFSword.png' );
+values ( 1 , '대검' , '공격력 +10' , 'Images/BFSword.png' );
 insert into itemMaterialTable2  
-values ( 2 , '곡궁' , '공격속도 +10', 'C:\\LoLChessPJ\\Images\\RecurveBow.png' );
+values ( 2 , '곡궁' , '공격속도 +10', 'Images/RecurveBow.png' );
 insert into itemMaterialTable2  
-values ( 3 , '갑옷' , '방어력 +20' , 'C:\\LoLChessPJ\\Images\\ChainVest.png' );
+values ( 3 , '갑옷' , '방어력 +20' , 'Images/ChainVest.png' );
 insert into itemMaterialTable2 
-values ( 4 , '여신의눈물' , '마나 +15' , 'C:\\LoLChessPJ\\Images\\Tearofthegoddess.png' );
+values ( 4 , '여신의눈물' , '마나 +15' , 'Images/Tearofthegoddess.png' );
 
 -- desc itemTable;
 -- select * from itemTable;
 
 insert into itemTable  
-values ( 1 , '죽음의검' , '추가 공격력 25/45/65 획득' , 1 , 1 , 'C:\\LoLChessPJ\\Images\\LordsEdge.jpg' );
+values ( 1 , '죽음의검' , '추가 공격력 25/45/65 획득' , 1 , 1 , 'Images/LordsEdge.jpg' );
 insert into itemTable  
 values ( 2 , '거인학살자' , '기본 공격 및 스킬 사용시 20%의 추가 피해. 
-대상 최대 체력이 1900 초과 시 추가 피해 45%로 증가' , 1 , 2 , 'C:\\LoLChessPJ\\Images\\GiantSlayer.jpg' );
+대상 최대 체력이 1900 초과 시 추가 피해 45%로 증가' , 1 , 2 , 'Images/GiantSlayer.jpg' );
 insert into itemTable  
 values ( 3 , '밤의끝자락' , '체력이 60%일 때 잠시 은신하며 대상으로 지정할 수 없는 상태가 되고 해로운 효과 제거. 
-이후 추가 공격 속도 40% 획득.' , 1 , 3 , 'C:\\LoLChessPJ\\Images\\GuardianAngel.png' );
+이후 추가 공격 속도 40% 획득.' , 1 , 3 , 'Images/GuardianAngel.png' );
 insert into itemTable  
-values ( 4 , '쇼진의창' , '추가 주문력 20, 기본 공격 시 추가로 5의 마나 회복' , 1 , 4 , 'C:\\LoLChessPJ\\Images\\SpearofShojin.png' );
+values ( 4 , '쇼진의창' , '추가 주문력 20, 기본 공격 시 추가로 5의 마나 회복' , 1 , 4 , 'Images/SpearofShojin.png' );
 insert into itemTable  
-values ( 5 , '고속연사포' , '추가 공격 속도 30% 및 공격 사거리 1칸 증가' , 2 , 2 , 'C:\\LoLChessPJ\\Images\\Rapid Firecannon.png' );
+values ( 5 , '고속연사포' , '추가 공격 속도 30% 및 공격 사거리 1칸 증가' , 2 , 2 , 'Images/Rapid Firecannon.png' );
 insert into itemTable  
-values ( 6 , '거인의결의' , '공격하거나 피해를 받으면 공격력 및 주문력 2 획득 (최대 25회 중첩)' , 2 , 3 , 'C:\\LoLChessPJ\\Images\\TitansResolve.png' );
+values ( 6 , '거인의결의' , '공격하거나 피해를 받으면 공격력 및 주문력 2 획득 (최대 25회 중첩)' , 2 , 3 , 'Images/TitansResolve.png' );
 insert into itemTable  
 values ( 7 , '스태틱의단검' , '추가 공격 속도 10%. 세 번째 공격마다 4명의 적에게 튕기는 
-연쇄 번개를 발사하여 50의 마법 피해를 입히고 대상의 마법 저항력 5초 동안 50% 감소' , 2  , 4 , 'C:\\LoLChessPJ\\Images\\StatikkShiv.png' );
+연쇄 번개를 발사하여 50의 마법 피해를 입히고 대상의 마법 저항력 5초 동안 50% 감소' , 2  , 4 , 'Images/StatikkShiv.png' );
 insert into itemTable  
 values ( 8 , '덤불조끼' , '추가 방어력 40. 받는 치명타 공격의 추가 피해 75% 무효화. 기본 공격에 맞을 경우 
-주변 모든 적에게 75/100/150 ★의 마법 피해 (2.5초마다 한 번씩)' , 3 , 3 , 'C:\\LoLChessPJ\\Images\\BrambleVest.png' );
+주변 모든 적에게 75/100/150 ★의 마법 피해 (2.5초마다 한 번씩)' , 3 , 3 , 'Images/BrambleVest.png' );
 insert into itemTable  
 values ( 9 , '수호자의맹세' , '시작 마나 15 증가
 전투 당 한번: 체력이 50%까지 떨어지면, 3칸 내 아군들이 2초 동안 최대 체력의 10%에 해당하는 보호막을 획득하며 
-전투가 끝날 때까지 방어력 및 마법 저항력 15 획득' , 3 , 4 , 'C:\\LoLChessPJ\\Images\\Fimbulwinter.png' );
+전투가 끝날 때까지 방어력 및 마법 저항력 15 획득' , 3 , 4 , 'Images/Fimbulwinter.png' );
 insert into itemTable  
-values ( 10 , '푸른파수꾼' , '시작 마나 20 증가. 스킬 사용 후 마나를 20까지 회복' , 4 , 4 , 'C:\\LoLChessPJ\\Images\\BlueBuff.png' );
+values ( 10 , '푸른파수꾼' , '시작 마나 20 증가. 스킬 사용 후 마나를 20까지 회복' , 4 , 4 , 'Images/BlueBuff.png' );

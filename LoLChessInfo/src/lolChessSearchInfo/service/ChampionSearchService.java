@@ -73,14 +73,10 @@ public class ChampionSearchService implements IChampionSearchService {
 
 		ArrayList<ResponseLine> resl = new ArrayList<>();
 
-		String selectLine = "SELECT c.imageRoute AS champImage, "
-				+ " c.name AS champName, L.name AS lineName "
-				+ " FROM championtable AS c "
-				+ " JOIN synergyTable AS s "
-				+ " ON c.id = s.championId  "
-				+ " JOIN linetable AS L"
-				+ " ON s.lineId = L.id "
-				+ " WHERE L.name = ? " ;
+		String selectLine = "SELECT c.imageRoute AS champImage, " 
+		+ " c.name AS champName, L.name AS lineName "
+				+ " FROM championtable AS c " + " JOIN synergyTable AS s " + " ON c.id = s.championId  "
+				+ " JOIN linetable AS L" + " ON s.lineId = L.id " + " WHERE L.name = ? ";
 
 		System.out.println(selectLine);
 		try {
@@ -92,6 +88,7 @@ public class ChampionSearchService implements IChampionSearchService {
 				ResponseLine res = new ResponseLine();
 				res.setChampName(rs.getString("champName"));
 				res.setChampImage(rs.getString("champImage"));
+				res.setLineName(rs.getString("lineName"));
 				resl.add(res);
 			}
 
@@ -120,6 +117,7 @@ public class ChampionSearchService implements IChampionSearchService {
 				+ " FROM championtable as C " + " join synergytable AS S " + " ON c.id = s.championId "
 				+ " JOIN linetable AS L " + " ON L.id = s.lineId " + " JOIN tribetable AS T " + " ON T.id = s.tribeId1 "
 				+ " WHERE T.name = ? ";
+		ResponseChampion rc = new ResponseChampion();
 
 		try {
 			psmt = dbHelper.getConnection().prepareStatement(selectLine);
@@ -189,4 +187,13 @@ public class ChampionSearchService implements IChampionSearchService {
 		return list;
 	}
 
+	
+
+	public static void main(String[] args) {
+
+		ChampionSearchService css = new ChampionSearchService();
+		ResponseChampion rc = new ResponseChampion();
+
+
+	}
 }
