@@ -187,13 +187,5 @@ public class ChampionSearchService implements IChampionSearchService {
 		return list;
 	}
 
-	
 
-	public static void main(String[] args) {
-
-		ChampionSearchService css = new ChampionSearchService();
-		ResponseChampion rc = new ResponseChampion();
-
-
-	}
 }

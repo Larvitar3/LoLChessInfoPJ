@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lolChessSearchInfo.hostFrame.HostMainFrame;
 import lombok.Data;
 
 
@@ -84,7 +83,6 @@ public class MenuSelectFrame extends JFrame implements ActionListener {
          setVisible(false);
       } else if (e.getSource() == hostButton) {
          setVisible(false);
-         new HostMainFrame();
 
       }
    }

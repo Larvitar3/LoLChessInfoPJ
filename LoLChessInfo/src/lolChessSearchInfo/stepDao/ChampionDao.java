@@ -198,27 +198,5 @@ public class ChampionDao implements IChampionDtoS {
 
 	}
 
-	public static void main(String[] args) {
-
-		ChampionDao C = new ChampionDao();
-		ResponseChampion R = new ResponseChampion();
-		RequestChampion R2 = new RequestChampion();
-
-		System.out.println(C.selectChamIdAll());
-
-		R2.setName("리산드라");
-		R2.setPrice("5");
-		R2.setHp("800");
-		R2.setDefense("8");
-		R2.setPower("5");
-		R2.setAttackRange("★★");
-		R2.setAttackSpeed("0.75");
-		R2.setImageAddress("aidnandans");
-		R2.setMagicResistance("555");
-		R2.setDps("66666");
-
-		// C.insertChamp(R2);
-
-	}
 
 }

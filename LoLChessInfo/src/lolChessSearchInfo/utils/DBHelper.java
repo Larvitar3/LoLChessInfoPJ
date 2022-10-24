@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBHelper {
 
-	private static final String DB_HOST = "localhost";
+	private static final String DB_HOST = "192.168.7.50";
 	private static final int DB_PORT = 3306;
 	private static final String DB_DATABASE_NAME = "LoLChessInfo";
 	private static final String DB_USER_NAME = "root";

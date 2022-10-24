@@ -668,18 +668,6 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 		} else if (e.getSource() == searchBtn) {
 			actionType(isBtnType);
 
-//			   if(isBtnType == isSearch) {		   
-//		        	 championImgBox.removeAll();
-//		             lineBgBox.removeAll();
-//		             championBgBox.removeAll();
-//		             tribeBgBox.removeAll();
-//		             flowBox.removeAll();
-//		             remove(championBgBox);
-//		             remove(lineBgBox);
-//		             remove(tribeBgBox);
-//		             priceBgBox.removeAll();
-//		             remove(priceBgBox);}	
-//			   }
 
 		} else if (e.getSource() == homeBtn) {
 			System.out.println("홈버튼");

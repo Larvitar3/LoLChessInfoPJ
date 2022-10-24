@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,62 +12,294 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import lolChessSearchInfo.dto.RequestChampion;
-import lolChessSearchInfo.dto.ResponseChampion;
 import lolChessSearchInfo.stepDao.ChampionDao;
 import lombok.Data;
 import lombok.Getter;
 
-@Getter
 public class HostInsertFrame extends JFrame implements ActionListener {
 
-	ChampionDao chpd;
-	JLabel backgroundImg;
-	JButton championBtn;
-	JButton itemBtn;
+	private ChampionDao chpd;
+	private JLabel backgroundImg;
+	private JButton championBtn;
+	public ChampionDao getChpd() {
+		return chpd;
+	}
 
-	JLabel name;
-	JTextField inputName;
+	public void setChpd(ChampionDao chpd) {
+		this.chpd = chpd;
+	}
 
-	JLabel price;
-	JTextField inputPrice;
+	public JLabel getBackgroundImg() {
+		return backgroundImg;
+	}
 
-	JLabel hp;
-	JTextField inputHp;
+	public void setBackgroundImg(JLabel backgroundImg) {
+		this.backgroundImg = backgroundImg;
+	}
 
-	JLabel power;
-	JTextField inputPower;
+	public JButton getChampionBtn() {
+		return championBtn;
+	}
 
-	JLabel dps;
-	JTextField inputDps;
+	public void setChampionBtn(JButton championBtn) {
+		this.championBtn = championBtn;
+	}
 
-	JLabel attackRange;
-	JTextField inputAttackRange;
+	public JButton getItemBtn() {
+		return itemBtn;
+	}
 
-	JLabel attackSpeed;
-	JTextField inputAttackSpeed;
+	public void setItemBtn(JButton itemBtn) {
+		this.itemBtn = itemBtn;
+	}
 
-	JLabel defense;
-	JTextField inputDefense;
 
-	JLabel magicResistance;
-	JTextField inputMagicResistance;
+	public void setName(JLabel name) {
+		this.name = name;
+	}
 
-	JLabel imageAddress;
-	JTextField inputImageAddress;
+	public JTextField getInputName() {
+		return inputName;
+	}
 
-	JButton insertBtn;
+	public void setInputName(JTextField inputName) {
+		this.inputName = inputName;
+	}
 
-	JButton homeBtn;
+	public JLabel getPrice() {
+		return price;
+	}
+
+	public void setPrice(JLabel price) {
+		this.price = price;
+	}
+
+	public JTextField getInputPrice() {
+		return inputPrice;
+	}
+
+	public void setInputPrice(JTextField inputPrice) {
+		this.inputPrice = inputPrice;
+	}
+
+	public JLabel getHp() {
+		return hp;
+	}
+
+	public void setHp(JLabel hp) {
+		this.hp = hp;
+	}
+
+	public JTextField getInputHp() {
+		return inputHp;
+	}
+
+	public void setInputHp(JTextField inputHp) {
+		this.inputHp = inputHp;
+	}
+
+	public JLabel getPower() {
+		return power;
+	}
+
+	public void setPower(JLabel power) {
+		this.power = power;
+	}
+
+	public JTextField getInputPower() {
+		return inputPower;
+	}
+
+	public void setInputPower(JTextField inputPower) {
+		this.inputPower = inputPower;
+	}
+
+	public JLabel getDps() {
+		return dps;
+	}
+
+	public void setDps(JLabel dps) {
+		this.dps = dps;
+	}
+
+	public JTextField getInputDps() {
+		return inputDps;
+	}
+
+	public void setInputDps(JTextField inputDps) {
+		this.inputDps = inputDps;
+	}
+
+	public JLabel getAttackRange() {
+		return attackRange;
+	}
+
+	public void setAttackRange(JLabel attackRange) {
+		this.attackRange = attackRange;
+	}
+
+	public JTextField getInputAttackRange() {
+		return inputAttackRange;
+	}
+
+	public void setInputAttackRange(JTextField inputAttackRange) {
+		this.inputAttackRange = inputAttackRange;
+	}
+
+	public JLabel getAttackSpeed() {
+		return attackSpeed;
+	}
+
+	public void setAttackSpeed(JLabel attackSpeed) {
+		this.attackSpeed = attackSpeed;
+	}
+
+	public JTextField getInputAttackSpeed() {
+		return inputAttackSpeed;
+	}
+
+	public void setInputAttackSpeed(JTextField inputAttackSpeed) {
+		this.inputAttackSpeed = inputAttackSpeed;
+	}
+
+	public JLabel getDefense() {
+		return defense;
+	}
+
+	public void setDefense(JLabel defense) {
+		this.defense = defense;
+	}
+
+	public JTextField getInputDefense() {
+		return inputDefense;
+	}
+
+	public void setInputDefense(JTextField inputDefense) {
+		this.inputDefense = inputDefense;
+	}
+
+	public JLabel getMagicResistance() {
+		return magicResistance;
+	}
+
+	public void setMagicResistance(JLabel magicResistance) {
+		this.magicResistance = magicResistance;
+	}
+
+	public JTextField getInputMagicResistance() {
+		return inputMagicResistance;
+	}
+
+	public void setInputMagicResistance(JTextField inputMagicResistance) {
+		this.inputMagicResistance = inputMagicResistance;
+	}
+
+	public JLabel getImageAddress() {
+		return imageAddress;
+	}
+
+	public void setImageAddress(JLabel imageAddress) {
+		this.imageAddress = imageAddress;
+	}
+
+	public JTextField getInputImageAddress() {
+		return inputImageAddress;
+	}
+
+	public void setInputImageAddress(JTextField inputImageAddress) {
+		this.inputImageAddress = inputImageAddress;
+	}
+
+	public JButton getInsertBtn() {
+		return insertBtn;
+	}
+
+	public void setInsertBtn(JButton insertBtn) {
+		this.insertBtn = insertBtn;
+	}
+
+	public JButton getHomeBtn() {
+		return homeBtn;
+	}
+
+	public void setHomeBtn(JButton homeBtn) {
+		this.homeBtn = homeBtn;
+	}
+
+	public Color getWhiteOp() {
+		return whiteOp;
+	}
+
+	public void setWhiteOp(Color whiteOp) {
+		this.whiteOp = whiteOp;
+	}
+
+	public Color getWhiteOp100() {
+		return whiteOp100;
+	}
+
+	public void setWhiteOp100(Color whiteOp100) {
+		this.whiteOp100 = whiteOp100;
+	}
+
+	public JPanel getItemBgBox() {
+		return itemBgBox;
+	}
+
+	public void setItemBgBox(JPanel itemBgBox) {
+		this.itemBgBox = itemBgBox;
+	}
+
+	public JPanel getChampionBgBox() {
+		return championBgBox;
+	}
+
+	public void setChampionBgBox(JPanel championBgBox) {
+		this.championBgBox = championBgBox;
+	}
+
+	private JButton itemBtn;
+
+	private JLabel name;
+	private JTextField inputName;
+
+	private JLabel price;
+	private JTextField inputPrice;
+
+	private JLabel hp;
+	private JTextField inputHp;
+
+	private JLabel power;
+	private JTextField inputPower;
+
+	private JLabel dps;
+	private JTextField inputDps;
+
+	private JLabel attackRange;
+	private JTextField inputAttackRange;
+
+	private JLabel attackSpeed;
+	private JTextField inputAttackSpeed;
+
+	private JLabel defense;
+	private JTextField inputDefense;
+
+	private JLabel magicResistance;
+	private JTextField inputMagicResistance;
+
+	private JLabel imageAddress;
+	private JTextField inputImageAddress;
+
+	private JButton insertBtn;
+
+	private JButton homeBtn;
 
 	Color whiteOp = new Color(225, 225, 225, 150);
 	Color whiteOp100 = new Color(225, 225, 225, 0);
 
-	JPanel itemBgBox;
-	JPanel championBgBox;
+	private JPanel itemBgBox;
+	private JPanel championBgBox;
 
-
-	
 	public HostInsertFrame() {
 		initData();
 		setInitLayout();
@@ -122,13 +353,13 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 	}
 
 	void insertChamp() {
-		
+
 		add(championBgBox);
 		championBgBox.setSize(700, 300);
 		championBgBox.setLocation(52, 260);
 		championBgBox.setLayout(null);
 		championBgBox.setBackground(whiteOp);
-		
+
 		championBgBox.add(name);
 		name.setSize(80, 20);
 		name.setLocation(20, 20);
@@ -136,7 +367,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputName);
 		inputName.setSize(100, 30);
 		inputName.setLocation(20, 45);
-		
+
 		championBgBox.add(price);
 		price.setSize(50, 20);
 		price.setLocation(150, 20);
@@ -144,7 +375,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputPrice);
 		inputPrice.setSize(50, 30);
 		inputPrice.setLocation(150, 45);
-		
+
 		championBgBox.add(hp);
 		hp.setSize(50, 20);
 		hp.setLocation(230, 20);
@@ -152,7 +383,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputHp);
 		inputHp.setSize(50, 30);
 		inputHp.setLocation(230, 45);
-		
+
 		championBgBox.add(power);
 		power.setSize(50, 20);
 		power.setLocation(310, 20);
@@ -160,8 +391,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputPower);
 		inputPower.setSize(50, 30);
 		inputPower.setLocation(310, 45);
-		
-		
+
 		championBgBox.add(dps);
 		dps.setSize(50, 20);
 		dps.setLocation(390, 20);
@@ -169,7 +399,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputDps);
 		inputDps.setSize(50, 30);
 		inputDps.setLocation(390, 45);
-		
+
 		championBgBox.add(attackRange);
 		attackRange.setSize(80, 20);
 		attackRange.setLocation(500, 20);
@@ -177,7 +407,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputAttackRange);
 		inputAttackRange.setSize(80, 30);
 		inputAttackRange.setLocation(500, 45);
-		
+
 		championBgBox.add(attackSpeed);
 		attackSpeed.setSize(80, 20);
 		attackSpeed.setLocation(610, 20);
@@ -185,7 +415,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputAttackSpeed);
 		inputAttackSpeed.setSize(80, 30);
 		inputAttackSpeed.setLocation(610, 45);
-		
+
 		championBgBox.add(defense);
 		defense.setSize(100, 20);
 		defense.setLocation(20, 100);
@@ -193,7 +423,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputDefense);
 		inputDefense.setSize(100, 30);
 		inputDefense.setLocation(20, 125);
-		
+
 		championBgBox.add(magicResistance);
 		magicResistance.setSize(100, 20);
 		magicResistance.setLocation(150, 100);
@@ -201,7 +431,7 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputMagicResistance);
 		inputMagicResistance.setSize(100, 30);
 		inputMagicResistance.setLocation(150, 125);
-		
+
 		championBgBox.add(imageAddress);
 		imageAddress.setSize(200, 20);
 		imageAddress.setLocation(280, 100);
@@ -209,12 +439,12 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 		championBgBox.add(inputImageAddress);
 		inputImageAddress.setSize(200, 30);
 		inputImageAddress.setLocation(280, 125);
-		
+
 		championBgBox.add(insertBtn);
 		insertBtn.setFont(new Font("sanSerif", Font.BOLD, 13));
 		insertBtn.setSize(100, 30);
 		insertBtn.setLocation(510, 125);
-		
+
 		repaint();
 	}
 
@@ -257,7 +487,6 @@ public class HostInsertFrame extends JFrame implements ActionListener {
 			chpd.insertChamp(this);
 		} else if (e.getSource() == homeBtn) {
 			System.out.println("홈버튼");
-			new HostMainFrame();
 			this.setVisible(false);
 		}
 	}
