@@ -131,52 +131,61 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 
 		} else {
 			remove(noList);
-
-			championBgBox.add(championImgBox);
+			
+			flowBox.add(championImgBox);
+			
 			ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
 			championImgBox.setIcon(imageAddress);
 
 			championBgBox.setSize(704, 300);
 			championBgBox.setLocation(53, 260);
 			championBgBox.setBackground(whiteOp);
-
-			championBgBox.add(cName);
+			
+			championBgBox.add(flowBox);
+			flowBox.setSize(704, 300);
+			flowBox.setLocation(53, 260);
+			flowBox.setLayout(null);
+			
+			System.out.println(championImgBox.getLocation());
+			
+			championImgBox.setLocation(0,0);
+			
+			flowBox.add(cName);
 
 			cName.setText(rcCBN.getName());
 
-			championBgBox.add(price);
+			flowBox.add(price);
 			price.setText("X " + rcCBN.getPrice());
 
-			championBgBox.add(tribeName);
+			flowBox.add(tribeName);
 			tribeName.setText(rcCBN.getTribeName());
 
 			if (rcCBN.getTribeName2() != null) {
-				championBgBox.add(tribeName2);
+				flowBox.add(tribeName2);
 				tribeName2.setText("|      " + rcCBN.getTribeName2());
 			}
 
-			championBgBox.add(hp);
+			flowBox.add(hp);
 			hp.setText("체력  " + rcCBN.getHp());
-
-			championBgBox.add(power);
+			flowBox.add(power);
 			power.setText("     |   공격력  " + rcCBN.getPower() + "     |  ");
 
-			championBgBox.add(dps);
+			flowBox.add(dps);
 			dps.setText("DPS   " + rcCBN.getDps());
 
-			championBgBox.add(attackRange);
+			flowBox.add(attackRange);
 			attackRange.setText("공격사거리   " + rcCBN.getAttackRange());
 
-			championBgBox.add(attackSpeed);
+			flowBox.add(attackSpeed);
 			attackSpeed.setText("|     공격속도   " + rcCBN.getAttackSpeed());
 
-			championBgBox.add(defense);
+			flowBox.add(defense);
 			defense.setText("방어력   " + rcCBN.getDefense());
 
-			championBgBox.add(magicResistance);
+			flowBox.add(magicResistance);
 			magicResistance.setText("|     마법저항력   " + rcCBN.getMagicResistance());
 
-			championBgBox.add(priceCoin);
+			flowBox.add(priceCoin);
 
 			championImgBox.setSize(120, 120);
 			championImgBox.setLocation(77, 110);
@@ -217,10 +226,12 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			defense.setFont(new Font("sanSerif", Font.BOLD, 18));
 			defense.setLocation(225, 220);
 
+			
 			magicResistance.setSize(200, 25);
 			magicResistance.setFont(new Font("sanSerif", Font.BOLD, 18));
 			magicResistance.setLocation(345, 220);
 
+			add(flowBox);
 			add(championBgBox);
 
 			repaint();
@@ -614,7 +625,7 @@ public class ChampionSerchFrame extends JFrame implements ActionListener {
 			remove(noList);
 			repaint();
 
-			isSearch = RESELECT_NAME_BTN;
+
 
 		} else if (e.getSource() == lineBtn) {
 			lineSelect();

@@ -19,7 +19,7 @@ public class MenuSelectFrame extends JFrame implements ActionListener {
    JButton itemSearch;
    JButton synergySearch;
    JButton hostButton; // 승원
-
+ 
    public MenuSelectFrame() {
       initData();
       setInitLayout();
