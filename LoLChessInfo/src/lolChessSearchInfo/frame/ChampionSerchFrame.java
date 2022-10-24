@@ -20,622 +20,698 @@ import lolChessSearchInfo.service.ChampionSearchService;
 
 public class ChampionSerchFrame extends JFrame implements ActionListener {
 
-   ChampionSearchService css;
-   JLabel backgroundImg;
-
-   JButton nameBtn;
-   JButton lineBtn;
-   JButton tribeBtn;
-   JButton priceBtn;
-   JButton homeBtn;
-   // Btn end
-
-   JTextField searchBox;
-   JButton searchBtn;
-   // searchBox end
-
-   JLabel championImgBox;
-   String imgAddress;
-   JLabel cName;
-   JLabel price;
-   JLabel priceCoin;
-   JLabel tribeName;
-   JLabel tribeName2;
-   JLabel hp;
-   JLabel power;
-   JLabel dps;
-   JLabel attackRange;
-   JLabel attackSpeed;
-   JLabel defense;
-   JLabel magicResistance;
-   // championBox end
-
-   JPanel championBgBox;
-   JPanel lineBgBox;
-   JPanel tribeBgBox;
-   JPanel priceBgBox;
-
-   JPanel flowBox;
-   Color whiteOp = new Color(225, 225, 225, 150);
-   Color whiteOp100 = new Color(225, 225, 225, 0);
-
-   public ChampionSerchFrame() {
-      initData();
-      setInitLayout();
-      addEventListener();
-
-   }
-
-   private void initData() {
-      setSize(810, 640);
-      setTitle("챔피언 검색");
-      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-      backgroundImg = new JLabel(new ImageIcon("Images/selectBg.jpg"));
+	ChampionSearchService css;
+	JLabel backgroundImg;
+
+	JButton nameBtn;
+	JButton lineBtn;
+	JButton tribeBtn;
+	JButton priceBtn;
+	JButton homeBtn;
+	// Btn end
+
+	JTextField searchBox;
+	JButton searchBtn;
+	// searchBox end
+
+	JLabel championImgBox;
+	String imgAddress;
+	JLabel cName;
+	JLabel price;
+	JLabel priceCoin;
+	JLabel tribeName;
+	JLabel tribeName2;
+	JLabel hp;
+	JLabel power;
+	JLabel dps;
+	JLabel attackRange;
+	JLabel attackSpeed;
+	JLabel defense;
+	JLabel magicResistance;
+	// championBox end
+
+	JPanel championBgBox;
+	JPanel lineBgBox;
+	JPanel tribeBgBox;
+	JPanel priceBgBox;
+
+	JLabel noList;
+
+	JPanel flowBox;
+	Color whiteOp = new Color(225, 225, 225, 150);
+	Color whiteOp100 = new Color(225, 225, 225, 0);
+
+	public ChampionSerchFrame() {
+		initData();
+		setInitLayout();
+		addEventListener();
+
+	}
+
+	private void initData() {
+		setSize(810, 640);
+		setTitle("챔피언 검색");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		backgroundImg = new JLabel(new ImageIcon("Images/selectBg.jpg"));
+
+		nameBtn = new JButton("NAME");
+		lineBtn = new JButton("LINE");
+		tribeBtn = new JButton("TRIBE");
+		priceBtn = new JButton("PRICE");
+		homeBtn = new JButton("HOME");
+		// Btn End
 
-      nameBtn = new JButton("NAME");
-      lineBtn = new JButton("LINE");
-      tribeBtn = new JButton("TRIBE");
-      priceBtn = new JButton("PRICE");
-      homeBtn = new JButton("HOME");
-      // Btn End
-
-      searchBox = new JTextField();
-      searchBtn = new JButton("검색");
-      // searchBox end
-
-      championBgBox = new JPanel();
-      lineBgBox = new JPanel();
-      flowBox = new JPanel();
-      tribeBgBox = new JPanel();
-      priceBgBox = new JPanel();
-
-      championImgBox = new JLabel();
-
-      cName = new JLabel();
-      price = new JLabel();
-      tribeName = new JLabel();
-      tribeName2 = new JLabel();
-      hp = new JLabel();
-      power = new JLabel();
-      dps = new JLabel();
-      attackRange = new JLabel();
-      attackSpeed = new JLabel();
-      defense = new JLabel();
-      magicResistance = new JLabel();
-
-      ImageIcon coinImg = new ImageIcon("Images/coin.png");
-      priceCoin = new JLabel(coinImg);
-
-      css = new ChampionSearchService();
+		searchBox = new JTextField();
+		searchBtn = new JButton("검색");
+		// searchBox end
 
-   }
+		championBgBox = new JPanel();
+		lineBgBox = new JPanel();
+		flowBox = new JPanel();
+		tribeBgBox = new JPanel();
+		priceBgBox = new JPanel();
 
-   void nameSearch(String searchName) {
+		championImgBox = new JLabel();
 
-      ResponseChampion rcCBN = css.selectChampionByName(searchName);
+		cName = new JLabel();
+		price = new JLabel();
+		tribeName = new JLabel();
+		tribeName2 = new JLabel();
+		hp = new JLabel();
+		power = new JLabel();
+		dps = new JLabel();
+		attackRange = new JLabel();
+		attackSpeed = new JLabel();
+		defense = new JLabel();
+		magicResistance = new JLabel();
 
-      if (rcCBN.getName() == null) {
-         System.out.println("없는 챔피언 입니다.");
-      } else {
+		ImageIcon coinImg = new ImageIcon("Images/coin.png");
+		priceCoin = new JLabel(coinImg);
 
-         championBgBox.add(championImgBox);
-         ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
-         championImgBox.setIcon(imageAddress);
+		noList = new JLabel("검색 결과가 없습니다. 다시 입력해주세요.");
 
-         championBgBox.setSize(704, 300);
-         championBgBox.setLocation(53, 260);
-         championBgBox.setBackground(whiteOp);
+		css = new ChampionSearchService();
 
-         championBgBox.add(cName);
+	}
 
-         cName.setText(rcCBN.getName());
+	void nameSearch(String searchName) {
 
-         championBgBox.add(price);
-         price.setText("X " + rcCBN.getPrice());
+		ResponseChampion rcCBN = css.selectChampionByName(searchName);
 
-         championBgBox.add(tribeName);
-         tribeName.setText(rcCBN.getTribeName());
+		if (rcCBN.getName() == null) {
 
-         if (rcCBN.getTribeName2() != null) {
-            championBgBox.add(tribeName2);
-            tribeName2.setText("|      " + rcCBN.getTribeName2());
-         }
+			add(noList);
+			noList.setSize(704, 300);
+			noList.setLocation(53, 260);
+			noList.setOpaque(true);
+			noList.setBackground(whiteOp);
+			noList.setHorizontalAlignment(JLabel.CENTER);
+			noList.setFont(new Font("sanSerif", Font.BOLD, 18));
 
-         championBgBox.add(hp);
-         hp.setText("체력  " + rcCBN.getHp());
+		} else {
+			remove(noList);
 
-         championBgBox.add(power);
-         power.setText("     |   공격력  " + rcCBN.getPower() + "     |  ");
+			championBgBox.add(championImgBox);
+			ImageIcon imageAddress = new ImageIcon(rcCBN.getImageAddress());
+			championImgBox.setIcon(imageAddress);
 
-         championBgBox.add(dps);
-         dps.setText("DPS   " + rcCBN.getDps());
+			championBgBox.setSize(704, 300);
+			championBgBox.setLocation(53, 260);
+			championBgBox.setBackground(whiteOp);
 
-         championBgBox.add(attackRange);
-         attackRange.setText("공격사거리   " + rcCBN.getAttackRange());
+			championBgBox.add(cName);
 
-         championBgBox.add(attackSpeed);
-         attackSpeed.setText("|     공격속도   " + rcCBN.getAttackSpeed());
+			cName.setText(rcCBN.getName());
 
-         championBgBox.add(defense);
-         defense.setText("방어력   " + rcCBN.getDefense());
+			championBgBox.add(price);
+			price.setText("X " + rcCBN.getPrice());
 
-         championBgBox.add(magicResistance);
-         magicResistance.setText("|     마법저항력   " + rcCBN.getMagicResistance());
+			championBgBox.add(tribeName);
+			tribeName.setText(rcCBN.getTribeName());
 
-         championBgBox.add(priceCoin);
+			if (rcCBN.getTribeName2() != null) {
+				championBgBox.add(tribeName2);
+				tribeName2.setText("|      " + rcCBN.getTribeName2());
+			}
 
-         championImgBox.setSize(120, 120);
-         championImgBox.setLocation(77, 110);
+			championBgBox.add(hp);
+			hp.setText("체력  " + rcCBN.getHp());
 
-         cName.setSize(120, 20);
-         cName.setFont(new Font("sanSerif", Font.BOLD, 16));
-         cName.setLocation(105, 240);
+			championBgBox.add(power);
+			power.setText("     |   공격력  " + rcCBN.getPower() + "     |  ");
 
-         tribeName.setSize(200, 25);
-         tribeName.setFont(new Font("sanSerif", Font.BOLD, 18));
-         tribeName.setLocation(225, 105);
+			championBgBox.add(dps);
+			dps.setText("DPS   " + rcCBN.getDps());
 
-         tribeName2.setSize(200, 25);
-         tribeName2.setFont(new Font("sanSerif", Font.BOLD, 18));
-         tribeName2.setLocation(325, 105);
+			championBgBox.add(attackRange);
+			attackRange.setText("공격사거리   " + rcCBN.getAttackRange());
 
-         hp.setSize(100, 25);
-         hp.setFont(new Font("sanSerif", Font.BOLD, 18));
-         hp.setLocation(225, 140);
+			championBgBox.add(attackSpeed);
+			attackSpeed.setText("|     공격속도   " + rcCBN.getAttackSpeed());
 
-         power.setSize(180, 25);
-         power.setFont(new Font("sanSerif", Font.BOLD, 18));
-         power.setLocation(300, 140);
+			championBgBox.add(defense);
+			defense.setText("방어력   " + rcCBN.getDefense());
 
-         dps.setSize(100, 25);
-         dps.setFont(new Font("sanSerif", Font.BOLD, 18));
-         dps.setLocation(475, 140);
+			championBgBox.add(magicResistance);
+			magicResistance.setText("|     마법저항력   " + rcCBN.getMagicResistance());
 
-         attackRange.setSize(200, 25);
-         attackRange.setFont(new Font("sanSerif", Font.BOLD, 18));
-         attackRange.setLocation(225, 180);
+			championBgBox.add(priceCoin);
 
-         attackSpeed.setSize(200, 25);
-         attackSpeed.setFont(new Font("sanSerif", Font.BOLD, 18));
-         attackSpeed.setLocation(425, 180);
+			championImgBox.setSize(120, 120);
+			championImgBox.setLocation(77, 110);
 
-         defense.setSize(200, 25);
-         defense.setFont(new Font("sanSerif", Font.BOLD, 18));
-         defense.setLocation(225, 220);
+			cName.setSize(120, 20);
+			cName.setFont(new Font("sanSerif", Font.BOLD, 16));
+			cName.setLocation(105, 240);
 
-         magicResistance.setSize(200, 25);
-         magicResistance.setFont(new Font("sanSerif", Font.BOLD, 18));
-         magicResistance.setLocation(345, 220);
+			tribeName.setSize(200, 25);
+			tribeName.setFont(new Font("sanSerif", Font.BOLD, 18));
+			tribeName.setLocation(225, 105);
 
-         add(championBgBox);
+			tribeName2.setSize(200, 25);
+			tribeName2.setFont(new Font("sanSerif", Font.BOLD, 18));
+			tribeName2.setLocation(325, 105);
 
-         repaint();
+			hp.setSize(100, 25);
+			hp.setFont(new Font("sanSerif", Font.BOLD, 18));
+			hp.setLocation(225, 140);
 
-      }
-   }
+			power.setSize(180, 25);
+			power.setFont(new Font("sanSerif", Font.BOLD, 18));
+			power.setLocation(300, 140);
 
-   private void nameSelect() {
+			dps.setSize(100, 25);
+			dps.setFont(new Font("sanSerif", Font.BOLD, 18));
+			dps.setLocation(475, 140);
 
-      add(searchBox);
-      add(searchBtn);
+			attackRange.setSize(200, 25);
+			attackRange.setFont(new Font("sanSerif", Font.BOLD, 18));
+			attackRange.setLocation(225, 180);
 
-      repaint();
-   }
-   // end of nameSelect ============================
+			attackSpeed.setSize(200, 25);
+			attackSpeed.setFont(new Font("sanSerif", Font.BOLD, 18));
+			attackSpeed.setLocation(425, 180);
 
-   void lineSearch(String searchLineName) {
+			defense.setSize(200, 25);
+			defense.setFont(new Font("sanSerif", Font.BOLD, 18));
+			defense.setLocation(225, 220);
 
-      System.out.println("실행");
+			magicResistance.setSize(200, 25);
+			magicResistance.setFont(new Font("sanSerif", Font.BOLD, 18));
+			magicResistance.setLocation(345, 220);
 
-      List<ResponseLine> resList = css.selectChampionByLine(searchLineName);
+			add(championBgBox);
 
-      lineBgBox.setSize(704, 300);
-      lineBgBox.setLocation(53, 260);
-      lineBgBox.setBackground(whiteOp);
-      lineBgBox.setLayout(null);
+			repaint();
 
-      lineBgBox.add(flowBox);
-      flowBox.setSize(704, 200);
-      flowBox.setLocation(53, 370);
-      flowBox.setLayout(null);
+		}
+	}
 
-      int witdhMarginPlus = 0;
-      int witdhMarginTextPlus = 0;
-      boolean imgFlag = true;
-      boolean textFlag = true;
+	private void nameSelect() {
 
-      for (ResponseLine data : resList) {
+		add(searchBox);
+		add(searchBtn);
 
-         JLabel imgJlabel = new JLabel(new ImageIcon(data.getChampImage()));
-         flowBox.add(imgJlabel);
-         imgJlabel.setSize(80, 80);
+		repaint();
+	}
+	// end of nameSelect ============================
 
-         if (imgFlag) {
-            imgJlabel.setLocation(50, 0);
-            System.out.println("가로길이실행중");
-            witdhMarginPlus = 150;
+	void lineSearch(String searchLineName) {
 
-         } else {
-            imgJlabel.setLocation((20 + witdhMarginPlus), 0);
-            witdhMarginPlus += 130;
-            int countNum = 20 + witdhMarginPlus;
-            System.out.println("마진 실행중  :    " + countNum);
-            if (countNum > 694) {
-               imgJlabel.setLocation(50, 150);
-            }
+		System.out.println("실행");
 
-         }
+		List<ResponseLine> resList = css.selectChampionByLine(searchLineName);
 
-         imgFlag = false;
-         System.out.println("이미지 실행" + data.getChampImage());
+		if (resList.isEmpty()) {
 
-      } // 라인 검색 이미지박스 end
+			add(noList);
+			noList.setSize(704, 300);
+			noList.setLocation(53, 260);
+			noList.setOpaque(true);
+			noList.setBackground(whiteOp);
+			noList.setHorizontalAlignment(JLabel.CENTER);
+			noList.setFont(new Font("sanSerif", Font.BOLD, 18));
 
-      for (ResponseLine data : resList) {
+		} else {
 
-         JLabel titleJlabel = new JLabel(data.getChampName());
-         flowBox.add(titleJlabel);
-         titleJlabel.setSize(80, 20);
-         titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
-         titleJlabel.setHorizontalAlignment(JLabel.CENTER);
+			remove(noList);
+			lineBgBox.setSize(704, 300);
+			lineBgBox.setLocation(53, 260);
+			lineBgBox.setBackground(whiteOp);
+			lineBgBox.setLayout(null);
 
-         if (textFlag) {
-            titleJlabel.setLocation(50, 90);
-            System.out.println("가로길이실행중");
-            witdhMarginTextPlus = 150;
+			lineBgBox.add(flowBox);
+			flowBox.setSize(704, 200);
+			flowBox.setLocation(53, 370);
+			flowBox.setLayout(null);
 
-         } else {
-            titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
-            witdhMarginTextPlus += 130;
-            int countNum = 20 + witdhMarginTextPlus;
-            System.out.println("마진 실행중  :    " + countNum);
-            if (countNum > 694) {
-               titleJlabel.setLocation(50, 150);
-            }
+			int witdhMarginPlus = 0;
+			int witdhMarginTextPlus = 0;
+			boolean imgFlag = true;
+			boolean textFlag = true;
 
-         }
+			for (ResponseLine data : resList) {
 
-         textFlag = false;
-         System.out.println("텍스트 실행 : " + data.getChampName());
+				JLabel imgJlabel = new JLabel(new ImageIcon(data.getChampImage()));
+				flowBox.add(imgJlabel);
+				imgJlabel.setSize(80, 80);
 
-      } // 라인 검색 텍스트 end
+				if (imgFlag) {
+					imgJlabel.setLocation(50, 0);
+					System.out.println("가로길이실행중");
+					witdhMarginPlus = 150;
 
-      add(flowBox);
-      add(lineBgBox);
-      repaint();
+				} else {
+					imgJlabel.setLocation((20 + witdhMarginPlus), 0);
+					witdhMarginPlus += 130;
+					int countNum = 20 + witdhMarginPlus;
+					System.out.println("마진 실행중  :    " + countNum);
+					if (countNum > 694) {
+						imgJlabel.setLocation(50, 150);
+					}
 
-   }
+				}
 
-   void lineSelect() {
+				imgFlag = false;
+				System.out.println("이미지 실행" + data.getChampImage());
 
-      add(searchBox);
-      add(searchBtn);
+			} // 라인 검색 이미지박스 end
 
-      repaint();
-   }
+			for (ResponseLine data : resList) {
 
-   void tribeSearch(String searchTribeName) {
+				JLabel titleJlabel = new JLabel(data.getChampName());
+				flowBox.add(titleJlabel);
+				titleJlabel.setSize(80, 20);
+				titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
+				titleJlabel.setHorizontalAlignment(JLabel.CENTER);
 
-      List<ResponseChampion> resList = css.selectChampionBytribe(searchTribeName);
+				if (textFlag) {
+					titleJlabel.setLocation(50, 90);
+					System.out.println("가로길이실행중");
+					witdhMarginTextPlus = 150;
 
-      tribeBgBox.setSize(704, 300);
-      tribeBgBox.setLocation(53, 260);
-      tribeBgBox.setBackground(whiteOp);
-      tribeBgBox.setLayout(null);
+				} else {
+					titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
+					witdhMarginTextPlus += 130;
+					int countNum = 20 + witdhMarginTextPlus;
+					System.out.println("마진 실행중  :    " + countNum);
+					if (countNum > 694) {
+						titleJlabel.setLocation(50, 150);
+					}
 
-      tribeBgBox.add(flowBox);
-      flowBox.setSize(704, 200);
-      flowBox.setLocation(53, 370);
-      flowBox.setLayout(null);
+				}
 
-      int witdhMarginPlus = 0;
-      int witdhMarginTextPlus = 0;
-      boolean imgFlag = true;
-      boolean textFlag = true;
+				textFlag = false;
+				System.out.println("텍스트 실행 : " + data.getChampName());
 
-      for (ResponseChampion data : resList) {
+			} // 라인 검색 텍스트 end
 
-         JLabel imgJlabel = new JLabel(new ImageIcon(data.getImageAddress()));
-         flowBox.add(imgJlabel);
-         imgJlabel.setSize(80, 80);
+			add(flowBox);
+			add(lineBgBox);
+			repaint();
 
-         if (imgFlag) {
-            imgJlabel.setLocation(50, 0);
-            witdhMarginPlus = 150;
+		}
+	}
 
-         } else {
-            imgJlabel.setLocation((20 + witdhMarginPlus), 0);
-            witdhMarginPlus += 130;
-            int countNum = 20 + witdhMarginPlus;
-            System.out.println("마진 실행중  :    " + countNum);
-            if (countNum > 694) {
-               imgJlabel.setLocation(50, 150);
-            }
+	void lineSelect() {
 
-         }
+		add(searchBox);
+		add(searchBtn);
 
-         imgFlag = false;
-         System.out.println(" 종족 이미지 실행  " + data.getImageAddress());
+		repaint();
+	}
 
-      } // 종족 검색 이미지박스 end
+	void tribeSearch(String searchTribeName) {
 
-      for (ResponseChampion data : resList) {
+		List<ResponseChampion> resList = css.selectChampionBytribe(searchTribeName);
 
-         JLabel titleJlabel = new JLabel(data.getName());
-         flowBox.add(titleJlabel);
-         titleJlabel.setSize(80, 20);
-         titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
-         titleJlabel.setHorizontalAlignment(JLabel.CENTER);
+		if (resList != null) {
+			remove(noList);
+			tribeBgBox.setSize(704, 300);
+			tribeBgBox.setLocation(53, 260);
+			tribeBgBox.setBackground(whiteOp);
+			tribeBgBox.setLayout(null);
 
-         if (textFlag) {
-            titleJlabel.setLocation(50, 90);
-            witdhMarginTextPlus = 150;
+			tribeBgBox.add(flowBox);
+			flowBox.setSize(704, 200);
+			flowBox.setLocation(53, 370);
+			flowBox.setLayout(null);
 
-         } else {
-            titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
-            witdhMarginTextPlus += 130;
-            int countNum = 20 + witdhMarginTextPlus;
-            System.out.println("마진 실행중  :    " + countNum);
-            if (countNum > 694) {
-               titleJlabel.setLocation(50, 150);
-            }
+			int witdhMarginPlus = 0;
+			int witdhMarginTextPlus = 0;
+			boolean imgFlag = true;
+			boolean textFlag = true;
 
-         }
+			for (ResponseChampion data : resList) {
 
-         textFlag = false;
-         System.out.println("텍스트 실행 : " + data.getName());
+				JLabel imgJlabel = new JLabel(new ImageIcon(data.getImageAddress()));
+				flowBox.add(imgJlabel);
+				imgJlabel.setSize(80, 80);
 
-      } // 종족 검색 텍스트 end
+				if (imgFlag) {
+					imgJlabel.setLocation(50, 0);
+					witdhMarginPlus = 150;
 
-      add(flowBox);
-      add(tribeBgBox);
-      repaint();
+				} else {
+					imgJlabel.setLocation((20 + witdhMarginPlus), 0);
+					witdhMarginPlus += 130;
+					int countNum = 20 + witdhMarginPlus;
+					if (countNum > 694) {
+						imgJlabel.setLocation(50, 150);
+					}
+				}
+				imgFlag = false;
 
-   }
+			} // 종족 검색 이미지박스 end
 
-   void tribeSelect() {
+			for (ResponseChampion data : resList) {
 
-      add(searchBox);
-      add(searchBtn);
+				JLabel titleJlabel = new JLabel(data.getName());
+				flowBox.add(titleJlabel);
+				titleJlabel.setSize(80, 20);
+				titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
+				titleJlabel.setHorizontalAlignment(JLabel.CENTER);
 
-      repaint();
-   }
+				if (textFlag) {
+					titleJlabel.setLocation(50, 90);
+					witdhMarginTextPlus = 150;
 
-   void priceSearch(String searchPrice) {
+				} else {
+					titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
+					witdhMarginTextPlus += 130;
+					int countNum = 20 + witdhMarginTextPlus;
+					if (countNum > 694) {
+						titleJlabel.setLocation(50, 150);
+					}
 
-      List<ResponseChampion> resList = css.selectChampionByPrice(searchPrice);
+				}
 
-      priceBgBox.setSize(704, 300);
-      priceBgBox.setLocation(53, 260);
-      priceBgBox.setBackground(whiteOp);
-      priceBgBox.setLayout(null);
+				textFlag = false;
+			} // 종족 검색 텍스트 end
 
-      priceBgBox.add(flowBox);
-      flowBox.setSize(704, 200);
-      flowBox.setLocation(53, 370);
-      flowBox.setLayout(new FlowLayout());
+			add(flowBox);
+			add(tribeBgBox);
+			repaint();
 
-      int witdhMarginPlus = 0;
-      int witdhMarginTextPlus = 0;
-      boolean imgFlag = true;
-      boolean textFlag = true;
+		} else {
+			System.out.println("실행");
+			add(noList);
+			noList.setSize(704, 300);
+			noList.setLocation(53, 260);
+			noList.setOpaque(true);
+			noList.setBackground(whiteOp);
+			noList.setHorizontalAlignment(JLabel.CENTER);
+			noList.setFont(new Font("sanSerif", Font.BOLD, 18));
+		}
 
-      for (ResponseChampion data : resList) {
+	}
 
-         JLabel imgJlabel = new JLabel(new ImageIcon(data.getImageAddress()));
-         flowBox.add(imgJlabel);
-         imgJlabel.setSize(80, 80);
+	void tribeSelect() {
 
-         if (imgFlag) {
-            imgJlabel.setLocation(50, 0);
-            witdhMarginPlus = 150;
+		add(searchBox);
+		add(searchBtn);
 
-         } else {
-            imgJlabel.setLocation((20 + witdhMarginPlus), 0);
-            witdhMarginPlus += 130;
-            int countNum = 20 + witdhMarginPlus;
-            System.out.println("마진 실행중  :    " + countNum);
-            if (countNum > 694) {
-               imgJlabel.setLocation(50, 150);
-            }
+		repaint();
+	}
 
-         }
+	void priceSearch(String searchPrice) {
 
-         imgFlag = false;
-         System.out.println(" 종족 이미지 실행  " + data.getImageAddress());
+		List<ResponseChampion> resList = css.selectChampionByPrice(searchPrice);
 
-      } // 비용 검색 이미지박스 end
+		if (resList.get(0) == null) {
+			add(noList);
+			noList.setSize(704, 300);
+			noList.setLocation(53, 260);
+			noList.setOpaque(true);
+			noList.setBackground(whiteOp);
+			noList.setHorizontalAlignment(JLabel.CENTER);
+			noList.setFont(new Font("sanSerif", Font.BOLD, 18));
 
-      for (ResponseChampion data : resList) {
+		} else {
+			remove(noList);
+			priceBgBox.setSize(704, 300);
+			priceBgBox.setLocation(53, 260);
+			priceBgBox.setBackground(whiteOp);
+			priceBgBox.setLayout(null);
 
-         JLabel titleJlabel = new JLabel(data.getName());
-         flowBox.add(titleJlabel);
-         titleJlabel.setSize(80, 20);
-         titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
-         titleJlabel.setHorizontalAlignment(JLabel.CENTER);
+			priceBgBox.add(flowBox);
+			flowBox.setSize(704, 200);
+			flowBox.setLocation(53, 370);
+			flowBox.setLayout(new FlowLayout());
 
-         if (textFlag) {
-            titleJlabel.setLocation(50, 90);
-            witdhMarginTextPlus = 150;
+			int witdhMarginPlus = 0;
+			int witdhMarginTextPlus = 0;
+			boolean imgFlag = true;
+			boolean textFlag = true;
 
-         } else {
-            titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
-            witdhMarginTextPlus += 130;
-            int countNum = 20 + witdhMarginTextPlus;
-            if (countNum > 694) {
-               titleJlabel.setLocation(50, 150);
-            }
+			for (ResponseChampion data : resList) {
 
-         }
+				JLabel imgJlabel = new JLabel(new ImageIcon(data.getImageAddress()));
+				flowBox.add(imgJlabel);
+				imgJlabel.setSize(80, 80);
 
-         textFlag = false;
+				if (imgFlag) {
+					imgJlabel.setLocation(50, 0);
+					witdhMarginPlus = 150;
 
-      } // 비용 검색 텍스트 end
+				} else {
+					imgJlabel.setLocation((20 + witdhMarginPlus), 0);
+					witdhMarginPlus += 130;
+					int countNum = 20 + witdhMarginPlus;
+					if (countNum > 694) {
+						imgJlabel.setLocation(50, 150);
+					}
 
-      add(flowBox);
-      add(priceBgBox);
-      repaint();
+				}
 
-   }
+				imgFlag = false;
 
-   void priceSelect() {
+			} // 비용 검색 이미지박스 end
 
-      add(searchBox);
-      add(searchBtn);
+			for (ResponseChampion data : resList) {
 
-      repaint();
-   }
+				JLabel titleJlabel = new JLabel(data.getName());
+				flowBox.add(titleJlabel);
+				titleJlabel.setSize(80, 20);
+				titleJlabel.setFont(new Font("sanSerif", Font.BOLD, 13));
+				titleJlabel.setHorizontalAlignment(JLabel.CENTER);
 
-   private void setInitLayout() {
-      setVisible(true);
-      setResizable(false);
-      setLocationRelativeTo(null);
-      setLayout(null);
+				if (textFlag) {
+					titleJlabel.setLocation(50, 90);
+					witdhMarginTextPlus = 150;
 
-      setContentPane(backgroundImg);
+				} else {
+					titleJlabel.setLocation((20 + witdhMarginTextPlus), 90);
+					witdhMarginTextPlus += 130;
+					int countNum = 20 + witdhMarginTextPlus;
+					if (countNum > 694) {
+						titleJlabel.setLocation(50, 150);
+					}
 
-      flowBox.setBackground(whiteOp100);
+				}
 
-      add(nameBtn);
-      nameBtn.setSize(176, 40);
-      nameBtn.setLocation(53, 220);
+				textFlag = false;
 
-      add(lineBtn);
-      lineBtn.setSize(176, 40);
-      lineBtn.setLocation(229, 220);
+			} // 비용 검색 텍스트 end
 
-      add(tribeBtn);
-      tribeBtn.setSize(176, 40);
-      tribeBtn.setLocation(405, 220);
+			add(flowBox);
+			add(priceBgBox);
+			repaint();
 
-      add(priceBtn);
-      priceBtn.setSize(176, 40);
-      priceBtn.setLocation(581, 220);
+		}
+	}
 
-      add(homeBtn);
-      homeBtn.setSize(80, 40);
-      homeBtn.setLocation(670, 70);
+	void priceSelect() {
 
-      searchBox.setSize(480, 35);
-      searchBox.setLocation(130, 300);
+		add(searchBox);
+		add(searchBtn);
 
-      searchBtn.setSize(70, 35);
-      searchBtn.setLocation(610, 300);
+		repaint();
+	}
 
-      price.setSize(150, 35);
-      price.setFont(new Font("sanSerif", Font.BOLD, 20));
-      price.setLocation(650, 250);
+	private void setInitLayout() {
+		setVisible(true);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setLayout(null);
 
-      priceCoin.setSize(50, 40);
-      priceCoin.setLocation(600, 245);
+		setContentPane(backgroundImg);
 
-   }
+		flowBox.setBackground(whiteOp100);
 
-   private void addEventListener() {
-      nameBtn.addActionListener(this);
-      lineBtn.addActionListener(this);
-      tribeBtn.addActionListener(this);
-      priceBtn.addActionListener(this);
-      searchBtn.addActionListener(this);
-      homeBtn.addActionListener(this);
+		add(nameBtn);
+		nameBtn.setSize(176, 40);
+		nameBtn.setLocation(53, 220);
 
-   }
+		add(lineBtn);
+		lineBtn.setSize(176, 40);
+		lineBtn.setLocation(229, 220);
 
-   int isBtnType;
-   final int NAME_SEARCH_BTN = 1;
-   final int LINE_SEARCH_BTN = 2;
-   final int TRIBE_SEARCH_BTN = 3;
-   final int PRICE_SEARCH_BTN = 4;
+		add(tribeBtn);
+		tribeBtn.setSize(176, 40);
+		tribeBtn.setLocation(405, 220);
 
-   @Override
-   public void actionPerformed(ActionEvent e) {
+		add(priceBtn);
+		priceBtn.setSize(176, 40);
+		priceBtn.setLocation(581, 220);
 
-      if (e.getSource() == nameBtn) {
-         nameSelect();
-         isBtnType = NAME_SEARCH_BTN;
+		add(homeBtn);
+		homeBtn.setSize(80, 40);
+		homeBtn.setLocation(670, 70);
 
-         lineBgBox.removeAll();
-         tribeBgBox.removeAll();
-         priceBgBox.removeAll();
-         flowBox.removeAll();
-         remove(tribeBgBox);
-         remove(lineBgBox);
-         remove(priceBgBox);
+		searchBox.setSize(480, 35);
+		searchBox.setLocation(130, 300);
 
-         repaint();
-      } else if (e.getSource() == lineBtn) {
-         lineSelect();
-         isBtnType = LINE_SEARCH_BTN;
+		searchBtn.setSize(70, 35);
+		searchBtn.setLocation(610, 300);
 
-         championImgBox.removeAll();
-         championBgBox.removeAll();
-         tribeBgBox.removeAll();
-         priceBgBox.removeAll();
-         flowBox.removeAll();
-         remove(championBgBox);
-         remove(tribeBgBox);
-         remove(priceBgBox);
-         repaint();
-      } else if (e.getSource() == tribeBtn) {
-         tribeSelect();
+		price.setSize(150, 35);
+		price.setFont(new Font("sanSerif", Font.BOLD, 20));
+		price.setLocation(650, 250);
 
-         isBtnType = TRIBE_SEARCH_BTN;
-         championImgBox.removeAll();
-         lineBgBox.removeAll();
-         championBgBox.removeAll();
-         priceBgBox.removeAll();
-         flowBox.removeAll();
-         remove(championBgBox);
-         remove(lineBgBox);
-         remove(priceBgBox);
+		priceCoin.setSize(50, 40);
+		priceCoin.setLocation(600, 245);
 
-         repaint();
-      } else if (e.getSource() == priceBtn) {
-         priceSelect();
-         isBtnType = PRICE_SEARCH_BTN;
-         championImgBox.removeAll();
-         lineBgBox.removeAll();
-         championBgBox.removeAll();
-         tribeBgBox.removeAll();
-         flowBox.removeAll();
-         remove(championBgBox);
-         remove(lineBgBox);
-         remove(tribeBgBox);
+	}
 
-      } else if (e.getSource() == searchBtn) {
-         actionType(isBtnType);
-      } else if (e.getSource() == homeBtn) {
-         System.out.println("홈버튼");
-         new MenuSelectFrame();
-         this.setVisible(false);
-      } else {
-         System.out.println("미선택");
-      }
+	private void addEventListener() {
+		nameBtn.addActionListener(this);
+		lineBtn.addActionListener(this);
+		tribeBtn.addActionListener(this);
+		priceBtn.addActionListener(this);
+		searchBtn.addActionListener(this);
+		homeBtn.addActionListener(this);
 
-   }
+	}
 
-   private void actionType(int isBtnType) {
+	int isBtnType;
+	final int NAME_SEARCH_BTN = 1;
+	final int LINE_SEARCH_BTN = 2;
+	final int TRIBE_SEARCH_BTN = 3;
+	final int PRICE_SEARCH_BTN = 4;
+
+	int isSearch;
+	final int RESELECT_NAME_BTN = 1;
+	final int RESELECT_LINE_BTN = 2;
+	final int RESELECT_TRIBE_BTN = 3;
+	final int RESELECT_PRICE_BTN = 4;
 
-      if (isBtnType == NAME_SEARCH_BTN) {
-         nameSearch(searchBox.getText().trim());
+	@Override
+	public void actionPerformed(ActionEvent e) {
 
-      } else if (isBtnType == LINE_SEARCH_BTN) {
-         System.out.println("라인 검색");
-         lineSearch(searchBox.getText().trim());
+		if (e.getSource() == nameBtn) {
+			nameSelect();
+			isBtnType = NAME_SEARCH_BTN;
 
-      } else if (isBtnType == TRIBE_SEARCH_BTN) {
-         System.out.println("종족 검색");
-         tribeSearch(searchBox.getText().trim());
+			lineBgBox.removeAll();
+			tribeBgBox.removeAll();
+			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(tribeBgBox);
+			remove(lineBgBox);
+			remove(priceBgBox);
+			remove(noList);
+			repaint();
 
-      } else if (isBtnType == PRICE_SEARCH_BTN) {
-         System.out.println("비용 검색");
-         priceSearch(searchBox.getText().trim());
+			isSearch = RESELECT_NAME_BTN;
 
-      } else {
-         System.out.println("선택되지않았습니다.");
-      }
+		} else if (e.getSource() == lineBtn) {
+			lineSelect();
+			isBtnType = LINE_SEARCH_BTN;
 
-   }
+			championImgBox.removeAll();
+			championBgBox.removeAll();
+			tribeBgBox.removeAll();
+			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(tribeBgBox);
+			remove(priceBgBox);
+			remove(noList);
+			repaint();
+
+			isSearch = RESELECT_LINE_BTN;
+
+		} else if (e.getSource() == tribeBtn) {
+			tribeSelect();
+
+			isBtnType = TRIBE_SEARCH_BTN;
+			championImgBox.removeAll();
+			lineBgBox.removeAll();
+			championBgBox.removeAll();
+			priceBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(lineBgBox);
+			remove(priceBgBox);
+			remove(noList);
+			repaint();
+
+			isSearch = RESELECT_TRIBE_BTN;
+
+		} else if (e.getSource() == priceBtn) {
+			priceSelect();
+			isBtnType = PRICE_SEARCH_BTN;
+			championImgBox.removeAll();
+			lineBgBox.removeAll();
+			championBgBox.removeAll();
+			tribeBgBox.removeAll();
+			flowBox.removeAll();
+			remove(championBgBox);
+			remove(lineBgBox);
+			remove(tribeBgBox);
+			remove(noList);
+
+			isSearch = RESELECT_PRICE_BTN;
+
+		} else if (e.getSource() == searchBtn) {
+			actionType(isBtnType);
+
+//			   if(isBtnType == isSearch) {		   
+//		        	 championImgBox.removeAll();
+//		             lineBgBox.removeAll();
+//		             championBgBox.removeAll();
+//		             tribeBgBox.removeAll();
+//		             flowBox.removeAll();
+//		             remove(championBgBox);
+//		             remove(lineBgBox);
+//		             remove(tribeBgBox);
+//		             priceBgBox.removeAll();
+//		             remove(priceBgBox);}	
+//			   }
+
+		} else if (e.getSource() == homeBtn) {
+			System.out.println("홈버튼");
+			new MenuSelectFrame();
+			this.setVisible(false);
+		} else {
+			System.out.println("미선택");
+		}
+
+	}
+
+	private void actionType(int isBtnType) {
+
+		if (isBtnType == NAME_SEARCH_BTN) {
+			nameSearch(searchBox.getText().trim());
+
+		} else if (isBtnType == LINE_SEARCH_BTN) {
+			System.out.println("라인 검색");
+			lineSearch(searchBox.getText().trim());
+
+		} else if (isBtnType == TRIBE_SEARCH_BTN) {
+			System.out.println("종족 검색");
+			tribeSearch(searchBox.getText().trim());
+
+		} else if (isBtnType == PRICE_SEARCH_BTN) {
+			System.out.println("비용 검색");
+			priceSearch(searchBox.getText().trim());
+
+		} else {
+			System.out.println("선택되지않았습니다.");
+		}
+
+	}
 
 }

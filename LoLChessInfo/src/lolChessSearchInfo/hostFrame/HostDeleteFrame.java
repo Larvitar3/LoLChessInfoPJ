@@ -2,7 +2,7 @@ package lolChessSearchInfo.hostFrame;
 
 import javax.swing.JFrame;
 
-public class HostDeleteFrame extends HostCRUDFrame {
+public class HostDeleteFrame extends HostInsertFrame {
 
    public HostDeleteFrame() {
       initData();

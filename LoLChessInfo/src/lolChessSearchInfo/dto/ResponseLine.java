@@ -7,5 +7,6 @@ public class ResponseLine {
 
 	String champName;
 	String champImage;
+	String lineName;
 	
 }

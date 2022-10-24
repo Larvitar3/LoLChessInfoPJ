@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 import lombok.Data;
 import lombok.Getter;
 
-public class HostSelectFrame extends HostCRUDFrame {
+public class HostSelectFrame extends HostInsertFrame {
 
    public HostSelectFrame() {
       initData();
